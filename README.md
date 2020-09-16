@@ -2,8 +2,8 @@
 My repo for the machine learning Engineering design group
 
 
-# Jeremy
-github repo url    https://github.com/hpssjellis/machine-learning-gearbots-jer  
+# Jeremy 
+This repository Github repo url    https://github.com/hpssjellis/machine-learning-gearbots-jer  
 Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/public/
 
 
