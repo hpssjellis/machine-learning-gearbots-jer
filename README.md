@@ -3,16 +3,14 @@ My repo for the machine learning Engineering design group
 
 
 # Jeremy
-github repo url    https://github.com/hpssjellis/machine-learning-gearbots-jer
-
+github repo url    https://github.com/hpssjellis/machine-learning-gearbots-jer  
 Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/public/
 
 
 
 
 # Darren 
-https://github.com/darrenkwon/Gearbots-Engineering-2020- 
-
+https://github.com/darrenkwon/Gearbots-Engineering-2020-   
 website https://darrenkwon.github.io/Gearbots-Engineering-2020-/public/
 
 
@@ -29,7 +27,7 @@ website https://midnight4577.github.io/
 
 
 # Will 
-https://github.com/poderman/Car-robotics/public/index.html 
+https://github.com/poderman/Car-robotics/public/index.html  
 website https://poderman.github.io/Car-robotics/public/index.html     
 
 
