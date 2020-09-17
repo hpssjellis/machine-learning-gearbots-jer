@@ -23,7 +23,7 @@ Website https://Morganv2.github.io/Machine-Learning-Gear-Bots-Jeremy
 
 # Andrew
 https://github.com/midnight4577/midnight4577.github.io   
-website https://midnight4577.github.io/
+website https://midnight4577.github.io/public/index.html
 
 
 # Will 
