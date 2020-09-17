@@ -32,7 +32,7 @@ website https://midnight4577.github.io/public/index.html
 
 
 # Will 
-https://github.com/poderman/Car-robotics/public/index.html  
+https://github.com/poderman/Car-robotics/    
 website https://poderman.github.io/Car-robotics/public/index.html     
 
 
