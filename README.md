@@ -18,7 +18,8 @@ website https://darrenkwon.github.io/Gearbots-Engineering-2020-/public/
 This is my GitHub https://github.com/GavidD/David   
 website: https://gavidd.github.io/David/public/ 
 
-
+# Ethan
+Wbsite https://ethan-will.github.io/machine-learning-gearbots-eth/public/
 
 # Liam
 https://github.com/LiamOnGithub/Gearbots-Engineering  
