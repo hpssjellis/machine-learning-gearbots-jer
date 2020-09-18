@@ -19,6 +19,7 @@ This is my GitHub https://github.com/GavidD/David
 website: https://gavidd.github.io/David/public/ 
 
 # Ethan
+Github https://github.com/ethan-will/machine-learning-gearbots-eth 
 Wbsite https://ethan-will.github.io/machine-learning-gearbots-eth/public/
 
 # Liam
