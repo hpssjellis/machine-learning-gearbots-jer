@@ -22,8 +22,8 @@ website: https://gavidd.github.io/David/public/
 Wbsite https://ethan-will.github.io/machine-learning-gearbots-eth/public/
 
 # Liam
-https://github.com/LiamOnGithub/Gearbots-Engineering  
-website
+https://github.com/LiamOnGithub/Gearbots-Engineering    
+website https://LiamOnGithub.github.io/Gearbots-Engineering/public/       
 
 # Morgan  
 https://github.com/Morganv2/Machine-Learning-Gear-Bots-Jeremy  
