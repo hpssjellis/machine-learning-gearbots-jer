@@ -39,7 +39,7 @@ website https://midnight4577.github.io/public/index.html
 
 # Will 
 https://github.com/poderman/Rc-car      
-website https://poderman.github.io/Rc-car/public/ 
-https://github.com/poderman/Rc-car  
+website https://poderman.github.io/Rc-car/public/    
+
 
 
