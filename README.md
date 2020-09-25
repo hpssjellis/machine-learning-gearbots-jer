@@ -28,7 +28,7 @@ website https://LiamOnGithub.github.io/Gearbots-Engineering/public/
 
 # Morgan  
 https://github.com/Morganv2/Machine-Learning-Gear-Bots-Jeremy  
-Website https://Morganv2.github.io/Machine-Learning-Gear-Bots-Jeremy
+Website https://Morganv2.github.io/Machine-Learning-Gear-Bots-Jeremy/public/index.html
 
 
 
