@@ -2,11 +2,11 @@
 <input id="myIn01" type=text value="https://www.rocksetta.com"><br>
 <textarea id="myArea01" rows=10 cols=70></textarea>
 
-<input id='myButton123' type='button' value='Get stuff form website' onclick="{
+<input id='myButton123' type='button' value='Get stuff from website' onclick="{
    (async () => {
        //document.getElementById('myArea01').value = document.getElementById('myIn01').value
 
-       myResponse = await fetch('https://www.rocksetta.com',{mode:'no-cors'})
+       myResponse = await fetch(document.getElementById('myIn01').value,{mode:'no-cors'})
        document.getElementById('myArea01').value = await myResponse.json()
       // console.log(myResponse);
    })();
