@@ -1,0 +1,14 @@
+<script src='https://cdn.jsdelivr.net/npm/puppeteer'> </script> 
+<input id="myIn01" type=text value="https://www.rocksetta.com"><br>
+<textarea id="myArea01" rows=10 cols=70></textarea>
+
+<input id='myButton123' type='button' value='Get stuff form website' onclick="{
+   (async () => {
+       //document.getElementById('myArea01').value = document.getElementById('myIn01').value
+
+       document.getElementById('myArea01').value = await fetch(document.getElementById('myIn01').value)
+   })();
+                                                  
+}"><br><br>
+
+<div id='myDiv123'>...</div><br>
