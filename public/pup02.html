@@ -6,7 +6,9 @@
    (async () => {
        //document.getElementById('myArea01').value = document.getElementById('myIn01').value
 
-       document.getElementById('myArea01').value = await fetch(document.getElementById('myIn01').value)
+       myResponse = await fetch('https://www.rocksetta.com',{mode:'no-cors'})
+       document.getElementById('myArea01').value = await myResponse.json()
+      // console.log(myResponse);
    })();
                                                   
 }"><br><br>
