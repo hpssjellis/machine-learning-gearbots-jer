@@ -10,7 +10,7 @@ Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/p
 
 
 # Darren 
-https://github.com/darrenkwon/Gearbots-Engineering-2020-   
+Myt Github   https://github.com/darrenkwon/Gearbots-Engineering-2020-   
 website https://darrenkwon.github.io/Gearbots-Engineering-2020-/public/
 
 
@@ -23,7 +23,7 @@ Github https://github.com/ethan-will/machine-learning-gearbots-eth
 Website https://ethan-will.github.io/machine-learning-gearbots-eth/public/
 
 # Liam
-https://github.com/LiamOnGithub/Gearbots-Engineering    
+Github https://github.com/LiamOnGithub/Gearbots-Engineering    
 website https://LiamOnGithub.github.io/Gearbots-Engineering/public/       
 
 # Morgan  
