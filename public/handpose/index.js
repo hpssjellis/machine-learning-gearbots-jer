@@ -226,10 +226,14 @@ const landmarksRealTime = async (video) => {
         
         
         
-      console.log(result[1])
-      document.getElementById('myDiv01').innerHTML = 'x:' + result[1][0].toFixed(0) + ', y:'+ result[1][1].toFixed(0) + ', z:' + result[1][2].toFixed(0) 
+      console.log(result)
+      document.getElementById('myDiv01').innerHTML = ''  
+      
+      for (myLoop=0; myLoop <= 20; myLoop++){  
+            
+          document.getElementById('myDiv01').innerHTML += myLoop + ', x:' + result[myLoop][0].toFixed(0) + ', y:'+ result[myLoop][1].toFixed(0) + ', z:' + result[myLoop][2].toFixed(0) + '<br>'    
         
-        
+      } 
         
       drawKeypoints(ctx, result, predictions[0].annotations);
 
