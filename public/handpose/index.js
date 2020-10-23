@@ -220,6 +220,10 @@ const landmarksRealTime = async (video) => {
     const predictions = await model.estimateHands(video);
     if (predictions.length > 0) {
       const result = predictions[0].landmarks;
+        
+      console.log(result)  
+        
+        
       drawKeypoints(ctx, result, predictions[0].annotations);
 
       if (renderPointcloud === true && scatterGL != null) {
@@ -236,7 +240,7 @@ const landmarksRealTime = async (video) => {
             
             
             
-          console.log(fingers.thumb)
+         // console.log(fingers.thumb)
             
             
             
