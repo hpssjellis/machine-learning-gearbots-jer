@@ -227,7 +227,7 @@ const landmarksRealTime = async (video) => {
         
         
       console.log(result[1])
-      document.getElementById('myDiv01').innerHTML = 'wow'  
+      document.getElementById('myDiv01').innerHTML = result[1][0]  
         
         
         
