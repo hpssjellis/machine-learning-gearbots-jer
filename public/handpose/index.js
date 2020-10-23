@@ -221,8 +221,13 @@ const landmarksRealTime = async (video) => {
     if (predictions.length > 0) {
       const result = predictions[0].landmarks;
         
+        
+        
+        
+        
+        
       console.log(result[1])
-      document.getElementById('myDiv01').innerHTml = 'wow'  
+      document.getElementById('myDiv01').innerHTML = 'wow'  
         
         
         
