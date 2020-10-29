@@ -241,7 +241,7 @@ const landmarksRealTime = async (video) => {
       let myThumbY = result[4][1]   //160
           
       let myIndexX = result[8][0]   //369
-      let myIndexY = result[8][1]   /165
+      let myIndexY = result[8][1]   //165
         
       if ( Math.abs(myIndexX - myThumbX) < 20     ){  
              
