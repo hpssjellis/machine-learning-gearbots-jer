@@ -235,6 +235,11 @@ const landmarksRealTime = async (video) => {
         
       } 
         
+       
+      document.getElementById('myDiv02').innerHTML = 'wow'  
+        
+        
+        
       drawKeypoints(ctx, result, predictions[0].annotations);
 
       if (renderPointcloud === true && scatterGL != null) {
