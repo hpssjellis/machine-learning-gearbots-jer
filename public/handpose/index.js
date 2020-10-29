@@ -236,8 +236,20 @@ const landmarksRealTime = async (video) => {
       } 
         
        
-      document.getElementById('myDiv02').innerHTML = 'wow'  
         
+      let myThumbX = result[4][0]   //367
+      let myThumbY = result[4][1]   //160
+          
+      let myIndexX = result[8][0]   //369
+      let myIndexY = result[8][1]   /165
+        
+      if ( Math.abs(myIndexX - myThumbX) < 20     ){  
+             
+      document.getElementById('myDiv02').innerHTML = 'thumb-index-touching'  
+    }  else {
+    
+      document.getElementById('myDiv02').innerHTML = 'nothing'  
+    } 
         
         
       drawKeypoints(ctx, result, predictions[0].annotations);
