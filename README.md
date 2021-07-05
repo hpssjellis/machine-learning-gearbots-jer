@@ -21,19 +21,19 @@ Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/p
 
 
 # Aaron 
-Repo  https://github.com/DiamondAaronXG/summer-2021-ml-gearbots-aaron 
+Repo  https://github.com/DiamondAaronXG/summer-2021-ml-gearbots-aaron    
 Website
 
 
 # Brockton
-Repo https://github.com/Brocktondailey/Just-yes 
+Repo https://github.com/Brocktondailey/Just-yes     
 Website
 
 
 
 # Mikolas
-Repo https://github.com/Mik-97/summer-2021-ml-mikolas 
-Webiste
+Repo https://github.com/Mik-97/summer-2021-ml-mikolas     
+Website
 
 
 # Shaun
