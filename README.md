@@ -22,12 +22,12 @@ Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/p
 
 # Aaron 
 Repo  https://github.com/DiamondAaronXG/summer-2021-ml-gearbots-aaron    
-Website
+Website  https://diamondaaronxg.github.io/summer-2021-ml-gearbots-aaron/public/index.html 
 
 
 # Brockton
 Repo https://github.com/Brocktondailey/Just-yes     
-Website
+Website   https://brocktondailey.github.io/Just-yes/public/index.html 
 
 
 
