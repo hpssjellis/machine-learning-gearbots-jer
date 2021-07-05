@@ -8,6 +8,26 @@ This repository Github repo url    https://github.com/hpssjellis/machine-learnin
 Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/public/
 
 
+# Sumer 2021
+
+
+# Shaun
+
+Repo  https://github.com/shaunoh/gearrbot-robotics-me
+Website https://shaunoh.github.io/gearrbot-robotics-me/public/index.html
+
+
+
+
+
+
+
+
+
+# Spring 2021
+
+
+
 
 
 # Liam
