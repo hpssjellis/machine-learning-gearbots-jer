@@ -1,14 +1,39 @@
 # Machine-Learning-Gearbots-Jeremy
 My repo for the machine learning Engineering design group
 
+.
 
+.
 
 # Jeremy 
 This repository Github repo url    https://github.com/hpssjellis/machine-learning-gearbots-jer  
 Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/public/
 
+.
+
+
+.
+
+
 
 # Sumer 2021
+
+
+
+# Aaron 
+Repo  https://github.com/DiamondAaronXG/summer-2021-ml-gearbots-aaron 
+Website
+
+
+# Brockton
+Repo https://github.com/Brocktondailey/Just-yes 
+Website
+
+
+
+# Mikolas
+Repo https://github.com/Mik-97/summer-2021-ml-mikolas 
+Webiste
 
 
 # Shaun
@@ -16,6 +41,19 @@ Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/p
 Repo  https://github.com/shaunoh/gearrbot-robotics-me
 Website https://shaunoh.github.io/gearrbot-robotics-me/public/index.html
 
+
+# Zakaiah
+Repo
+Website
+
+.
+
+
+.
+
+
+
+.
 
 
 
@@ -52,6 +90,9 @@ website https://poderman.github.io/Rc-car/public/
 
 Repo  https://github.com/shaunoh/gearrbot-robotics-me
 Website https://shaunoh.github.io/gearrbot-robotics-me/public/index.html
+
+
+
 
 
 
