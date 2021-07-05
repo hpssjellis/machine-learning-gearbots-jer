@@ -26,20 +26,20 @@ Website  https://diamondaaronxg.github.io/summer-2021-ml-gearbots-aaron/public/i
 
 
 # Brockton
-Repo https://github.com/Brocktondailey/Just-yes     
-Website   https://brocktondailey.github.io/Just-yes/public/index.html 
+Repo https://github.com/Brocktondailey/Just-yes       
+Website   https://brocktondailey.github.io/Just-yes/public/index.html   
 
 
 
 # Mikolas
-Repo https://github.com/Mik-97/summer-2021-ml-mikolas     
-Website
+Repo https://github.com/Mik-97/summer-2021-ml-mikolas       
+Website  https://mik-97.github.io/summer-2021-ml-mikolas/ml-yes-no2/index.html    
 
 
 # Shaun
 
-Repo  https://github.com/shaunoh/gearrbot-robotics-me
-Website https://shaunoh.github.io/gearrbot-robotics-me/public/index.html
+Repo  https://github.com/shaunoh/gearrbot-robotics-me   
+Website https://shaunoh.github.io/gearrbot-robotics-me/public/index.html   
 
 
 # Zakaiah
