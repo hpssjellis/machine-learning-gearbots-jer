@@ -55,8 +55,8 @@ Website https://shaunoh.github.io/gearrbot-robotics-me/public/index.html
 
 
 # Zakaiah
-Repo
-Website
+Repo   https://github.com/Ninjakai100 
+Website  https://ninjakai100.github.io/gerbots-summer-kai/public/index.html 
 
 .
 
