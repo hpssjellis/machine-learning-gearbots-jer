@@ -63,6 +63,19 @@ Website  https://ninjakai100.github.io/gerbots-summer-kai/public/index.html
 
 .
 
+July 7th Wed
+Making own impulses.
+
+July 6th,
+
+Edge Impulse Fixed the pen time model
+
+July 5th 9am-noon    
+Set everybodies github up for webpages "gitpages" with public folder and index.html   
+made new folder called ml-yes-no with index.html   
+copied edgeimpulse WA "WASM" edge-impulse-standalone.js and edge-impulse-standalone.wasm files to the folder   
+copied https://github.com/hpssjellis/my-examples-of-edge-impulse/blob/main/public/downloads/index.html to the same folder as the above files
+
 
 
 .
