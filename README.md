@@ -15,6 +15,35 @@ Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/p
 .
 
 
+# Aaron 
+Repo  https://github.com/DiamondAaronXG/summer-2021-ml-gearbots-aaron    
+Website  https://diamondaaronxg.github.io/summer-2021-ml-gearbots-aaron/public/index.html 
+
+
+# Brockton
+Repo https://github.com/Brocktondailey/Just-yes       
+Website   https://brocktondailey.github.io/Just-yes/public/index.html   
+
+
+
+# Mikolas
+Repo https://github.com/Mik-97/summer-2021-ml-mikolas       
+Website  https://mik-97.github.io/summer-2021-ml-mikolas/public/index.html    
+
+
+# Shaun
+
+Repo  https://github.com/shaunoh/gearrbot-robotics-me   
+Website https://shaunoh.github.io/gearrbot-robotics-me/public/index.html   
+
+
+# Kai
+Repo   https://github.com/Ninjakai100/gerbots-summer-kai   
+Website  https://ninjakai100.github.io/gerbots-summer-kai/public/index.html 
+
+.
+
+
 
 # Sumer 2021
 
@@ -78,50 +107,6 @@ July 8th, Thursday
 
 
 
-July 7th, Wed
-
-Made our own Edge Impulse and put on the website and tried to add sounds
-
-
-July 6th,
-
-Edge Impulse
-
-July 5th 9am-noon    
-Set everybodies github up for webpages "gitpages" with public folder and index.html   
-made new folder called ml-yes-no with index.html   
-copied edgeimpulse WA "WASM" edge-impulse-standalone.js and edge-impulse-standalone.wasm files to the folder   
-copied https://github.com/hpssjellis/my-examples-of-edge-impulse/blob/main/public/downloads/index.html to the same folder as the above files
-
-
-
-# Aaron 
-Repo  https://github.com/DiamondAaronXG/summer-2021-ml-gearbots-aaron    
-Website  https://diamondaaronxg.github.io/summer-2021-ml-gearbots-aaron/public/index.html 
-
-
-# Brockton
-Repo https://github.com/Brocktondailey/Just-yes       
-Website   https://brocktondailey.github.io/Just-yes/public/index.html   
-
-
-
-# Mikolas
-Repo https://github.com/Mik-97/summer-2021-ml-mikolas       
-Website  https://mik-97.github.io/summer-2021-ml-mikolas/public/index.html    
-
-
-# Shaun
-
-Repo  https://github.com/shaunoh/gearrbot-robotics-me   
-Website https://shaunoh.github.io/gearrbot-robotics-me/public/index.html   
-
-
-# Kai
-Repo   https://github.com/Ninjakai100/gerbots-summer-kai   
-Website  https://ninjakai100.github.io/gerbots-summer-kai/public/index.html 
-
-.
 
 
 .
