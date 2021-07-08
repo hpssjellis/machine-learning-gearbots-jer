@@ -19,6 +19,29 @@ Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/p
 # Sumer 2021
 
 
+July 8th, Thursday
+
+## Steps to reproduce an Impulse
+
+
+1.
+1.
+1.
+1.
+1.
+1.
+
+
+
+
+
+
+
+
+July 7th, Wed
+
+Made our own Edge Impulse and put on the website and tried to add sounds
+
 
 July 6th,
 
