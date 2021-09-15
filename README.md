@@ -3,6 +3,10 @@ My repo for the machine learning Engineering design group
 
 .
 
+Check out the Price List before classes start
+
+[price-list.md](price-list.md)
+
 .
 
 # Jeremy 
