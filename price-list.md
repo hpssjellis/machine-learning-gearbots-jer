@@ -59,7 +59,7 @@ Optional:
 
 <img src="https://user-images.githubusercontent.com/5605614/133374371-e522276f-00ab-47ba-86d2-fe1cc8a5bc37.png" width=400 /> [Arduino-nano-33-ble-sense-with-headers](https://store-usa.arduino.cc/products/arduino-nano-33-ble-sense-with-headers) $33.40 USD
 
-This board made around 2019 has Machine Learning ability and an accelerometer. A great starting choice for Machine Learning, however it is lacking when using the color camera below since the resolution size can only be 48 x 48 pixels.
+This board made around 2018 has Machine Learning ability and an accelerometer. A great starting choice for Machine Learning, however it is lacking when using the color camera below since the resolution size can only be 48 x 48 pixels.
 
 
 
@@ -80,7 +80,7 @@ This board made in 2015 is still a great microcontroller today, but only with li
 
 
 
-
+# Final Product
 
 
 This is what it looks like when it is all finished. A robot controlled or app controlled Toy Car.
