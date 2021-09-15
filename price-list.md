@@ -3,8 +3,8 @@
 
 Must have, Contact Mr Dirome if this is going to be a problem
 
-[SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
-<img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=200 />
+<img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=200 /> [RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
+
 
 In Abbotsford, BC this store has them, phone first  
 Order from Canadian Collectors Club:   
