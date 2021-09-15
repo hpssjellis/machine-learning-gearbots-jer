@@ -66,47 +66,56 @@ This board made in 2015 is still a great microcontroller today, but only with li
 
 
 
-![image](https://user-images.githubusercontent.com/5605614/133374039-45fac79c-23a0-4992-a403-699e03a1c17f.png)
-
-![image](https://user-images.githubusercontent.com/5605614/133374088-cc719213-80e5-47c9-a8d1-b476c2cc336c.png)
 
 
-![image](https://user-images.githubusercontent.com/5605614/133374122-6af08f67-3216-41f2-9b39-30c7eb15e9a4.png)
+<img src="https://user-images.githubusercontent.com/5605614/133374039-45fac79c-23a0-4992-a403-699e03a1c17f.png" width=200 />
 
 
-
-![image](https://user-images.githubusercontent.com/5605614/133374152-65006148-0003-4ddc-87bb-1dade1220466.png)
+<img src="https://user-images.githubusercontent.com/5605614/133374088-cc719213-80e5-47c9-a8d1-b476c2cc336c.png" width=200 />
 
 
 
-![image](https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png)
+<img src="https://user-images.githubusercontent.com/5605614/133374122-6af08f67-3216-41f2-9b39-30c7eb15e9a4.png" width=200 />
 
 
 
 
+<img src="https://user-images.githubusercontent.com/5605614/133374152-65006148-0003-4ddc-87bb-1dade1220466.png" width=200 />
 
 
 
 
-![image](https://user-images.githubusercontent.com/5605614/133374299-bcad6533-8d8f-48f3-a833-85228e8ff984.png)
-
-![image](https://user-images.githubusercontent.com/5605614/133374371-e522276f-00ab-47ba-86d2-fe1cc8a5bc37.png)
-
-
-
-![image](https://user-images.githubusercontent.com/5605614/133374447-75e23fc8-ea5f-4319-a6dd-2426680955aa.png)
-
-
-![image](https://user-images.githubusercontent.com/5605614/133374498-25540209-2123-437f-9cca-6319c8881364.png)
+<img src="https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png" width=200 />
 
 
 
 
 
-![image](https://user-images.githubusercontent.com/5605614/133374580-13deb749-820c-46db-bc04-597c610d2bd0.png)
 
 
-![image](https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png)
+<img src="https://user-images.githubusercontent.com/5605614/133374299-bcad6533-8d8f-48f3-a833-85228e8ff984.png" width=200 />
+
+
+
+
+<img src="https://user-images.githubusercontent.com/5605614/133374447-75e23fc8-ea5f-4319-a6dd-2426680955aa.png" width=200 />
+
+
+<img src="https://user-images.githubusercontent.com/5605614/133374371-e522276f-00ab-47ba-86d2-fe1cc8a5bc37.png" width=200 />
+
+
+
+
+<img src="https://user-images.githubusercontent.com/5605614/133374498-25540209-2123-437f-9cca-6319c8881364.png" width=200 />
+
+
+
+
+<img src="https://user-images.githubusercontent.com/5605614/133374580-13deb749-820c-46db-bc04-597c610d2bd0.png" width=200 />
+
+<img src="https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png" width=200 />
+
+
 
 
 
