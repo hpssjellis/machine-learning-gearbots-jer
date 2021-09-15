@@ -3,18 +3,15 @@
 
 Must have, Contact Mr Dirome if this is going to be a problem
 
-[SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN
+[SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
+<img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=200 />
 
 In Abbotsford, BC this store has them, phone first  
 Order from Canadian Collectors Club:   
 Located at #1 - 33232 South Fraser Way    
 (t) 1.800.332.1373 or (t) 604.870.9271   
   
-![image](https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png)
 
-.
-
-<img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=200 />
 
 
 Everone needs the [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD
