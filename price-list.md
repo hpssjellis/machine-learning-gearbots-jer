@@ -106,8 +106,10 @@ This board made in 2015 is still a great microcontroller today, but only with li
 
 
 
+![image](https://user-images.githubusercontent.com/5605614/133374580-13deb749-820c-46db-bc04-597c610d2bd0.png)
 
 
+![image](https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png)
 
 
 
