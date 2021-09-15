@@ -78,6 +78,11 @@ This board made around 2018 has Machine Learning ability and an accelerometer. A
 This board made in 2015 is still a great microcontroller today, but only with limited Machine Learning capability
 
 
+# Optional Sensor Kit: Consider getting one of the many Arduino style sensor kits on the market. Here is one for $35 CDN that looks very good
+
+[Kuman 37-in-1 Sensor Kit Compatible with Arduino Raspberry Pi Mega 2560 Kits Compatible K5](https://www.amazon.ca/Kuman-sensor-arduino-raspberry-Compatible/dp/B01BY16552/ref=sr_1_29?dchild=1&keywords=maker+breadboard+wire+kit+solder&qid=1631683832&sr=8-29)
+<img src="https://user-images.githubusercontent.com/5605614/133377159-586ccaba-56fd-42ac-8390-51c33fe5d086.png" width=800 /> 
+
 
 
 # Final Product
@@ -86,7 +91,6 @@ This board made in 2015 is still a great microcontroller today, but only with li
 This is what it looks like when it is all finished. A robot controlled or app controlled Toy Car.
 
 <img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=1000 /> 
-
 
 
 
