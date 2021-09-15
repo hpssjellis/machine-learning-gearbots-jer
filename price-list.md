@@ -5,7 +5,7 @@ Must have the following, contact Mr Dirom if this is going to be a problem
 
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133374039-45fac79c-23a0-4992-a403-699e03a1c17f.png" width=200 /> [RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
+<img src="https://user-images.githubusercontent.com/5605614/133374039-45fac79c-23a0-4992-a403-699e03a1c17f.png" width=600 /> [RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
 
 
 In Abbotsford, BC this store has them, phone first  
