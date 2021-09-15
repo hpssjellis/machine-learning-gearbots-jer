@@ -8,6 +8,8 @@ Must have the following, contact Mr Dirom if this is going to be a problem
 <img src="https://user-images.githubusercontent.com/5605614/133374039-45fac79c-23a0-4992-a403-699e03a1c17f.png" width=600 /> [RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
 
 
+(Do not get the more expensive brushless version of the Shedder car as the coding is much more difficult)
+
 In Abbotsford, BC this store has them, phone first  
 Order from Canadian Collectors Club:   
 Located at #1 - 33232 South Fraser Way    
@@ -24,7 +26,6 @@ Located at #1 - 33232 South Fraser Way
 
 
 
-(Do not get the more expensive brushless version as the coding is much more difficult)
 
 Note: You can get an extra servo motor as this makes coding much eaiser than the roginal car above. 
  
