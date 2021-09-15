@@ -37,9 +37,12 @@ If you don't get the 3 wire servo you need this [DRV8835 Dual Motor Driver Carri
 
 ## 2021 Microcontroller Price List   
 When we combine the PortentaH7 with the LoRa vision shield we have a great Machine Learning duo. But it is expensive.  
-[Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD  
 
-[Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD
+
+<img src="https://user-images.githubusercontent.com/5605614/133374580-13deb749-820c-46db-bc04-597c610d2bd0.png" width=400 />[Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD  
+
+
+<img src="https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png" width=400 /> [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD
 
 Optional: [Charmed Labs Pixy2 Machine Learning Color cam] (https://www.robotshop.com/ca/en/charmed-labs-pixy-21-cmucam5-image-sensor.html) $76.97 CDN
 
@@ -111,9 +114,6 @@ This board made in 2015 is still a great microcontroller today, but only with li
 
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133374580-13deb749-820c-46db-bc04-597c610d2bd0.png" width=200 />
-
-<img src="https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png" width=200 />
 
 
 
