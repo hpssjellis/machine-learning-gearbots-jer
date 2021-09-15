@@ -12,6 +12,10 @@ Located at #1 - 33232 South Fraser Way
   
 ![image](https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png)
 
+.
+
+<img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=200 />
+
 
 Everone needs the [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD
 
