@@ -3,7 +3,9 @@
 
 Must have the following, contact Mr Dirom if this is going to be a problem
 
-<img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=200 /> [RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
+
+
+<img src="https://user-images.githubusercontent.com/5605614/133374039-45fac79c-23a0-4992-a403-699e03a1c17f.png" width=200 /> [RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
 
 
 In Abbotsford, BC this store has them, phone first  
@@ -18,7 +20,7 @@ Located at #1 - 33232 South Fraser Way
 <img src="https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png" width=400 /> Everone needs the [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD
 
 
-And these plugs [WSD1302 plug set](https://www.rcsuperstore.com/ws-deans-2-pin-ultra-plug-set-one-male-one-female-included/) $2.99 USD
+<img src="https://user-images.githubusercontent.com/5605614/133374122-6af08f67-3216-41f2-9b39-30c7eb15e9a4.png" width=400 /> And these plugs [WSD1302 plug set](https://www.rcsuperstore.com/ws-deans-2-pin-ultra-plug-set-one-male-one-female-included/) $2.99 USD
 
 
 
@@ -26,9 +28,9 @@ And these plugs [WSD1302 plug set](https://www.rcsuperstore.com/ws-deans-2-pin-u
 
 Note: You can get an extra servo motor as this makes coding much eaiser than the roginal car above. 
  
-<img src="https://user-images.githubusercontent.com/5605614/133374152-65006148-0003-4ddc-87bb-1dade1220466.png" width=200 />  Extra [3 wire Servo ](https://www.rcpro.ca/collections/shredder/products/shredder-3-wires-19gram-metal-gear-servo) $24.99 CDN
+<img src="https://user-images.githubusercontent.com/5605614/133374152-65006148-0003-4ddc-87bb-1dade1220466.png" width=400 />  Extra [3 wire Servo ](https://www.rcpro.ca/collections/shredder/products/shredder-3-wires-19gram-metal-gear-servo) $24.99 CDN
 
-If you don't get the 3 wire servo you need this [DRV8835 Dual Motor Driver Carrie](https://www.pololu.com/product/2135) from Pololu $9.95 USD
+<img src="https://user-images.githubusercontent.com/5605614/133374088-cc719213-80e5-47c9-a8d1-b476c2cc336c.png" width=400 /> If you don't get the 3 wire servo you need this [DRV8835 Dual Motor Driver Carrie](https://www.pololu.com/product/2135) from Pololu $9.95 USD
 
 
 
@@ -80,14 +82,17 @@ This board made in 2015 is still a great microcontroller today, but only with li
 
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133374039-45fac79c-23a0-4992-a403-699e03a1c17f.png" width=200 />
+This is what it looks like when it is all finished. A robot controlled or app controlled Toy Car.
+
+<img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=1000 /> 
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133374088-cc719213-80e5-47c9-a8d1-b476c2cc336c.png" width=200 />
 
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133374122-6af08f67-3216-41f2-9b39-30c7eb15e9a4.png" width=200 />
+
+
+
 
 
 
