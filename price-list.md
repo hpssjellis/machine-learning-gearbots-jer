@@ -1,19 +1,56 @@
 ## Gear Bots Machine Learning Engineering Design STEM Class
 
 
+Must have, Contact Mr Dirome if this is going to be a problem
+
+[SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN
+
+In Abbotsford, BC this store has them, phone first  
+Order from Canadian Collectors Club:   
+Located at #1 - 33232 South Fraser Way    
+(t) 1.800.332.1373 or (t) 604.870.9271   
+  
+![image](https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png)
+
+
+Everone needs the [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD
+
+
+And these plugs [WSD1302 plug set](https://www.rcsuperstore.com/ws-deans-2-pin-ultra-plug-set-one-male-one-female-included/) $299 USD
+
+
+
+(Do not get the more expensive brushless version as the coding is much more difficult)
+
+Note: You can get an extra servo motor as this makes coding much eaiser than the roginal car above. 
+Extra [3 wire Servo ](https://www.rcpro.ca/collections/shredder/products/shredder-3-wires-19gram-metal-gear-servo) $24.99 CDN
+
+If you don't get the 3 wire servo you need this [DRV8835 Dual Motor Driver Carrie](https://www.pololu.com/product/2135) from Pololu $9.95 USD
+
 
 
 -----
 
 ## 2021 Price List
 
+[Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD
+
+[Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD
+
+Optional: [Charmed Labs Pixy2 Machine Learning Color cam] (https://www.robotshop.com/ca/en/charmed-labs-pixy-21-cmucam5-image-sensor.html) $76.97 CDN
+
 
 -----
 
 ## 2020 Price List
 
+[arduino-nano-33-ble-sense-with-headers](https://store-usa.arduino.cc/products/arduino-nano-33-ble-sense-with-headers) $33.40 USD
+
+[ov7670 Camera](https://electropeak.com/ov7670-camera-board-b-waveshare) $13.29 USD
 
 
 -----
 
 ## 2019 Price List
+
+[Particle Photon](https://store.particle.io/products/photon)  $19.65 USD
