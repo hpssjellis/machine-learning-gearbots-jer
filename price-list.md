@@ -1,7 +1,7 @@
 ## Gear Bots Machine Learning Engineering Design STEM Class
 
 
-Must have, Contact Mr Dirome if this is going to be a problem
+Must have the following, contact Mr Dirom if this is going to be a problem
 
 <img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=200 /> [RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
 
@@ -32,11 +32,12 @@ If you don't get the 3 wire servo you need this [DRV8835 Dual Motor Driver Carri
 
 -----
 
-## Note that Microcontrollers get better rapidly. Here is the changing list. The 2021 Portenta should last for a few years.
+## Note that Microcontrollers improve rapidly. Here is the changing list. The 2021 Portenta should last us a few years.   
+(Any other these materials would work fine, just we will be able to do more with the latest equipment)
 
-## 2021 Microcontroller Price List
-When we combine the PortentaH7 with the LoRa vision shield we have a great Machine Learning duo. But it is expensive.
-[Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD
+## 2021 Microcontroller Price List   
+When we combine the PortentaH7 with the LoRa vision shield we have a great Machine Learning duo. But it is expensive.  
+[Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD  
 
 [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD
 
