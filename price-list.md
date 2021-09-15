@@ -51,7 +51,7 @@ Optional: [Charmed Labs Pixy2 Machine Learning Color cam] (https://www.robotshop
 
 ## 2020 Microcontroller Price List
 
-[arduino-nano-33-ble-sense-with-headers](https://store-usa.arduino.cc/products/arduino-nano-33-ble-sense-with-headers) $33.40 USD
+<img src="https://user-images.githubusercontent.com/5605614/133374371-e522276f-00ab-47ba-86d2-fe1cc8a5bc37.png" width=400 /> [arduino-nano-33-ble-sense-with-headers](https://store-usa.arduino.cc/products/arduino-nano-33-ble-sense-with-headers) $33.40 USD
 
 This board made around 2019 has Machine Learning ability and an accelerometer. A great starting choice for Machine Learning, however it is lacking when using the color camera below since the resolution size can only be 48 x 48 pixels.
 
@@ -62,7 +62,8 @@ This board made around 2019 has Machine Learning ability and an accelerometer. A
 
 ## 2019 Microcontroller Price List
 
-[Particle Photon](https://store.particle.io/products/photon)  $19.65 USD
+
+<img src="https://user-images.githubusercontent.com/5605614/133374498-25540209-2123-437f-9cca-6319c8881364.png" width=400 /> [Particle Photon](https://store.particle.io/products/photon)  $19.65 USD
 This board made in 2015 is still a great microcontroller today, but only with limited Machine Learning capability
 
 
@@ -102,14 +103,6 @@ This board made in 2015 is still a great microcontroller today, but only with li
 
 
 <img src="https://user-images.githubusercontent.com/5605614/133374447-75e23fc8-ea5f-4319-a6dd-2426680955aa.png" width=200 />
-
-
-<img src="https://user-images.githubusercontent.com/5605614/133374371-e522276f-00ab-47ba-86d2-fe1cc8a5bc37.png" width=200 />
-
-
-
-
-<img src="https://user-images.githubusercontent.com/5605614/133374498-25540209-2123-437f-9cca-6319c8881364.png" width=200 />
 
 
 
