@@ -27,7 +27,7 @@ Located at #1 - 33232 South Fraser Way
 
 
 
-Note: You can get an extra servo motor as this makes coding much eaiser than the roginal car above. 
+Note: You can get an extra servo motor as this makes coding much eaiser than the oginal car above, which uses a DC motor for turning and a potentiometer to determine what angle the motor is at. 
  
 <img src="https://user-images.githubusercontent.com/5605614/133374152-65006148-0003-4ddc-87bb-1dade1220466.png" width=400 />  Extra [3 wire Servo ](https://www.rcpro.ca/collections/shredder/products/shredder-3-wires-19gram-metal-gear-servo) $24.99 CDN
 
