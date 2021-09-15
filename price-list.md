@@ -38,7 +38,7 @@ Note: You can get an extra servo motor as this makes coding much eaiser than the
 -----
 
 ## Note that Microcontrollers improve rapidly. Here is the changing list. The 2021 Portenta should last us a few years.   
-(Any other these materials would work fine, just we will be able to do more with the latest equipment)
+(Any other the below materials would work fine, just we will be able to do much more with the latest equipment the Portenta and Vision Shield)
 
 ## 2021 Microcontroller Price List   
 When we combine the PortentaH7 with the LoRa vision shield we have a great Machine Learning duo. But it is expensive.  
