@@ -57,10 +57,11 @@ When we combine the PortentaH7 with the LoRa vision shield we have a great Machi
 <img src="https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png" width=400 /> [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD  Allows the Portenta to See and hear and use the LoRaWan networks
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133946385-f768bd3b-60fd-44ec-92c6-80e3bbd6cf6d.png" width=400 /> [Seeedstudio Grove 128x64 OLED Display](https://www.robotshop.com/ca/en/seeedstudio-grove-128x64-oled-display.html?gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-yFXp7cpk2qEBbJ-mKO3dtvo5_8n0M5hqiUZE1wPE7RPDKo6fMhjfsaApVREALw_wcB)  $19.10 CDN   Needed to see what the Portenta sees
+<img src="https://user-images.githubusercontent.com/5605614/133946385-f768bd3b-60fd-44ec-92c6-80e3bbd6cf6d.png" width=100 /> [Seeedstudio Grove 128x64 OLED Display](https://www.robotshop.com/ca/en/seeedstudio-grove-128x64-oled-display.html?gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-yFXp7cpk2qEBbJ-mKO3dtvo5_8n0M5hqiUZE1wPE7RPDKo6fMhjfsaApVREALw_wcB)  $19.10 CDN   Needed to see what the Portenta sees
 
 Optional:    
-<img src="https://user-images.githubusercontent.com/5605614/133374299-bcad6533-8d8f-48f3-a833-85228e8ff984.png" width=200 /> [Charmed Labs Pixy2 Machine Learning Color cam] (https://www.robotshop.com/ca/en/charmed-labs-pixy-21-cmucam5-image-sensor.html) $76.97 CDN   This already has Machine Learning in it and detects different shades, (black and white are not a shade). Can really easily do very complex things, and it is fast.
+<img src="https://user-images.githubusercontent.com/5605614/133374299-bcad6533-8d8f-48f3-a833-85228e8ff984.png" width=200 /> 
+[Charmed Labs Pixy2 Machine Learning Color cam](https://www.robotshop.com/ca/en/charmed-labs-pixy-21-cmucam5-image-sensor.html) $76.97 CDN   This already has Machine Learning in it and detects different shades, (black and white are not a shade). Can really easily do very complex things, and it is fast.
 
 
 -----
