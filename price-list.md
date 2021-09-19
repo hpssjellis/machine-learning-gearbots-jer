@@ -1,22 +1,22 @@
 ## Gear Bots Machine Learning Engineering Design STEM Class
 
 
-Must have the following, contact Mr Dirom if this is going to be a problem
+# Must have the following, contact Mr Dirom if this is going to be a problem
 
 
 
 <img src="https://user-images.githubusercontent.com/5605614/133374039-45fac79c-23a0-4992-a403-699e03a1c17f.png" width=600 /> [RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
 
 
-(Do not get the more expensive brushless version of the Shedder car as the coding is much more difficult)
+(Do not get the more expensive brushless version of the Shredder car as the coding is much more difficult)
 
-In Abbotsford, BC this store has them, phone first  
+In Abbotsford, BC this store has the above RC Shreder, phone first  
 Order from Canadian Collectors Club:   
 Located at #1 - 33232 South Fraser Way    
 (t) 1.800.332.1373 or (t) 604.870.9271   
   
 
-
+# Must also have
 
 
 <img src="https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png" width=400 /> Everone needs the [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD
