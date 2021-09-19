@@ -104,7 +104,7 @@ This is what it looks like when it is all finished. A robot controlled or app co
 <img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=1000 /> 
 
 
-## List of suggested first time purchase;
+## List of suggested first time purchase:
 
 
 1. [RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN  
