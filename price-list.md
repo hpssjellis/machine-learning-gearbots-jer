@@ -27,9 +27,14 @@ Located at #1 - 33232 South Fraser Way
 
 
 
-Note: You can get an extra servo motor as this makes coding much eaiser than the oginal car above, which uses a DC motor for turning and a potentiometer to determine what angle the motor is at. 
+# Note: 
+
+You can get an extra servo motor as this makes coding much eaiser than the oginal car above, which uses a DC motor for turning and a potentiometer to determine what angle the motor is at. 
  
 <img src="https://user-images.githubusercontent.com/5605614/133374152-65006148-0003-4ddc-87bb-1dade1220466.png" width=400 />  Extra [3 wire Servo ](https://www.rcpro.ca/collections/shredder/products/shredder-3-wires-19gram-metal-gear-servo) $24.99 CDN
+
+
+# OR
 
 <img src="https://user-images.githubusercontent.com/5605614/133374088-cc719213-80e5-47c9-a8d1-b476c2cc336c.png" width=400 /> If you don't get the 3 wire servo you need this [DRV8835 Dual Motor Driver Carrie](https://www.pololu.com/product/2135) from Pololu $9.95 USD
 
@@ -37,20 +42,25 @@ Note: You can get an extra servo motor as this makes coding much eaiser than the
 
 -----
 
-## Note that Microcontrollers improve rapidly. Here is the changing list. The 2021 Portenta should last us a few years.   
+## Note that Microcontrollers improve rapidly. 
+
+Here is the changing list. The 2021 Portenta should last us a few years.   
 (Any other the below materials would work fine, just we will be able to do much more with the latest equipment the Portenta and Vision Shield)
 
 ## 2021 Microcontroller Price List   
 When we combine the PortentaH7 with the LoRa vision shield we have a great Machine Learning duo. But it is expensive.  
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133374580-13deb749-820c-46db-bc04-597c610d2bd0.png" width=400 /> [Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD  
+<img src="https://user-images.githubusercontent.com/5605614/133374580-13deb749-820c-46db-bc04-597c610d2bd0.png" width=400 /> [Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD  The base best Arduino
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png" width=400 /> [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD
+<img src="https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png" width=400 /> [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD  Allows the Portenta to See and hear and use the LoRaWan networks
+
+
+<img src="https://user-images.githubusercontent.com/5605614/133946385-f768bd3b-60fd-44ec-92c6-80e3bbd6cf6d.png" width=400 /> [Seeedstudio Grove 128x64 OLED Display](https://www.robotshop.com/ca/en/seeedstudio-grove-128x64-oled-display.html?gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-yFXp7cpk2qEBbJ-mKO3dtvo5_8n0M5hqiUZE1wPE7RPDKo6fMhjfsaApVREALw_wcB)  $19.10 CDN   Needed to see what the Portenta sees
 
 Optional:    
-<img src="https://user-images.githubusercontent.com/5605614/133374299-bcad6533-8d8f-48f3-a833-85228e8ff984.png" width=200 /> [Charmed Labs Pixy2 Machine Learning Color cam] (https://www.robotshop.com/ca/en/charmed-labs-pixy-21-cmucam5-image-sensor.html) $76.97 CDN
+<img src="https://user-images.githubusercontent.com/5605614/133374299-bcad6533-8d8f-48f3-a833-85228e8ff984.png" width=200 /> [Charmed Labs Pixy2 Machine Learning Color cam] (https://www.robotshop.com/ca/en/charmed-labs-pixy-21-cmucam5-image-sensor.html) $76.97 CDN   This already has Machine Learning in it and detects different shades, (black and white are not a shade). Can really easily do very complex things, and it is fast.
 
 
 -----
