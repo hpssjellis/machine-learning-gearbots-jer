@@ -104,6 +104,25 @@ This is what it looks like when it is all finished. A robot controlled or app co
 <img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=1000 /> 
 
 
+## List of suggested first time purchase;
+
+<ol>
+<li>[RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN  
+<li>[WSD1302 plug set](https://www.rcsuperstore.com/ws-deans-2-pin-ultra-plug-set-one-male-one-female-included/) $2.99 USD
+<li>[Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD 
+<li>[DRV8835 Dual Motor Driver Carrie](https://www.pololu.com/product/2135) from Pololu $9.95 USD
+<br>
+<li>[Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD 
+<li>[Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD
+<li>[Seeedstudio Grove 128x64 OLED Display](https://www.robotshop.com/ca/en/seeedstudio-grove-128x64-oled-display.html?gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-yFXp7cpk2qEBbJ-mKO3dtvo5_8n0M5hqiUZE1wPE7RPDKo6fMhjfsaApVREALw_wcB)  $19.10 CDN 
+<br>
+  
+  Total=
+  
+  
+</ol>
+
+
 
 
 
