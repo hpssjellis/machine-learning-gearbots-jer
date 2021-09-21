@@ -59,7 +59,21 @@ When we combine the PortentaH7 with the LoRa vision shield we have a great Machi
 
 <img src="https://user-images.githubusercontent.com/5605614/133946385-f768bd3b-60fd-44ec-92c6-80e3bbd6cf6d.png" width=100 /> [Seeedstudio Grove 128x64 OLED Display](https://www.robotshop.com/ca/en/seeedstudio-grove-128x64-oled-display.html?gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-yFXp7cpk2qEBbJ-mKO3dtvo5_8n0M5hqiUZE1wPE7RPDKo6fMhjfsaApVREALw_wcB)  $19.10 CDN   Needed to see what the Portenta sees
 
-Optional:    
+
+
+.
+
+
+.
+
+
+.
+
+
+# Optional 2021:  
+
+
+
 <img src="https://user-images.githubusercontent.com/5605614/133374299-bcad6533-8d8f-48f3-a833-85228e8ff984.png" width=200 /> 
 [Charmed Labs Pixy2 Machine Learning Color cam](https://www.robotshop.com/ca/en/charmed-labs-pixy-21-cmucam5-image-sensor.html) $76.97 CDN   This already has Machine Learning in it and detects different shades, (black and white are not a shade). Can really easily do very complex things, and it is fast.
 
@@ -89,10 +103,31 @@ This board made around 2018 has Machine Learning ability and an accelerometer. A
 This board made in 2015 is still a great microcontroller today, but only with limited Machine Learning capability
 
 
-# Optional Sensor Kit: Consider getting one of the many Arduino style sensor kits on the market. Here is one for $35 CDN that looks very good
+# Optional: Any year:
 
+
+Arduino Starter Kit: Everything you need to get going building things with Arduino  $35.26 CDN
+[Elecrow Starter Kit for Raspberry Pi & Arduino](https://www.robotshop.com/ca/en/elecrow-starter-kit-raspberry-pi-arduino.html)
+
+<img src="https://user-images.githubusercontent.com/5605614/134213537-0113a757-f7ef-424d-af33-592488304cdf.png" width=600 /> 
+
+
+Sensor Kit: Consider getting one of the many Arduino style sensor kits on the market. Here is one for $35 CDN that looks very good
 [Kuman 37-in-1 Sensor Kit Compatible with Arduino Raspberry Pi Mega 2560 Kits Compatible K5](https://www.amazon.ca/Kuman-sensor-arduino-raspberry-Compatible/dp/B01BY16552/ref=sr_1_29?dchild=1&keywords=maker+breadboard+wire+kit+solder&qid=1631683832&sr=8-29)
-<img src="https://user-images.githubusercontent.com/5605614/133377159-586ccaba-56fd-42ac-8390-51c33fe5d086.png" width=800 /> 
+<img src="https://user-images.githubusercontent.com/5605614/133377159-586ccaba-56fd-42ac-8390-51c33fe5d086.png" width=600 /> 
+
+Basic Solder kit: Not really needed as we use breadboards and snap connectors but good to have
+
+[Plusivo Soldering Kit for Electronics (US Plug)](https://www.robotshop.com/ca/en/plusivo-soldering-kit-electronics-us-plug.html)
+
+<img src="https://user-images.githubusercontent.com/5605614/134214253-310de7c1-6ebc-451d-a616-e6741990d710.png" width=600 /> 
+
+
+..
+
+
+
+.
 
 
 
