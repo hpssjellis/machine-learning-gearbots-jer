@@ -101,6 +101,12 @@ This board made around 2018 has Machine Learning ability and an accelerometer. A
 
 <img src="https://user-images.githubusercontent.com/5605614/133374498-25540209-2123-437f-9cca-6319c8881364.png" width=400 /> [Particle Photon](https://store.particle.io/products/photon)  $19.65 USD
 This board made in 2015 is still a great microcontroller today, but only with limited Machine Learning capability
+.
+
+
+.
+
+
 
 
 # Optional: Any year:
@@ -116,7 +122,7 @@ Sensor Kit: Consider getting one of the many Arduino style sensor kits on the ma
 [Kuman 37-in-1 Sensor Kit Compatible with Arduino Raspberry Pi Mega 2560 Kits Compatible K5](https://www.amazon.ca/Kuman-sensor-arduino-raspberry-Compatible/dp/B01BY16552/ref=sr_1_29?dchild=1&keywords=maker+breadboard+wire+kit+solder&qid=1631683832&sr=8-29)
 <img src="https://user-images.githubusercontent.com/5605614/133377159-586ccaba-56fd-42ac-8390-51c33fe5d086.png" width=600 /> 
 
-Basic Solder kit: Not really needed as we use breadboards and snap connectors but good to have
+Basic Solder kit: Not really needed as we use breadboards and snap connectors but good to have  CAD $24.21
 
 [Plusivo Soldering Kit for Electronics (US Plug)](https://www.robotshop.com/ca/en/plusivo-soldering-kit-electronics-us-plug.html)
 
@@ -139,6 +145,12 @@ This is what it looks like when it is all finished. A robot controlled or app co
 <img src="https://user-images.githubusercontent.com/5605614/133371262-eb66181f-40c3-4d72-a0aa-c43379d2404b.png" width=1000 /> 
 
 
+...
+
+
+
+...
+
 ## List of suggested first time purchase:
 
 
@@ -149,6 +161,7 @@ This is what it looks like when it is all finished. A robot controlled or app co
 5. [Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD 
 6. [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD
 7. [Seeedstudio Grove 128x64 OLED Display](https://www.robotshop.com/ca/en/seeedstudio-grove-128x64-oled-display.html?gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-yFXp7cpk2qEBbJ-mKO3dtvo5_8n0M5hqiUZE1wPE7RPDKo6fMhjfsaApVREALw_wcB)  $19.10 CDN 
+8. [Elecrow Starter Kit for Raspberry Pi & Arduino](https://www.robotshop.com/ca/en/elecrow-starter-kit-raspberry-pi-arduino.html)  35.26 CDN
 <br>
   
 
