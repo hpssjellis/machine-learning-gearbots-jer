@@ -59,6 +59,8 @@ When we combine the PortentaH7 with the LoRa vision shield we have a great Machi
 
 <img src="https://user-images.githubusercontent.com/5605614/133946385-f768bd3b-60fd-44ec-92c6-80e3bbd6cf6d.png" width=100 /> [Seeedstudio Grove 128x64 OLED Display](https://www.robotshop.com/ca/en/seeedstudio-grove-128x64-oled-display.html?gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-yFXp7cpk2qEBbJ-mKO3dtvo5_8n0M5hqiUZE1wPE7RPDKo6fMhjfsaApVREALw_wcB)  $19.10 CDN   Needed to see what the Portenta sees
 
+Note: I am trying this [1.5inch OLED Display Module 128x128 16 Gray Scale SPI/I2C Interface SSD1327 Driver Raspberry Pi/Arduino/STM32](https://www.amazon.ca/dp/B079KRC9X3?psc=1&smid=AIVH4OZ6D0Y4K&ref_=chk_typ_imgToDp) $23 CDN to see if the grayscale is better. Speed is important
+
 
 
 .
