@@ -59,14 +59,16 @@ When we combine the PortentaH7 with the LoRa vision shield we have a great Machi
 <img src="https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png" width=400 /> [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD  Allows the Portenta to See and hear and use the LoRaWan networks
 
 
+## Also to view what you are working on a screen is a good idea
+
 <img src="https://user-images.githubusercontent.com/5605614/133946385-f768bd3b-60fd-44ec-92c6-80e3bbd6cf6d.png" width=100 /> [Seeedstudio Grove 128x64 MonoChrome "black or white" OLED Display](https://www.robotshop.com/ca/en/seeedstudio-grove-128x64-oled-display.html?gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-yFXp7cpk2qEBbJ-mKO3dtvo5_8n0M5hqiUZE1wPE7RPDKo6fMhjfsaApVREALw_wcB)  $19.10 CDN   Needed to see what the Portenta sees <br>
 
-OR the much better 16 levels of Grayscale<br>
+OR the much better 16 levels of Grayscale OLED<br>
 
 <img src="https://user-images.githubusercontent.com/5605614/136551247-6a7fc635-e00c-4b14-80a9-550cb4e7a7b3.png" width=100 /><br>  [1.5inch OLED Display Module 128x128 16 Gray Scale SPI/I2C Interface SSD1327 Driver Raspberry Pi/Arduino/STM32](https://www.amazon.ca/dp/B079KRC9X3?psc=1&smid=AIVH4OZ6D0Y4K&ref_=chk_typ_imgToDp) $23 CDN 
 
 
-
+I do have a TFT V2 touchscreen but the refresh rate is too slow.
 
 .
 
