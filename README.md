@@ -51,6 +51,19 @@ website: https://gavidd.github.io/David/public/
 .
 
 
+.
+
+
+.
+
+
+
+
+.
+
+
+
+
 # Aaron 
 Repo  https://github.com/DiamondAaronXG/summer-2021-ml-gearbots-aaron    
 Website  https://diamondaaronxg.github.io/summer-2021-ml-gearbots-aaron/public/index.html 
