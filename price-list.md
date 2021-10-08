@@ -38,7 +38,7 @@ You can get an extra servo motor as this makes coding much eaiser than the orgin
 # OR
 <img src="https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png" width=400 />
  If you don't get the 3 wire servo you need this 
- [DRV8835 Dual Motor Driver Carrier](https://www.pololu.com/product/2135) from Pololu $9.95 USD
+ [DRV8835 Dual Motor Driver Carrier](https://www.pololu.com/product/2135)     from Pololu $9.95 USD
 
 
 
@@ -57,6 +57,19 @@ When we combine the PortentaH7 with the LoRa vision shield we have a great Machi
 
 
 <img src="https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png" width=400 /> [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD  Allows the Portenta to See and hear and use the LoRaWan networks
+
+
+The Portenta Might need female headers if you don't want to solder wires directly onto it. Mr. Ellis should be able to provide those. Here is a link if you want them. The male headers are good to attach the Portenta to a breadboard. Note: The female headers are attached to come up out of the board.
+
+<img src="https://user-images.githubusercontent.com/5605614/136552450-901d787f-d894-402c-9c72-4052aad977ca.png" width=400 /> 
+[10 pack of 40 pin male female headers](https://www.amazon.ca/Pieces-2-54mm-Single-Female-Header/dp/B08CMNRXJ1/ref=sr_1_1_sspa?dchild=1&keywords=40+female+headers&qid=1633693932&sr=8-1-spons&psc=1&smid=A2FXQ4Q1N0PO2C&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExTDdVQ1JWU05MQUhJJmVuY3J5cHRlZElkPUEwNTU0NzY2MU9MREgzN0ZZN1BZRyZlbmNyeXB0ZWRBZElkPUEwNDk4MDAyMVlXRTA4UE1HTjc1QiZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)
+
+.
+
+
+
+.
+
 
 
 ## Also to view what you are working on a screen is a good idea
