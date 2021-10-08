@@ -19,7 +19,8 @@ Located at #1 - 33232 South Fraser Way
 # Must also have
 
 
- Everone needs the <img src="https://user-images.githubusercontent.com/5605614/133374088-cc719213-80e5-47c9-a8d1-b476c2cc336c.png" width=400 /> [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD
+ Everone needs the <br>
+ <img src="https://user-images.githubusercontent.com/5605614/133374088-cc719213-80e5-47c9-a8d1-b476c2cc336c.png" width=400 /> [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD
 
 
 <img src="https://user-images.githubusercontent.com/5605614/133374122-6af08f67-3216-41f2-9b39-30c7eb15e9a4.png" width=400 /> And these plugs [WSD1302 plug set](https://www.rcsuperstore.com/ws-deans-2-pin-ultra-plug-set-one-male-one-female-included/) $2.99 USD
@@ -36,7 +37,8 @@ You can get an extra servo motor as this makes coding much eaiser than the orgin
 
 # OR
 <img src="https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png" width=400 />
- If you don't get the 3 wire servo you need this [DRV8835 Dual Motor Driver Carrie](https://www.pololu.com/product/2135) from Pololu $9.95 USD
+ If you don't get the 3 wire servo you need this 
+ [DRV8835 Dual Motor Driver Carrier](https://www.pololu.com/product/2135) from Pololu $9.95 USD
 
 
 
@@ -57,13 +59,13 @@ When we combine the PortentaH7 with the LoRa vision shield we have a great Machi
 <img src="https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png" width=400 /> [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD  Allows the Portenta to See and hear and use the LoRaWan networks
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133946385-f768bd3b-60fd-44ec-92c6-80e3bbd6cf6d.png" width=100 /> [Seeedstudio Grove 128x64 OLED Display](https://www.robotshop.com/ca/en/seeedstudio-grove-128x64-oled-display.html?gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-yFXp7cpk2qEBbJ-mKO3dtvo5_8n0M5hqiUZE1wPE7RPDKo6fMhjfsaApVREALw_wcB)  $19.10 CDN   Needed to see what the Portenta sees
+<img src="https://user-images.githubusercontent.com/5605614/133946385-f768bd3b-60fd-44ec-92c6-80e3bbd6cf6d.png" width=100 /> [Seeedstudio Grove 128x64 MonoChrome "black or white" OLED Display](https://www.robotshop.com/ca/en/seeedstudio-grove-128x64-oled-display.html?gclid=Cj0KCQjwv5uKBhD6ARIsAGv9a-yFXp7cpk2qEBbJ-mKO3dtvo5_8n0M5hqiUZE1wPE7RPDKo6fMhjfsaApVREALw_wcB)  $19.10 CDN   Needed to see what the Portenta sees <br>
 
-Note: I am trying this [1.5inch OLED Display Module 128x128 16 Gray Scale SPI/I2C Interface SSD1327 Driver Raspberry Pi/Arduino/STM32](https://www.amazon.ca/dp/B079KRC9X3?psc=1&smid=AIVH4OZ6D0Y4K&ref_=chk_typ_imgToDp) $23 CDN to see if the grayscale is better. Speed is important
+OR the much better 16 levels of Grayscale<br>
+
+<img src="https://user-images.githubusercontent.com/5605614/136551247-6a7fc635-e00c-4b14-80a9-550cb4e7a7b3.png" width=100 /><br>  [1.5inch OLED Display Module 128x128 16 Gray Scale SPI/I2C Interface SSD1327 Driver Raspberry Pi/Arduino/STM32](https://www.amazon.ca/dp/B079KRC9X3?psc=1&smid=AIVH4OZ6D0Y4K&ref_=chk_typ_imgToDp) $23 CDN 
 
 
-
-.
 
 
 .
