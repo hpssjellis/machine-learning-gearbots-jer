@@ -16,13 +16,35 @@ Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/p
 .
 
 
-Nathan   https://nathannull.github.io/GearbotsNS/public/index.html
+# Nathan   https://nathannull.github.io/GearbotsNS/public/index.html
 
-Brandon  https://
+# Brandon  https://Machinelearning3Dprinting/geatbot_brandon/public/index.html
 
-Romeo  https://
+# Romeo  https://romeogrey/Gearbots-Romeo/public/index.html
 
 
+
+
+# Liam
+Github https://github.com/LiamOnGithub/Gearbots-Engineering    
+website https://LiamOnGithub.github.io/Gearbots-Engineering/public/       
+
+
+
+
+# Andrew
+https://github.com/midnight4577/midnight4577.github.io   
+website https://midnight4577.github.io/public/index.html
+
+
+# Will 
+https://github.com/poderman/Rc-car      
+website https://poderman.github.io/Rc-car/public/    
+
+
+# David
+This is my GitHub https://github.com/GavidD/David   
+website: https://gavidd.github.io/David/public/ 
 .
 
 
@@ -151,25 +173,6 @@ copied https://github.com/hpssjellis/my-examples-of-edge-impulse/blob/main/publi
 
 
 
-
-# Liam
-Github https://github.com/LiamOnGithub/Gearbots-Engineering    
-website https://LiamOnGithub.github.io/Gearbots-Engineering/public/       
-
-
-
-
-# Andrew
-https://github.com/midnight4577/midnight4577.github.io   
-website https://midnight4577.github.io/public/index.html
-
-
-# Will 
-https://github.com/poderman/Rc-car      
-website https://poderman.github.io/Rc-car/public/    
-
-
-
 # Shaun
 
 Repo  https://github.com/shaunoh/gearrbot-robotics-me
@@ -201,9 +204,6 @@ Myt Github   https://github.com/darrenkwon/Gearbots-Engineering-2020-
 website https://darrenkwon.github.io/Gearbots-Engineering-2020-/public/
 
 
-# David
-This is my GitHub https://github.com/GavidD/David   
-website: https://gavidd.github.io/David/public/ 
 
 # Ethan
 Github https://github.com/ethan-will/machine-learning-gearbots-eth     
