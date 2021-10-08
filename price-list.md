@@ -36,9 +36,11 @@ You can get an extra servo motor as this makes coding much eaiser than the orgin
 
 
 # OR
+
+
 <img src="https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png" width=400 />
  If you don't get the 3 wire servo you need this 
- [DRV8835 Dual Motor Driver Carrier](https://www.pololu.com/product/2135)     from Pololu $9.95 USD
+ DRV8835 Dual Motor Driver Carrier  https://www.pololu.com/product/2135      from Pololu $9.95 USD
 
 
 
