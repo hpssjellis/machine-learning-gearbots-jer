@@ -16,11 +16,14 @@ Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/p
 .
 
 
-# Nathan   https://nathannull.github.io/GearbotsNS/public/index.html
+# Nathan   
+https://nathannull.github.io/GearbotsNS/public/index.html
 
-# Brandon  https://Machinelearning3Dprinting/geatbot_brandon/public/index.html
+# Brandon  
+https://Machinelearning3Dprinting/geatbot_brandon/public/index.html
 
-# Romeo  https://romeogrey/Gearbots-Romeo/public/index.html
+# Romeo 
+https://romeogrey/Gearbots-Romeo/public/index.html
 
 
 
