@@ -19,7 +19,7 @@ Located at #1 - 33232 South Fraser Way
 # Must also have
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png" width=400 /> Everone needs the [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD
+ Everone needs the <img src="https://user-images.githubusercontent.com/5605614/133374088-cc719213-80e5-47c9-a8d1-b476c2cc336c.png" width=400 /> [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD
 
 
 <img src="https://user-images.githubusercontent.com/5605614/133374122-6af08f67-3216-41f2-9b39-30c7eb15e9a4.png" width=400 /> And these plugs [WSD1302 plug set](https://www.rcsuperstore.com/ws-deans-2-pin-ultra-plug-set-one-male-one-female-included/) $2.99 USD
@@ -35,8 +35,8 @@ You can get an extra servo motor as this makes coding much eaiser than the orgin
 
 
 # OR
-
-<img src="https://user-images.githubusercontent.com/5605614/133374088-cc719213-80e5-47c9-a8d1-b476c2cc336c.png" width=400 /> If you don't get the 3 wire servo you need this [DRV8835 Dual Motor Driver Carrie](https://www.pololu.com/product/2135) from Pololu $9.95 USD
+<img src="https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png" width=400 />
+ If you don't get the 3 wire servo you need this [DRV8835 Dual Motor Driver Carrie](https://www.pololu.com/product/2135) from Pololu $9.95 USD
 
 
 
