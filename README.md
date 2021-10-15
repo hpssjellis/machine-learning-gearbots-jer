@@ -23,7 +23,7 @@ https://nathannull.github.io/GearbotsNS/public/index.html
 https://Machinelearning3Dprinting/geatbot_brandon/public/index.html
 
 # Romeo 
-https://romeogrey/Gearbots-Romeo/public/index.html
+https://romeogrey.github.io/Gearbots-Romeo/public/index.html
 
 
 
