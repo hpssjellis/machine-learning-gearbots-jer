@@ -225,3 +225,13 @@ website https://darrenkwon.github.io/Gearbots-Engineering-2020-/public/
 Github https://github.com/ethan-will/machine-learning-gearbots-eth     
 Website https://ethan-will.github.io/machine-learning-gearbots-eth/public/
 
+
+
+
+
+
+## Old Photon motor connections
+
+![image](https://user-images.githubusercontent.com/5605614/138486093-81a9bc95-1730-4333-ba32-c26dd73b2be9.png)
+
+
