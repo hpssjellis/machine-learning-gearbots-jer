@@ -479,16 +479,21 @@ void loop()
     digitalWrite(LEDB, HIGH);   //on board LED's are turned off by HIGH    
     digitalWrite(LEDG, HIGH);   
     digitalWrite(LEDR, HIGH); 
-   // myMessage01 = "";
-   // myMessage02 = "";
+
 
 
     // note: just ignore unknow readings
     // Should stop first later work on going slower
+    if (result.classification[0].value >= 0.2){  //BLUE on first object // can tune a bit here
+   
+      display.setCursor(70,110);
+      display.println("Unknown");
+    } 
+    
         
-    if (result.classification[1].value>= 0.4){  //BLUE on first object // can tune a bit here
+    if (result.classification[1].value>= 0.6){  //BLUE on first object // can tune a bit here
       digitalWrite(LEDB, LOW);
-     // myClassCount += 1;
+      myClassCount += 1;
       
       display.setCursor(10,110);
       display.println("Pop: Go Right");
@@ -497,7 +502,7 @@ void loop()
 
     } 
     
-    if (result.classification[2].value>= 0.4){  // green on second object
+    if (result.classification[2].value>= 0.1){  // green on second object
       digitalWrite(LEDG, LOW);   // this is the unknown
 
       myClassCount += 1;
@@ -508,7 +513,7 @@ void loop()
       // first just a fixed turn
     } 
     
-    if (result.classification[3].value>= 0.4){   // red on third object
+    if (result.classification[3].value>= 0.1){   // red on third object
       digitalWrite(LEDR, LOW);   // this not used in this model
       
       myClassCount += 1; 
