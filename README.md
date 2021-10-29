@@ -1,6 +1,9 @@
 # Machine-Learning-Gearbots-Jeremy
 My repo for the machine learning Engineering design group
 
+
+RC car ML downloads at [downloads](downloads/)
+
 .
 
 Check out the Price List before classes start
