@@ -473,19 +473,22 @@ void loop()
     ei_printf("%.3f", result.anomaly);
 #endif
     ei_printf("]\n");
-    let myBestClassificationNumber = -1  
-    let myBestClassificationValue = 0.25   // lowest best allowable value
+    int myBestClassificationNumber = -1;  
+    int myBestClassificationValue = 0.25;   // lowest best allowable value
     
     // human-readable predictions
     for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
         ei_printf("    %s: %.5f\n", result.classification[ix].label, result.classification[ix].value);
 
-       if (results.classification[ix].value > myBestClassificationValue ){
+       if (result.classification[ix].value > myBestClassificationValue ){
            myBestClassificationNumber = ix;                      // find the biggest array value
-           myBestClassificationValue = results.classification[ix].value  
+           myBestClassificationValue = result.classification[ix].value;  
         }
-        display.setCursor(20*ix, 0);  // move down the OLED
-        display.println(String(ix) + ": "+String((results.classification[ix].value*100),2)+"%"); 
+        int myCursorDown = 10*ix+20;
+        display.setCursor(5, myCursorDown);  // move down the OLED
+        int myTempResult = result.classification[ix].value * 100;
+        display.println("#"+String(ix) + ": "+String(myTempResult)+"%"); 
+       // display.println( myTempResult ); 
 
         
     }
