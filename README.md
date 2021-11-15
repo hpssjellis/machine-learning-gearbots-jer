@@ -11,6 +11,12 @@ the old posenet, websocket hack site
 
 https://github.com/hpssjellis/Particle-Spark-Core-Photon-Websocket-Hack
 
+another one to try is
+
+https://github.com/hpssjellis/arduino-simple-websocket
+
+
+
 
 
 Check out the Price List before classes start
