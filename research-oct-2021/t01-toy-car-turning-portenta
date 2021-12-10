@@ -5,6 +5,9 @@
 // yellow A0
 // brown GND
 
+// D4 digital motor direction
+// D5 PWM motor speed
+
 
 int myRandom = 0;
 
@@ -15,16 +18,16 @@ unsigned long myMilliOld = 0;
 
 
 void setup() {
-    pinMode(D7, OUTPUT);
-    pinMode(A4, OUTPUT);
-    pinMode(D4, OUTPUT);
+    pinMode(LEDB, OUTPUT);
+    pinMode(D5, OUTPUT);   // motor speed
+    pinMode(D4, OUTPUT);   // motor turn
     randomSeed(analogRead(A3)); 
     
     
     
-    digitalWrite(D7, 1);
+    digitalWrite(LEDB, 0);
     delay(2000);   
-    digitalWrite(D7, 0);
+    digitalWrite(LEDB, 1);
     delay(1000);
     
     
@@ -59,7 +62,7 @@ void loop() {
 // must loop through several times before it sets the mark
 void setDirection(int myDirection , int mySpeed ){
     // assume A0 for potentiometer reading
-    // assume A4 for DC turning motor speed
+    // assume D5 for DC turning motor speed
     // assume D4 for direction. reverse motor wires if wrong
     int myBias = 70;  // what we are OK for as straight   bias 30 shakes
     
@@ -75,13 +78,13 @@ void setDirection(int myDirection , int mySpeed ){
     
     if (myDirection >= myA0 + myBias){
         digitalWrite(D4, 1);
-        analogWrite(A4, mySpeed);  // slowish speed for turning motor
+        analogWrite(D5, mySpeed);  // slowish speed for turning motor
     } else 
     if (myDirection <= myA0 - myBias){
         digitalWrite(D4, 0);
-        analogWrite(A4, mySpeed);  // slowish speed for turning motor
+        analogWrite(D5, mySpeed);  // slowish speed for turning motor
     }    else {
-        analogWrite(A4, 0);  // stop the turning motor  
+        analogWrite(D5, 0);  // stop the turning motor  
         Serial.println("Direction: " + String(myDirection) + ", Set to: " + String(myA0) );
         delay(1000);
     }
