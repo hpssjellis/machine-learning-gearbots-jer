@@ -44,13 +44,15 @@ void loop() {
     if (myDuration >= 800){
         myMilliOld = myMilliNew;   // reset timer
         
-        myRandom =  random(200,800);  // number about between 200 and 800 
+        myRandom =  random(300,800);  // number about between 200 and 800 
         
+        digitalWrite(LEDB, 0);
         delay(1000);    
       
+       digitalWrite(LEDB, 1);
     }
     setDirection(myRandom, 100);
-    delay(1);
+    delay(100);
 
    
 }
@@ -72,8 +74,8 @@ void setDirection(int myDirection , int mySpeed ){
     if (mySpeed < 50){ mySpeed = 50; }     // minimum turning speed;
     if (mySpeed > 255){ mySpeed = 255; }   // maximum turning speed;
     
-    if (myDirection < 0){ myDirection = 0; }         // minimum turning amount
-    if (myDirection > 4095){ myDirection = 4095; }   // maximum turning amount
+    if (myDirection < 300){ myDirection = 300; }         // minimum turning amount
+    if (myDirection > 800){ myDirection = 800; }   // maximum turning amount
 
     
     if (myDirection >= myA0 + myBias){
