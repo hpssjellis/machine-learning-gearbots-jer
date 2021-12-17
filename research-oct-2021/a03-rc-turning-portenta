@@ -41,7 +41,7 @@ void loop() {
     
     myDuration =  myMilliNew - myMilliOld;   
 
-    if (myDuration >= 800){
+    if (myDuration >= 2000){
         myMilliOld = myMilliNew;   // reset timer
         
         myRandom =  random(300,750);  // number about between 300 and 750 
