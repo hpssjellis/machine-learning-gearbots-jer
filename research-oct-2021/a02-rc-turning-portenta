@@ -1,0 +1,91 @@
+// on 5 wire turning motor with potentiometer
+// red motor B1
+// black motor B2
+// white 3V3
+// yellow A1
+// brown GND
+
+// D4 digital motor direction
+// D5 PWM motor speed
+
+
+int myRandom = 0;
+
+unsigned long myDuration = 0;
+unsigned long myMilliNew = 0;
+unsigned long myMilliOld = 0;
+
+
+
+void setup() {
+    pinMode(LEDB, OUTPUT);
+    pinMode(D5, OUTPUT);   // motor speed
+    pinMode(D4, OUTPUT);   // motor turn
+    randomSeed(analogRead(A3)); 
+    
+    
+    
+    digitalWrite(LEDB, 0);
+    delay(2000);   
+    digitalWrite(LEDB, 1);
+    delay(1000);
+    
+    
+    
+}
+
+void loop() {
+
+   
+    myMilliNew = millis();
+    
+    myDuration =  myMilliNew - myMilliOld;   
+
+    if (myDuration >= 800){
+        myMilliOld = myMilliNew;   // reset timer
+        
+        myRandom =  random(300,750);  // number about between 300 and 750 
+        
+    }
+    setDirection(myRandom, 30);
+    //delay(100);
+
+   
+}
+
+
+
+
+
+// must loop through several times before it sets the mark
+void setDirection(int myDirection , int mySpeed ){
+    // assume A1 for potentiometer reading
+    // assume D5 for DC turning motor speed
+    // assume D4 for direction. reverse motor wires if wrong
+    int myBias = 70;  // what we are OK for as straight   bias 30 shakes
+    
+    
+    int myA0 = analogRead(A0);
+    
+    if (mySpeed < 20){ mySpeed = 20; }     // minimum turning speed;
+    if (mySpeed > 255){ mySpeed = 255; }   // maximum turning speed;
+    
+    if (myDirection < 300){ myDirection = 300; }         // minimum turning amount
+    if (myDirection > 750){ myDirection = 750; }   // maximum turning amount
+
+    
+    if (myDirection >= myA0 + myBias){
+        digitalWrite(D4, 1);
+        analogWrite(D5, mySpeed);  // slowish speed for turning motor
+    } else 
+    if (myDirection <= myA0 - myBias){
+        digitalWrite(D4, 0);
+        analogWrite(D5, mySpeed);  // slowish speed for turning motor
+    }    else {
+        analogWrite(D5, 0);  // stop the turning motor  
+        Serial.println("Direction: " + String(myDirection) + ", Set to: " + String(myA0) );
+        delay(1000);
+    }
+    
+    
+}
