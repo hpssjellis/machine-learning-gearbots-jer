@@ -498,15 +498,20 @@ void loop(){
            myBestClassificationNumber = ix;                      // find the biggest array value
            myBestClassificationValue = result.classification[ix].value;  
         }
-        int myCursorDown = 10*ix+20;
-        display.setCursor(5, myCursorDown);  // move down the OLED
-        int myTempResult = result.classification[ix].value * 100;
-        if (ix > 0){
-           display.println("#"+String(ix) + ": "+String(myTempResult)+"%,  " + String(myClassCount[ix])); 
-        } else {
 
-           display.println("#"+String(ix) + ": "+String(myTempResult)+"%, unknown"); 
-        }
+
+        if (!myLoRaStop){
+          int myCursorDown = 10*ix+20;
+          display.setCursor(5, myCursorDown);  // move down the OLED
+          int myTempResult = result.classification[ix].value * 100;
+          if (ix > 0){
+             display.println("#"+String(ix) + ": "+String(myTempResult)+"%,  " + String(myClassCount[ix])); 
+          } else {
+  
+             display.println("#"+String(ix) + ": "+String(myTempResult)+"%, unknown"); 
+          }
+
+        }  // end if mylorastop
         
        // display.println( myTempResult ); 
 
