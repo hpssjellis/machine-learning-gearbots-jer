@@ -25,12 +25,35 @@
 #include <ei-v20unknown-1popGoRight-2waterGoLeft-3fast-v2-0-0_inferencing.h>
 #include "edge-impulse-advanced.h"
 #include <Servo.h>
+#include "mbed.h"
+#include "rtos.h"
+
+//using namespace mbed;  // sometimes needed
+using namespace rtos;
+
+
+// Global Variables
+int myDelay = 0;  // delay between readings, can be zero, default 2000 = 2 seconds
+
+Thread thread;
+
+int myGlobalD4 = 0;
 
 Servo myServo_D2;
 
 
-// Global Variables
-int myDelay = 500;  // delay between readings, can be zero, default 2000 = 2 seconds
+
+
+
+
+
+void myLedBlue_thread(){
+   while (true) {
+      analogWrite(D4, myGlobalD4);
+      ThisThread::sleep_for(50);
+   }
+}
+
 
 
 /**
@@ -38,10 +61,13 @@ int myDelay = 500;  // delay between readings, can be zero, default 2000 = 2 sec
 */
 void setup()
 {
+     thread.start(myLedBlue_thread);
+     
     // put your setup code here, to run once:
     Serial.begin(115200);
     Serial.println("Edge Impulse Inferencing Demo");
-
+    myServo_D2.attach(D2);   // D2 should do PWM on Portenta
+    
     pinMode(LEDR, OUTPUT); 
     pinMode(LEDG, OUTPUT);   // this is LED_BUILTIN
     pinMode(LEDB, OUTPUT); 
@@ -145,28 +171,32 @@ void loop()
     if (myBestClassificationNumber == 0){    // 0 unknown do nothing
         digitalWrite(LEDR, LOW);    
         digitalWrite(LEDG, LOW);  
-        analogWrite(D4, 0);     // stop 
+        //analogWrite(D4, 0);     // stop
+        myGlobalD4 = 0; 
       ei_printf("0: Unknown Stop: %.5f\n", myBestClassificationValue);
     }
 
 
     if (myBestClassificationNumber == 1){   // 1pop: Go Right
       digitalWrite(LEDB, LOW);              // Blue LED on
-      analogWrite(D4, 30);     // slow 
+      //analogWrite(D4, 30);     // slow 
+      myGlobalD4 = 30;
       myServo_D2.write(110);   // go right
       ei_printf("1: Pop Go right: %.5f\n", myBestClassificationValue);
     }
     
     if (myBestClassificationNumber == 2){   // 2water : go left
       digitalWrite(LEDG, LOW);              // Green LED on     
-      analogWrite(D4, 30);     // slow   
+      //analogWrite(D4, 30);     // slow 
+      myGlobalD4 = 30;  
       myServo_D2.write(70);    // go left
       ei_printf("2: Water Go Left: %.5f\n", myBestClassificationValue);
     }
     
     if (myBestClassificationNumber == 3){   // 3fast got straight
       digitalWrite(LEDR, LOW);              // Red LED on  
-      analogWrite(D4, 30);     // medium   
+     // analogWrite(D4, 30);     // medium   
+      myGlobalD4 = 50;
       myServo_D2.write(90);    // straight   
       ei_printf("3: Both Go Fast: %.5f\n", myBestClassificationValue);
     }
