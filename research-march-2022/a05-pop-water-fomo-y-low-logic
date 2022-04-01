@@ -272,15 +272,30 @@ void loop(){
         }
 
 
+        
+        //display.println(String(bb.label).substring(0, 4) );  // only print the start of the label
+
+        int xMap = map(bb.x, 0,96, 0,127);
+        int yMap = map(bb.y, 0,96, 0,127);
+        int widthMap = map(bb.width, 0,96, 0,127);
+        int heightMap = map(bb.height, 0,96, 0,127);
+        
+        display.drawRect(xMap, yMap, widthMap, heightMap, SSD1327_WHITE ); 
+        myTotalObjects += EI_CLASSIFIER_OBJECT_DETECTION_COUNT;
+        display.setCursor(xMap, yMap-5); 
+        display.println("x:" + String(xMap)+",y:" + String(yMap));  // label    
+
+
+
        // sepecific to RC car Library and label  1popgoright 2watergoleft  might have to change these
        if (label == "1popgoright"){
        // ei_printf("Pop label");
-          if ((int)bb.y > myMaxPopY){ myMaxPopY == (int)bb.y;}  
+          if (yMap > myMaxPopY){ myMaxPopY = yMap;}  
        }
        
        if (label == "2watergoleft"){
        // ei_printf("Water label");
-          if ((int)bb.y > myMaxWaterY){ myMaxWaterY == (int)bb.y;}  
+          if (yMap > myMaxWaterY){ myMaxWaterY = yMap;}  
        }       
 
 
@@ -294,19 +309,6 @@ void loop(){
         ei_printf_float(bb.value);
         ei_printf(") [ x: %u, y: %u, width: %u, height: %u ,  objectCount %u, popY %d, waterY %d\n", bb.x, bb.y, bb.width, bb.height,  myObjectCount, myMaxPopY, myMaxWaterY );
 
-
-        
-        //display.println(String(bb.label).substring(0, 4) );  // only print the start of the label
-
-        int xMap = map(bb.x, 0,96, 0,127);
-        int yMap = map(bb.y, 0,96, 0,127);
-        int widthMap = map(bb.width, 0,96, 0,127);
-        int heightMap = map(bb.height, 0,96, 0,127);
-        
-        display.drawRect(xMap, yMap, widthMap, heightMap, SSD1327_WHITE ); 
-        myTotalObjects += EI_CLASSIFIER_OBJECT_DETECTION_COUNT;
-        display.setCursor(xMap, yMap-5); 
-        display.println("x:" + String(xMap)+",y:" + String(yMap));  // label    
 
 
 
