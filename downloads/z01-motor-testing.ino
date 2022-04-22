@@ -10,8 +10,8 @@
 // This program will just tell you if  the connections are working
 // See https://www.pololu.com/product/1451 for assistance
 
-// On motor driver board LED goes red for one direction and green for the other
 
+// On motor driver board LED goes red for one direction and green for the other
 
 
 
@@ -30,7 +30,7 @@ void setup() {
     pinMode(D6, OUTPUT);   // digital 0 to 1
     
                             // both off = glide, both on = brake (if motor can do that) 
-    digitalWrite(D5, 1);    // set one direction
+    digitalWrite(D6, 1);    // set one direction
     digitalWrite(D3, 0);    // set one direction 
     
     pinMode(LED_BUILTIN, OUTPUT);
@@ -41,22 +41,22 @@ void loop() {
     digitalWrite(LED_BUILTIN, LOW);    // D7 on
 
     myServo_D2.write(110); // turn
-    analogWrite(D4, 50);   // go medium
+    analogWrite(D5, 50);   // go medium
     delay(1000);
-    analogWrite(D4, 0);     // stop
+    analogWrite(D5, 0);     // stop
     delay(3000); 
     
     myServo_D2.write(70);   // turn
-    analogWrite(D4, 50);   // go medium   
+    analogWrite(D5, 50);   // go medium   
     delay(1000);    
-    analogWrite(D4, 0);     // stop
+    analogWrite(D5, 0);     // stop
     delay(3000); 
 
 
     myServo_D2.write(90);   // go straight
-    analogWrite(D4, 50);   // go medium   
+    analogWrite(D5, 50);   // go medium   
     delay(1000);    
-    analogWrite(D4, 0);     // stop
+    analogWrite(D5, 0);     // stop
     delay(3000); 
 
 
