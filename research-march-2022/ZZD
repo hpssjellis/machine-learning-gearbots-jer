@@ -1,0 +1,29 @@
+
+int myRand1;
+int myRand2;
+int myRand3;
+
+int myCarDirection = 0;
+
+void setup() {
+  // put your setup code here, to run once:
+   Serial.begin(115200);
+}
+
+void loop() {
+  myRand1 = random(0,3);
+
+  // only if 2 myRands are the same
+  //myCarDirection = myRand;
+  Serial.print(myRand1);
+  Serial.print(", ");  
+  Serial.print(myRand2);
+  Serial.print(", ");  
+  Serial.print(myRand3);
+  Serial.print(", ");
+  Serial.print(myCarDirection);
+  Serial.println();
+  delay(500);
+  myRand3 = myRand2;
+  myRand2 = myRand1;
+}
