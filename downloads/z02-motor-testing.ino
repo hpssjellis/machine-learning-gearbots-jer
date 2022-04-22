@@ -37,7 +37,7 @@ void setup() {
 
     // to connect wires and put car on ground
     digitalWrite(LEDB, LOW);    // D7 on
-    delay(15000);
+    delay(9000);
     digitalWrite(LEDB, HIGH);    // D7 on
     delay(2000);
     
