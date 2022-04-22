@@ -21,6 +21,7 @@
 #include <Servo.h>
 
 Servo myServo_D2;
+int myMainSpeed = 45;
 
 void setup() {
   
@@ -48,20 +49,20 @@ void loop() {
     digitalWrite(LEDB, LOW);    // D7 on
 
     myServo_D2.write(110); // turn
-    analogWrite(D5, 50);   // go medium
+    analogWrite(D5, myMainSpeed);   // go medium
     delay(300);
     analogWrite(D5, 0);     // stop
     delay(3000); 
     
     myServo_D2.write(70);   // turn
-    analogWrite(D5, 50);   // go medium   
+    analogWrite(D5, myMainSpeed);   // go medium   
     delay(300);    
     analogWrite(D5, 0);     // stop
     delay(3000); 
 
 
     myServo_D2.write(90);   // go straight
-    analogWrite(D5, 50);   // go medium   
+    analogWrite(D5, myMainSpeed);   // go medium   
     delay(300);    
     analogWrite(D5, 0);     // stop
     delay(3000); 
