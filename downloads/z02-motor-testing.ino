@@ -30,8 +30,8 @@ void setup() {
     pinMode(D6, OUTPUT);   // digital 0 to 1
     
                             // both off = glide, both on = brake (if motor can do that) 
-    digitalWrite(D6, 1);    // set one direction
-    digitalWrite(D3, 0);    // set one direction 
+    digitalWrite(D6, 0);    // not needing to be attached
+    digitalWrite(D3, 1);    // set one direction 
     
     pinMode(LEDB, OUTPUT);
 
