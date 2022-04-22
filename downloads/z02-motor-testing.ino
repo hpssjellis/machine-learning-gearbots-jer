@@ -21,7 +21,9 @@
 #include <Servo.h>
 
 Servo myServo_D2;
-int myMainSpeed = 45;
+int myMainSpeed = 30;
+int myMainDelay = 2000;
+int mySecurityDelay = 3000;
 
 void setup() {
   
@@ -38,9 +40,9 @@ void setup() {
 
     // to connect wires and put car on ground
     digitalWrite(LEDB, LOW);    // D7 on
-    delay(9000);
+    delay(mySecurityDelay * 2 );
     digitalWrite(LEDB, HIGH);    // D7 on
-    delay(2000);
+    delay(mySecurityDelay);
     
 }
 
@@ -50,27 +52,27 @@ void loop() {
 
     myServo_D2.write(110); // turn
     analogWrite(D5, myMainSpeed);   // go medium
-    delay(300);
+    delay(myMainDelay);
     analogWrite(D5, 0);     // stop
-    delay(3000); 
+    delay(mySecurityDelay); 
     
     myServo_D2.write(70);   // turn
     analogWrite(D5, myMainSpeed);   // go medium   
-    delay(300);    
+    delay(myMainDelay);    
     analogWrite(D5, 0);     // stop
-    delay(3000); 
+    delay(mySecurityDelay); 
 
 
     myServo_D2.write(90);   // go straight
     analogWrite(D5, myMainSpeed);   // go medium   
-    delay(300);    
+    delay(myMainDelay);    
     analogWrite(D5, 0);     // stop
-    delay(3000); 
+    delay(mySecurityDelay); 
 
 
 
     
     digitalWrite(LEDB, HIGH);  // D7 off
-    delay(9000);            // wait 9 seconds
+    delay(mySecurityDelay * 3);            // wait 9 seconds
         
 }
