@@ -38,7 +38,7 @@ envie_m7.build.extra_flags=-DEI_CLASSIFIER_ALLOCATION_STATIC
 using namespace rtos;
 
 // Global Variables
-int myDelay = 500;  // delay between readings, can be zero, default 2000 = 2 seconds
+int myDelay = 0;  // delay between readings, can be zero, default 2000 = 2 seconds
 int mySlowSpeed = 30;
 
 Thread myThread01;
@@ -49,12 +49,12 @@ Servo myServo_D2;
 
 bool myLoRaStop = false;
 
-int myObectCode = 0;   // 0=unknown,   1= pop,  2= water,     ,  3  both pop and water  now 1 red cup upside down and 2 right side up white cup
+int myObjectCode = 0;   // 0=unknown,   1= pop,  2= water,     ,  3  both pop and water  now 1 red cup upside down and 2 right side up white cup
 int myMax1Y;       
 int myMax2Y;     
-int myObjectCount = 0;     
-int myObjectCountNew = 0;     
-int myObjectCountNext = 0;     
+//int myObjectCount = 0;     
+int myObjectCodeNew = 0;     
+int myObjectCodeNext = 0;     
 
 
 
@@ -144,12 +144,12 @@ void loop()
 
 
    // set values before the loop
-    myObectCode = 0;   // 0=unknown,   1= upside down red cup, 2 right side up white cup or toilet paper
+    myObjectCode = 0;   // 0=unknown,   1= upside down red cup, 2 right side up white cup or toilet paper
     myMax1Y = -1;       
     myMax2Y = -1;     
-    myObjectCount = 0;     
-    myObjectCountNew = 0;   
-    myObjectCountNext = 0;   
+   // myObjectCount = 0;     
+    myObjectCodeNew = 0;   
+    myObjectCodeNext = 0;   
 
 
 
@@ -229,51 +229,51 @@ void loop()
       Serial.print(", myMax1Y: "+String(myMax1Y) + ", myMax2Y: " +String(myMax2Y) + "+++");
 
    // more fuzzy logic here
-   if (myMax1Y < 0 && myMax2Y < 0){myObectCode = 0;}   // nothing
-   if (myMax1Y > 0 && myMax2Y < 0){myObectCode = 1;}   // red cup
-   if (myMax1Y < 0 && myMax2Y > 0){myObectCode = 2;}   // white cup / toilet paper roll
-   if (myMax1Y > 0 && myMax2Y > 0){myObectCode = 3;}   // both cups
+   if (myMax1Y < 0 && myMax2Y < 0){myObjectCode = 0;}   // nothing
+   if (myMax1Y > 0 && myMax2Y < 0){myObjectCode = 1;}   // red cup
+   if (myMax1Y < 0 && myMax2Y > 0){myObjectCode = 2;}   // white cup / toilet paper roll
+   if (myMax1Y > 0 && myMax2Y > 0){myObjectCode = 3;}   // both cups
 
 
 
    // no buffer code written yet
    // rc car responds to every classification
    
-      ei_printf(", myObjectCount: %u ---", myObjectCount);
+      ei_printf(", myObjectCode: %u ---", myObjectCode);
 
-   if (myObectCode == 0){    // 0 unknown do nothing
+   if (myObjectCode == 0){    // 0 unknown do nothing
         digitalWrite(LEDR, LOW);      // green and red on 
         digitalWrite(LEDG, LOW);    
         myServo_D2.write(90);          // wheels straight 
         myGlobalD5 = 0;                // stop the car
-     // ei_printf("0: Unknown Stop: %u\n", myObectCode);
+     // ei_printf("0: Unknown Stop: %u\n", myObjectCode);
       ei_printf("stop");
     }
 
 
-    if (myObectCode == 1){       // red cup was pop: Go Right
+    if (myObjectCode == 1){       // red cup was pop: Go Right
       digitalWrite(LEDB, LOW);   // Blue LED on
       myGlobalD5 = mySlowSpeed;           // car slow
       myServo_D2.write(110);     // go right
-     // ei_printf("1: Red Cup Go right: %u\n", myObectCode);
+     // ei_printf("1: Red Cup Go right: %u\n", myObjectCode);
       ei_printf("right");
     }
 
 
-    if (myObectCode == 2){      // white cup or toilet paper was water bottle go left
+    if (myObjectCode == 2){      // white cup or toilet paper was water bottle go left
       digitalWrite(LEDG, LOW);   // Green LED on
       myGlobalD5 = mySlowSpeed;           // car slow
       myServo_D2.write(70);      // go left
-     // ei_printf("2: white cup go left: %u\n", myObectCode);
+     // ei_printf("2: white cup go left: %u\n", myObjectCode);
       ei_printf("left");
     }
 
     
-    if (myObectCode == 3 ){             // both detected
+    if (myObjectCode == 3 ){             // both detected
       digitalWrite(LEDR, LOW);          // Red LED on     
       myGlobalD5 = mySlowSpeed;                  // slow
       myServo_D2.write(90);             // go straight
-      //ei_printf("3: Both: %u\n", myObectCode);
+      //ei_printf("3: Both: %u\n", myObjectCode);
       ei_printf("straight");
     }
 
