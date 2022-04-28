@@ -45,11 +45,11 @@ Servo myServo_D2;
 
 bool myLoRaStop = false;
 
-    int myObectCode = 0;   // 0=unknown,   1= pop,  2= water,  3=cone   ,  4  both pop and cone or pop and water 
-    int myMaxPopY = -1;       
-    int myMaxWaterY = -1;     
-    int myObjectCount = 0;     
-    int myObjectCountOld = 0;     
+int myObectCode = 0;   // 0=unknown,   1= pop,  2= water,     ,  3  both pop and water  now 1 red cup upside down and 2 right side up white cup
+int myMaxPopY = -1;       
+int myMaxWaterY = -1;     
+int myObjectCount = 0;     
+int myObjectCountOld = 0;     
 
 
 
@@ -177,15 +177,15 @@ void loop()
       // do some detection logic here
 
        // sepecific to RC car Library and label  1popgoright 2watergoleft  might have to change these
-       if (bb.label == "1"){  // red cup was pop
+       if (bb.label == "1"){  // upside down red cup was pop
        // ei_printf("Pop label");
-          if (yMap > myMaxPopY){ myMaxPopY = yMap;}  
+          if (bb.y > myMaxPopY){ myMaxPopY = bb.y;}  
        }
        
 
-       if (bb.label == "2"){   // white cup / toilet paper roll was water bottle
+       if (bb.label == "2"){   // right side up white cup / toilet paper roll was water bottle
        // ei_printf("Water label");
-          if (yMap > myMaxWaterY){ myMaxWaterY = yMap;}  
+          if (bb.y > myMaxWaterY){ myMaxWaterY = bb.y;}  
        }   
 
 
