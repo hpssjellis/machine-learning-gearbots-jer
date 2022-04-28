@@ -196,7 +196,9 @@ void loop()
          //ei_printf("-%u-",myMax2Y);  
        }   
 
-      Serial.print("Label: "+String(bb.label) + ", bb.y: " +String(bb.y) + ":::");
+     // Serial.print("Label: "+String(bb.label) + ", bb.y: " +String(bb.y) + ":::");
+
+      
       //  ei_printf("    %s (", bb.label);
       //  ei_printf_float(bb.value);
        // ei_printf(") [ x: %u, y: %u, width: %u, height: %u ]\n", bb.x, bb.y, bb.width, bb.height);
@@ -226,7 +228,7 @@ void loop()
     digitalWrite(LEDR, HIGH); 
 
 
-      Serial.print(", myMax1Y: "+String(myMax1Y) + ", myMax2Y: " +String(myMax2Y) + "+++");
+     // Serial.print(", myMax1Y: "+String(myMax1Y) + ", myMax2Y: " +String(myMax2Y) + "+++");
 
    // more fuzzy logic here
    if (myMax1Y < 0 && myMax2Y < 0){myObjectCode = 0;}   // nothing
@@ -242,8 +244,7 @@ void loop()
       ei_printf(", myObjectCode: %u ---", myObjectCode);
 
    if (myObjectCode == 0){    // 0 unknown do nothing
-        digitalWrite(LEDR, LOW);      // green and red on 
-        digitalWrite(LEDG, LOW);    
+        digitalWrite(LEDR, LOW);      // red stop   
         myServo_D2.write(90);          // wheels straight 
         myGlobalD5 = 0;                // stop the car
      // ei_printf("0: Unknown Stop: %u\n", myObjectCode);
@@ -270,7 +271,8 @@ void loop()
 
     
     if (myObjectCode == 3 ){             // both detected
-      digitalWrite(LEDR, LOW);          // Red LED on     
+      digitalWrite(LEDB, LOW);          // blue and green = cyan 
+      digitalWrite(LEDG, LOW);              
       myGlobalD5 = mySlowSpeed;                  // slow
       myServo_D2.write(90);             // go straight
       //ei_printf("3: Both: %u\n", myObjectCode);
