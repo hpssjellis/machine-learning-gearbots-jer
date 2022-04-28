@@ -229,6 +229,7 @@ void loop()
 
 
      // Serial.print(", myMax1Y: "+String(myMax1Y) + ", myMax2Y: " +String(myMax2Y) + "+++");
+      Serial.print("\t 1Y: "+String(myMax1Y) + ",\t2Y: " +String(myMax2Y) + "\t");
 
    // more fuzzy logic here
    if (myMax1Y < 0 && myMax2Y < 0){myObjectCode = 0;}   // nothing
@@ -241,7 +242,7 @@ void loop()
    // no buffer code written yet
    // rc car responds to every classification
    
-      ei_printf(", myObjectCode: %u ---", myObjectCode);
+      ei_printf("\tCode: %u \t", myObjectCode);
 
    if (myObjectCode == 0){    // 0 unknown do nothing
         digitalWrite(LEDR, LOW);      // red stop   
