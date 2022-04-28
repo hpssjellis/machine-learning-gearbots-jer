@@ -26,6 +26,7 @@ envie_m7.build.extra_flags=-DEI_CLASSIFIER_ALLOCATION_STATIC
 
 /* Includes ---------------------------------------------------------------- */
 #include <ei-rc-car-v7-1-1-cups-fomo-96x96_inferencing.h>
+#include "edge-impulse-advanced-v2.h"
 #include <Servo.h>
 #include "mbed.h"
 #include "rtos.h"
@@ -34,9 +35,11 @@ using namespace rtos;
 
 // Global Variables
 int myDelay = 0;  // delay between readings, can be zero, default 2000 = 2 seconds
+int mySlowSpeed = 30;
+
 Thread myThread01;
 
-int myGlobalD5 = 0;
+int myGlobalD5 = 0; // the Big Motor PWM speed
 
 Servo myServo_D2;
 
@@ -66,8 +69,7 @@ void myLedBlue_myThread01(){
 /**
 * @brief      Arduino setup function
 */
-void setup()
-{
+void setup(){
     // put your setup code here, to run once:
     Serial.begin(115200);
 
@@ -175,12 +177,13 @@ void loop()
       // do some detection logic here
 
        // sepecific to RC car Library and label  1popgoright 2watergoleft  might have to change these
-       if (label == "1"){  // red cup was pop
+       if (bb.label == "1"){  // red cup was pop
        // ei_printf("Pop label");
           if (yMap > myMaxPopY){ myMaxPopY = yMap;}  
        }
        
-       if (label == "2"){   // white cup / toilet paper roll was water bottle
+
+       if (bb.label == "2"){   // white cup / toilet paper roll was water bottle
        // ei_printf("Water label");
           if (yMap > myMaxWaterY){ myMaxWaterY = yMap;}  
        }   
@@ -238,7 +241,7 @@ void loop()
 
     if (myObectCode == 1){       // red cup was pop: Go Right
       digitalWrite(LEDB, LOW);   // Blue LED on
-      myGlobalD5 = 30;           // car slow
+      myGlobalD5 = mySlowSpeed;           // car slow
       myServo_D2.write(110);     // go right
      // ei_printf("1: Pop Go right: %u\n", myObectCode);
     }
@@ -246,7 +249,7 @@ void loop()
 
     if (myObectCode == 2){      // white cup or toilet paper was water bottle go left
       digitalWrite(LEDG, LOW);   // Green LED on
-      myGlobalD5 = 30;           // car slow
+      myGlobalD5 = mySlowSpeed;           // car slow
       myServo_D2.write(70);      // go left
      // ei_printf("1: Pop Go right: %u\n", myObectCode);
     }
@@ -254,7 +257,7 @@ void loop()
     
     if (myObectCode == 3 ){             // both detected
       digitalWrite(LEDR, LOW);          // Red LED on     
-      myGlobalD5 = 30;                  // slow
+      myGlobalD5 = mySlowSpeed;                  // slow
       myServo_D2.write(90);             // go straight
       //ei_printf("2: Water Go Left: %u\n", myObectCode);
     }
