@@ -25,7 +25,11 @@ envie_m7.build.extra_flags=-DEI_CLASSIFIER_ALLOCATION_STATIC
 */
 
 /* Includes ---------------------------------------------------------------- */
-#include <ei-rc-car-v7-1-1-cups-fomo-96x96_inferencing.h>
+
+// this is the Arduino library downloaded from edge Impulse
+#include <ei-v8-1-1-jeremy-rc-car-1red-2white-cup-fomo-96x96_inferencing.h>
+
+
 #include "edge-impulse-advanced-v2.h"
 #include <Servo.h>
 #include "mbed.h"
@@ -178,13 +182,13 @@ void loop()
 
        // sepecific to RC car Library and label  1popgoright 2watergoleft  might have to change these
        if (bb.label == "1"){  // upside down red cup was pop
-        ei_printf("upside down Red Cup label 1");
+        ei_printf("1");
           if (bb.y > myMaxPopY){ myMaxPopY = bb.y;}  
        }
        
 
        if (bb.label == "2"){   // right side up white cup / toilet paper roll was water bottle
-        ei_printf("right side up White Cup label 2");
+        ei_printf("2");
           if (bb.y > myMaxWaterY){ myMaxWaterY = bb.y;}  
        }   
 
@@ -202,10 +206,10 @@ void loop()
 
     
 
-   // how the above is done for classifying exported edge impulse models 
-   // for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
-    //    ei_printf("    %s: %.5f\n", result.classification[ix].label, result.classification[ix].value);
-   // }
+     //   how the above is done for classifying exported edge impulse models 
+     //   for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
+     //      ei_printf("    %s: %.5f\n", result.classification[ix].label, result.classification[ix].value);
+    // }
 
 
     
@@ -243,7 +247,7 @@ void loop()
       digitalWrite(LEDB, LOW);   // Blue LED on
       myGlobalD5 = mySlowSpeed;           // car slow
       myServo_D2.write(110);     // go right
-     // ei_printf("1: Pop Go right: %u\n", myObectCode);
+     // ei_printf("1: Red Cup Go right: %u\n", myObectCode);
     }
 
 
@@ -251,7 +255,7 @@ void loop()
       digitalWrite(LEDG, LOW);   // Green LED on
       myGlobalD5 = mySlowSpeed;           // car slow
       myServo_D2.write(70);      // go left
-     // ei_printf("1: Pop Go right: %u\n", myObectCode);
+     // ei_printf("2: white cup go left: %u\n", myObectCode);
     }
 
     
@@ -259,9 +263,9 @@ void loop()
       digitalWrite(LEDR, LOW);          // Red LED on     
       myGlobalD5 = mySlowSpeed;                  // slow
       myServo_D2.write(90);             // go straight
-      //ei_printf("2: Water Go Left: %u\n", myObectCode);
+      //ei_printf("3: Both: %u\n", myObectCode);
     }
 
-
+      ei_printf("\n");
 
 }   // end main loop
