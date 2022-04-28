@@ -38,7 +38,7 @@ envie_m7.build.extra_flags=-DEI_CLASSIFIER_ALLOCATION_STATIC
 using namespace rtos;
 
 // Global Variables
-int myDelay = 0;  // delay between readings, can be zero, default 2000 = 2 seconds
+int myDelay = 500;  // delay between readings, can be zero, default 2000 = 2 seconds
 int mySlowSpeed = 30;
 
 Thread myThread01;
@@ -50,10 +50,11 @@ Servo myServo_D2;
 bool myLoRaStop = false;
 
 int myObectCode = 0;   // 0=unknown,   1= pop,  2= water,     ,  3  both pop and water  now 1 red cup upside down and 2 right side up white cup
-int myMaxPopY = -1;       
-int myMaxWaterY = -1;     
+int myMax1Y;       
+int myMax2Y;     
 int myObjectCount = 0;     
-int myObjectCountOld = 0;     
+int myObjectCountNew = 0;     
+int myObjectCountNext = 0;     
 
 
 
@@ -142,12 +143,13 @@ void loop()
     }
 
 
-
-    myObectCode = 0;   // 0=unknown,   1= pop,  2= water,  3=cone   ,  4  both pop and cone or pop and water 
-    myMaxPopY = -1;       
-    myMaxWaterY = -1;     
+   // set values before the loop
+    myObectCode = 0;   // 0=unknown,   1= upside down red cup, 2 right side up white cup or toilet paper
+    myMax1Y = -1;       
+    myMax2Y = -1;     
     myObjectCount = 0;     
-    myObjectCountOld = 0;   
+    myObjectCountNew = 0;   
+    myObjectCountNext = 0;   
 
 
 
@@ -182,19 +184,21 @@ void loop()
 
        // sepecific to RC car Library and label  1popgoright 2watergoleft  might have to change these
        if (bb.label == "1"){  // upside down red cup was pop
-        ei_printf("1");
-          if (bb.y > myMaxPopY){ myMaxPopY = bb.y;}  
+        ei_printf("1,");
+          if (myMax1Y < (int)bb.y){ myMax1Y = (int)bb.y;}  
+        // ei_printf("-%u-",myMax1Y); 
        }
        
 
        if (bb.label == "2"){   // right side up white cup / toilet paper roll was water bottle
-        ei_printf("2");
-          if (bb.y > myMaxWaterY){ myMaxWaterY = bb.y;}  
+        ei_printf("2,");
+          if (myMax2Y < (int)bb.y){ myMax2Y = (int)bb.y;} 
+         //ei_printf("-%u-",myMax2Y);  
        }   
 
-
-       // ei_printf("    %s (", bb.label);
-       // ei_printf_float(bb.value);
+      Serial.print("Label: "+String(bb.label) + ", bb.y: " +String(bb.y) + ":::");
+      //  ei_printf("    %s (", bb.label);
+      //  ei_printf_float(bb.value);
        // ei_printf(") [ x: %u, y: %u, width: %u, height: %u ]\n", bb.x, bb.y, bb.width, bb.height);
     }
 
@@ -222,18 +226,20 @@ void loop()
     digitalWrite(LEDR, HIGH); 
 
 
+      Serial.print(", myMax1Y: "+String(myMax1Y) + ", myMax2Y: " +String(myMax2Y) + "+++");
+
    // more fuzzy logic here
-   if (myMaxPopY < 0 && myMaxWaterY < 0){myObjectCount = 0;}   // nothing
-   if (myMaxPopY > 0 && myMaxWaterY < 0){myObjectCount = 1;}   // red cup
-   if (myMaxPopY < 0 && myMaxWaterY > 0){myObjectCount = 2;}   // white cup / toilet paper roll
-   if (myMaxPopY > 0 && myMaxWaterY > 0){myObjectCount = 3;}   // both cups
+   if (myMax1Y < 0 && myMax2Y < 0){myObjectCount = 0;}   // nothing
+   if (myMax1Y > 0 && myMax2Y < 0){myObjectCount = 1;}   // red cup
+   if (myMax1Y < 0 && myMax2Y > 0){myObjectCount = 2;}   // white cup / toilet paper roll
+   if (myMax1Y > 0 && myMax2Y > 0){myObjectCount = 3;}   // both cups
 
 
 
    // no buffer code written yet
    // rc car responds to every classification
    
-      ei_printf("------");
+      ei_printf(", myObjectCount: %u ---", myObjectCount);
 
    if (myObectCode == 0){    // 0 unknown do nothing
         digitalWrite(LEDR, LOW);      // green and red on 
@@ -272,5 +278,6 @@ void loop()
     }
 
       ei_printf("\n");
+      
 
 }   // end main loop
