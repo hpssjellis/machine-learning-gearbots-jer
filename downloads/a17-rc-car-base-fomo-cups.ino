@@ -232,7 +232,8 @@ void loop()
 
    // no buffer code written yet
    // rc car responds to every classification
-
+   
+      ei_printf("------");
 
    if (myObectCode == 0){    // 0 unknown do nothing
         digitalWrite(LEDR, LOW);      // green and red on 
@@ -240,6 +241,7 @@ void loop()
         myServo_D2.write(90);          // wheels straight 
         myGlobalD5 = 0;                // stop the car
      // ei_printf("0: Unknown Stop: %u\n", myObectCode);
+      ei_printf("stop");
     }
 
 
@@ -248,6 +250,7 @@ void loop()
       myGlobalD5 = mySlowSpeed;           // car slow
       myServo_D2.write(110);     // go right
      // ei_printf("1: Red Cup Go right: %u\n", myObectCode);
+      ei_printf("right");
     }
 
 
@@ -256,6 +259,7 @@ void loop()
       myGlobalD5 = mySlowSpeed;           // car slow
       myServo_D2.write(70);      // go left
      // ei_printf("2: white cup go left: %u\n", myObectCode);
+      ei_printf("left");
     }
 
     
@@ -264,6 +268,7 @@ void loop()
       myGlobalD5 = mySlowSpeed;                  // slow
       myServo_D2.write(90);             // go straight
       //ei_printf("3: Both: %u\n", myObectCode);
+      ei_printf("straight");
     }
 
       ei_printf("\n");
