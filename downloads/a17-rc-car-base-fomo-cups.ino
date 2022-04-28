@@ -178,13 +178,13 @@ void loop()
 
        // sepecific to RC car Library and label  1popgoright 2watergoleft  might have to change these
        if (bb.label == "1"){  // upside down red cup was pop
-       // ei_printf("Pop label");
+        ei_printf("upside down Red Cup label 1");
           if (bb.y > myMaxPopY){ myMaxPopY = bb.y;}  
        }
        
 
        if (bb.label == "2"){   // right side up white cup / toilet paper roll was water bottle
-       // ei_printf("Water label");
+        ei_printf("right side up White Cup label 2");
           if (bb.y > myMaxWaterY){ myMaxWaterY = bb.y;}  
        }   
 
