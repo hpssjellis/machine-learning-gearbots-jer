@@ -229,10 +229,10 @@ void loop()
       Serial.print(", myMax1Y: "+String(myMax1Y) + ", myMax2Y: " +String(myMax2Y) + "+++");
 
    // more fuzzy logic here
-   if (myMax1Y < 0 && myMax2Y < 0){myObjectCount = 0;}   // nothing
-   if (myMax1Y > 0 && myMax2Y < 0){myObjectCount = 1;}   // red cup
-   if (myMax1Y < 0 && myMax2Y > 0){myObjectCount = 2;}   // white cup / toilet paper roll
-   if (myMax1Y > 0 && myMax2Y > 0){myObjectCount = 3;}   // both cups
+   if (myMax1Y < 0 && myMax2Y < 0){myObectCode = 0;}   // nothing
+   if (myMax1Y > 0 && myMax2Y < 0){myObectCode = 1;}   // red cup
+   if (myMax1Y < 0 && myMax2Y > 0){myObectCode = 2;}   // white cup / toilet paper roll
+   if (myMax1Y > 0 && myMax2Y > 0){myObectCode = 3;}   // both cups
 
 
 
