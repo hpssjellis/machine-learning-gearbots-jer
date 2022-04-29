@@ -75,6 +75,8 @@ void myLedBlue_myThread01(){
 * @brief      Arduino setup function
 */
 void setup(){
+   
+     myThread01.start(myLedBlue_myThread01);
     // put your setup code here, to run once:
     Serial.begin(115200);
 
