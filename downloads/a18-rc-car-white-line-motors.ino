@@ -27,7 +27,8 @@ envie_m7.build.extra_flags=-DEI_CLASSIFIER_ALLOCATION_STATIC
 /* Includes ---------------------------------------------------------------- */
 
 // this is the Arduino library downloaded from edge Impulse
-#include <ei-v8-1-1-jeremy-rc-car-1red-2white-cup-fomo-96x96_inferencing.h>
+//#include <ei-v8-1-1-jeremy-rc-car-1red-2white-cup-fomo-96x96_inferencing.h>
+#include <ei-v1-1-1-rocksetta-rc-car-1-road-lines-fomo-996_inferencing.h>
 
 
 #include "edge-impulse-advanced-v2.h"
@@ -289,17 +290,17 @@ void loop()
         if (myConnectedX > MY_MIDDLE_X + MY_SERVO_STRAIGHT_RANGE) {
            myServoNow += 3;
            digitalWrite(LEDG, LOW);      // green right 
-           ei_printf("Go Right");
+           ei_printf("Green go Right");
           }  //If bounding box taller them make car go faster  
         else if (myConnectedX < MY_MIDDLE_X - MY_SERVO_STRAIGHT_RANGE) {
            myServoNow -= 3; 
            digitalWrite(LEDB, LOW);      // Blue left  
-           ei_printf("Go Left");
+           ei_printf("Blue go Left");
          } else {
           myServoNow = MY_SERVO_STRAIGHT;
           digitalWrite(LEDB, LOW);      // Blue 
           digitalWrite(LEDG, LOW);      // green  
-          ei_printf("Go Straight ");
+          ei_printf("Cyan go Straight ");
           }  
         // check max and mins
         if (myServoNow >  MY_SERVO_MAX )  {myServoNow = MY_SERVO_MAX;}
@@ -309,11 +310,11 @@ void loop()
        if (myPwmNow == 0 ){
         
           digitalWrite(LEDR, LOW);      // red stop  
-                ei_printf(", STOP");
+          ei_printf(", STOP");
         }
 
 
-                ei_printf(", PWM: %d", myServoNow);
+      ei_printf(", PWM: %d", myPwmNow);
 
     // ACTIVATE THE MOTORS
       myGlobalD5 = myPwmNow;     // this is updated in the thread      
