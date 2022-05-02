@@ -79,15 +79,18 @@ const int cutout_col_start = (EI_CAMERA_RAW_FRAME_BUFFER_COLS - CUTOUT_COLS) / 2
 int myGlobalCount;
 
 const int MY_MIDDLE_X = 44;    //  (98 pixels / 2) - 4
+const int MY_SERVO_STRAIGHT_RANGE = 5;  // middle location allowable error
+
 
 const int MY_SERVO_MIN = 70;
 const int MY_SERVO_STRAIGHT = 90;
 const int MY_SERVO_MAX = 110;
+
 int myServoNow = MY_SERVO_STRAIGHT;    // start going straight
 int myServoOld = MY_SERVO_STRAIGHT;    // start going straight
 
-const int MY_PWM_MIN = 30;
-const int MY_PWM_MAX = 50;   // careful this is the max speed for the car can be up to 255!
+const int MY_PWM_MIN = 30;  // 30
+const int MY_PWM_MAX = 50; //50;  // careful this is the max speed for the car can be up to 255!
 int myPwmNow = 0;            // start with it stopped!
 int myPwmOld = 0;      
 
@@ -193,12 +196,15 @@ void loop(){
 
     myGlobalCount = 0;
     myPwmOld = myPwmNow; 
-    myPwmNow = 0; 
-    myServoOld = myServoNow; 
-    myServoNow = 0; 
+    myPwmNow = 0;   //  iF no objects we want the car to stay stopped
+    //myServoOld = myServoNow; 
+    //myServoNow = 0;    // global so don't touch here
 
     myMaxHeightOld = myMaxHeight;
     myMaxHeight = 0;
+    myConnectedX = 0;
+    myConnectedY = 0;
+    myConnectedWidth = 0;
     
 
     ei::signal_t signal;
@@ -256,8 +262,9 @@ void loop(){
            myConnectedY = (int)bb.y; 
            myConnectedWidth = (int)bb.width; 
 
-       
-    }   // END of analysis loop!
+        }   
+        
+    }        // END of analysis loop!
 
     if (!bb_found) {
         ei_printf("    No objects found\n");
@@ -284,20 +291,31 @@ void loop(){
      if (myGlobalCount  > 5 && myGlobalCount  <= 8) {   digitalWrite(LEDR, LOW);  digitalWrite(LEDG, HIGH);  digitalWrite(LEDB, HIGH);}
      if (myGlobalCount  > 8 && myGlobalCount  <= 11) {  digitalWrite(LEDR, LOW);  digitalWrite(LEDG, HIGH);  digitalWrite(LEDB, LOW); }
      if (myGlobalCount  > 11 && myGlobalCount  <= 14) { digitalWrite(LEDR, LOW);  digitalWrite(LEDG, LOW);   digitalWrite(LEDB, HIGH);}
-     if (myGlobalCount  > 14) { digitalWrite(LEDR, LOW);  digitalWrite(LEDG, LOW);   digitalWrite(LEDB, LOW); }
+
+   //  Leave full white to show LORA stop if we implement that.
+   //  if (myGlobalCount  > 14) { digitalWrite(LEDR, LOW);  digitalWrite(LEDG, LOW);   digitalWrite(LEDB, LOW); }
 
    }
 
+       // LET'S TRY SOME FUZZY LOGIC
+        
         // RC car speed!
-        if (myMaxHeight > myMaxHeightOld ) {myPwmNow += 1;}  //If bounding box taller them make car go faster  
-        else { myPwmNow -= 1; }
+       // if (myMaxHeight > myMaxHeightOld ) {myPwmNow += 1;}  //If bounding box taller them make car go faster  
+       // else { myPwmNow -= 1; }
+       
+      //  myPwmNow = (myMaxHeight * 5) - (myConnectedWidth * 3)  ;   // taller the bounding box faster the car
+      
+        myPwmNow = (myMaxHeight/myConnectedWidth) * 30  ;   // taller the bounding box faster the car
+                                                            // wider the bounding box slower the car
+   
         // check max and mins
         if (myPwmNow >  MY_PWM_MAX )  {myPwmNow = MY_PWM_MAX;}
         if (myPwmNow < MY_PWM_MIN  )  {myPwmNow = MY_PWM_MIN;}
 
         // RC car Direction! Based on x location of tallest bounding box
-        if (myConnectedX < MY_MIDDLE_X ) {myServoNow += 1;}  //If bounding box taller them make car go faster  
-        else { myServoNow -= 1; }
+        if (myConnectedX > MY_MIDDLE_X + MY_SERVO_STRAIGHT_RANGE) {myServoNow += 3;}  //If bounding box taller them make car go faster  
+        else if (myConnectedX < MY_MIDDLE_X - MY_SERVO_STRAIGHT_RANGE) { myServoNow -= 3; }
+        else {myServoNow = MY_SERVO_STRAIGHT;}  
         // check max and mins
         if (myServoNow >  MY_SERVO_MAX )  {myServoNow = MY_SERVO_MAX;}
         if (myServoNow < MY_SERVO_MIN  )  {myServoNow = MY_SERVO_MIN;}
@@ -312,6 +330,13 @@ void loop(){
         display.setCursor(100, 120);
         display.println(String(myPwmNow));
 
+       // use this to show a variable in the middle of the screen 
+       // display.setCursor(50, 50);
+       // display.println(String(myConnectedX));
+
      // Last thing is to show the 128x128 GRAYSCALE OLED
      display.display();  // OLED 4 bit 16 color GRAYSCALE update
 }
+
+
+
