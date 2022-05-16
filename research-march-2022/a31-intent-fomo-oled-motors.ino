@@ -111,8 +111,8 @@ const int  MY_THREAD_SLEEP = 50;   // default 10, ms the motor thread sleeps, lo
 const int  MY_INTENT_COUNT = 2;   // >= 2 how many threads until the intent kicks in. Higher more mellow, lower more intense
 
 const float MY_FOMO_CUTOFF = 0.75;
-const int MY_MIDDLE_X = 44;  //44;    //  (98 pixels / 2) - 4
-const int MY_SERVO_STRAIGHT_RANGE = 3;  // middle location allowable error
+const int MY_MIDDLE_X = 40;  //44;    //  (98 pixels / 2) - 4
+const int MY_SERVO_STRAIGHT_RANGE = 6;  // middle location allowable error
 const int  MY_SERVO_JUMP = 3;
 
 const int MY_SERVO_MIN = 70;
@@ -124,8 +124,11 @@ const int MY_LOST_COUNT_MAX = 30;  // how many loops do you wait when lost to st
 int myServoNow = MY_SERVO_STRAIGHT;    // start going straight
 int myServoOld = MY_SERVO_STRAIGHT;    // start going straight
 
+
+const int  HEIGHT_WIDTH_PWM = 25; //30
+
 const int MY_PWM_MIN = 25;  // 30
-const int MY_PWM_MAX = 35; //50;  // careful this is the max speed for the car and can be up to 255!
+const int MY_PWM_MAX = 27; //50;  // careful this is the max speed for the car and can be up to 255!
 int myPwmNow = 0;                 // start with it stopped!
 int myPwmOld = 0;      
 
@@ -408,7 +411,7 @@ void loop(){
              display.setCursor(50, 50);
              display.println("STOP");
           } else {
-               myPwmNow = (myMaxHeight/myConnectedWidth) * 30  ;   // taller the bounding box faster the car
+               myPwmNow = (myMaxHeight/myConnectedWidth) * HEIGHT_WIDTH_PWM  ;   // taller the bounding box faster the car
               // change later
               //myPwmNow =   MY_PWM_MIN;                                          // wider the bounding box slower the car
    
