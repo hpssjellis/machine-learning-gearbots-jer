@@ -406,11 +406,11 @@ void loop(){
              display.setCursor(50, 50);
              display.println("STOP");
           } else {
-              // myPwmNow = (myMaxHeight/myConnectedWidth) * 30  ;   // taller the bounding box faster the car
+               myPwmNow = (myMaxHeight/myConnectedWidth) * 30  ;   // taller the bounding box faster the car
               // change later
-              myPwmNow =   MY_PWM_MIN;                                          // wider the bounding box slower the car
+              //myPwmNow =   MY_PWM_MIN;                                          // wider the bounding box slower the car
    
-              // check max and mins
+              // check max and mins for PWM (SPEED)
               if (myPwmNow >  MY_PWM_MAX )  {
                  myPwmNow = MY_PWM_MAX; 
               }
@@ -492,7 +492,7 @@ void loop(){
             myIntentPWM = myPwmNow;
             display.setCursor(0, 90);
             display.println(String(myIntentPWM));
-            ei_printf("New Intent PWM: %d", myIntentPWM );
+            ei_printf(", New Intent PWM: %d", myIntentPWM );
            
           }
 
@@ -501,14 +501,15 @@ void loop(){
             myIntentServo = myServoNow;
             display.setCursor(30, 90);
             display.println(String(myIntentServo));        
-            ei_printf("New Intent Servo: %d", myIntentServo );
+            ei_printf(", New Intent Servo: %d", myIntentServo );
           }
 
           
 
           myPwmOld = myPwmNow;   // reset the old value for next loop
           myServoOld = myServoNow;   // reset the old value for next loop
-         // ACTIVATE THE MOTORS
+          
+         // ACTIVATE THE Main MOTOR
          myGlobalD5 = myPwmNow;     // this is updated in the thread   
          ei_printf("\n" );
 
