@@ -108,7 +108,7 @@ bool myLoRaStop = false;
 
 
 const int  MY_THREAD_SLEEP = 50;   // default 10, ms the motor thread sleeps, lower the faster the response
-const int  MY_INTENT_COUNT = 2;   // >= 2 how many threads until the intent kicks in. Higher more mellow, lower more intense
+const int  MY_INTENT_COUNT = 5;   // >= 2 how many threads until the intent kicks in. Higher more mellow, lower more intense
 
 const float MY_FOMO_CUTOFF = 0.75;
 const int MY_MIDDLE_X = 40;  //44;    //  (98 pixels / 2) - 4
@@ -174,8 +174,8 @@ void myLedBlue_myThread01(){
         analogWrite(D5, myGlobalD5); 
         myServo_D2.write(myServoNow);  
        // ei_printf("PWM-D5 at: %3d , servo: %3d  \n ", myGlobalD5, myServoNow);
-        ThisThread::sleep_for(MY_THREAD_SLEEP);
       }
+      ThisThread::sleep_for(MY_THREAD_SLEEP);   
    }
 }
 
@@ -404,9 +404,12 @@ void loop(){
        // else { myPwmNow -= 1; }
        
       //  myPwmNow = (myMaxHeight * 5) - (myConnectedWidth * 3)  ;   // taller the bounding box faster the car
+
+          
             
-         if (myMaxHeight == 0 && myIntentServo != MY_SERVO_MAX ) {  // account for being lost!
+         if (myMaxHeight == 0  && myIntentGoal <= 3) {  // ignore no objects if LOST intent
              myPwmNow = 0;   // stop
+             myIntentGoal = 0;
              myServoNow = MY_SERVO_STRAIGHT;   // wheels straight
              display.setCursor(50, 50);
              display.println("STOP");
@@ -431,25 +434,31 @@ void loop(){
                 // RC car Direction! Based on x location of tallest bounding box
                 if (myConnectedX + (myConnectedWidth/2) > MY_MIDDLE_X + MY_SERVO_STRAIGHT_RANGE) {
                    myServoNow = MY_SERVO_STRAIGHT + MY_SERVO_JUMP;   //   += for increasing but worse for intent
-                   digitalWrite(LEDG, LOW);      // green right 
+                  
+                  myLostCount =  0;  // about the intent
+                  digitalWrite(LEDG, LOW);      // green right 
                    ei_printf("Green go Right: %d", myServoNow );
-                   
+                   myIntentGoal = 1;
                    display.setCursor(50, 50);
                    display.println("Green Right");
                   }  //If bounding box taller them make car go faster  
                 else if (myConnectedX + (myConnectedWidth/2) < MY_MIDDLE_X - MY_SERVO_STRAIGHT_RANGE) {
-                   myServoNow = MY_SERVO_STRAIGHT - MY_SERVO_JUMP; //   -= for increasing but worse for intent
+                 
+                  myLostCount =  0;  // about the intent
+                  myServoNow = MY_SERVO_STRAIGHT - MY_SERVO_JUMP; //   -= for increasing but worse for intent
                    digitalWrite(LEDB, LOW);      // Blue left  
-                   
+                   myIntentGoal = 2;
                    display.setCursor(70, 50);
                    display.println("blue left");
                    ei_printf("Blue go Left: %d", myServoNow );
                  } else {
+                  myLostCount =  0;  // about the intent
                   myServoNow = MY_SERVO_STRAIGHT;
                   digitalWrite(LEDB, LOW);      // Blue 
                   digitalWrite(LEDG, LOW);      // green  
-                   display.setCursor(10, 50);
-                   display.println("Straight");
+                  myIntentGoal = 3;
+                  display.setCursor(10, 50);
+                  display.println("Straight");
                   ei_printf("Cyan go Straight: %d", myServoNow );
                   }  
         
@@ -475,7 +484,7 @@ void loop(){
                 if (myServoNow < MY_SERVO_MIN  )  {myServoNow = MY_SERVO_MIN;}
 
 
-              
+
 
 
 
@@ -531,10 +540,11 @@ void loop(){
             myIntentServo = myServoNow;
           }
 
-          if (myIntentPWM == 0) { 
+          if (myIntentPWM == 0 || myIntentGoal < 4 ) { 
             myLostCount += 1;
             if (myLostCount > MY_LOST_COUNT_MAX ){   // we have been lost for a while so turn in right hand circles
-                myLostCount =  0;
+               // myLostCount =  0;  // make it last longer
+                myIntentGoal = 4; // 0=stop, 1=right, 2= left, 3= faster, 4=LOST
                 myIntentServo =  MY_SERVO_MAX;
                 myIntentPWM =  MY_PWM_MIN;
               }
@@ -546,6 +556,15 @@ void loop(){
          // ACTIVATE THE Main MOTOR
          myGlobalD5 = myPwmNow;     // this is updated in the thread   
          ei_printf("\n" );
+
+
+
+
+
+
+
+
+
 
      // Last thing is to show the 128x128 GRAYSCALE OLED
      display.display();  // OLED 4 bit 16 color GRAYSCALE update
