@@ -468,6 +468,15 @@ void loop(){
                 // check max and mins
                 if (myServoNow >  MY_SERVO_MAX )  {myServoNow = MY_SERVO_MAX;}
                 if (myServoNow < MY_SERVO_MIN  )  {myServoNow = MY_SERVO_MIN;}
+
+
+                
+
+                display.setCursor(50, 110);
+                display.println(String(myIntentServo));
+                display.setCursor(100, 110);
+                display.println(String(myIntentPWM));
+
                 
                 
                 display.setCursor(10,120);
@@ -489,19 +498,12 @@ void loop(){
 
           // Check if we need to change the Intent speed!
           if (myPwmNow = myPwmOld) {
-            myIntentPWM = myPwmNow;
-            display.setCursor(0, 90);
-            display.println(String(myIntentPWM));
-            ei_printf(", New Intent PWM: %d", myIntentPWM );
-           
+            myIntentPWM = myPwmNow;     
           }
 
                     // Check if we need to change the Intent direction!
           if (myServoNow = myServoOld) {
             myIntentServo = myServoNow;
-            display.setCursor(30, 90);
-            display.println(String(myIntentServo));        
-            ei_printf(", New Intent Servo: %d", myIntentServo );
           }
 
           
