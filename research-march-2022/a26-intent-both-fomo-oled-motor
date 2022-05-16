@@ -118,6 +118,7 @@ const int  MY_SERVO_JUMP = 3;
 const int MY_SERVO_MIN = 70;
 const int MY_SERVO_STRAIGHT = 90;
 const int MY_SERVO_MAX = 110;
+const int MY_LOST_COUNT = 30;
 
 
 int myServoNow = MY_SERVO_STRAIGHT;    // start going straight
@@ -133,7 +134,7 @@ int myIntentGoal = 0; // 0=stop, 1=go right, 2=go left, 3=straight, 4=lost look 
 int myIntentServo = MY_SERVO_STRAIGHT; // go straight  
 int myIntentPWM = 0;   // cars intent to go a certain speed 0=stop slow=MY_PWM_MIN  fast=MY_PWM_MAX
 int myThreadCount = 0; // how many times the thread has ran since the last intent
-
+int myLostCount = 0;
 
 
 
@@ -162,7 +163,9 @@ void myLedBlue_myThread01(){
       if (myThreadCount >= MY_INTENT_COUNT ) {
         myThreadCount = 0;   // reset threadCount
           analogWrite(D5, myIntentPWM); 
-          myServo_D2.write(myIntentServo);     
+          myServo_D2.write(myIntentServo);   
+          display.setCursor(20,10);
+          display.println("RocksettaDrive");  
        // ei_printf("PWM-D5 INTENT at: %3d , servo: %3d  \n ", myIntentPWM, myIntentServo);
       } else {
         analogWrite(D5, myGlobalD5); 
@@ -280,8 +283,7 @@ void loop(){
 
     display.drawRect(0,0,128,128, SSD1327_WHITE );  // rectangle around outside of OLED
 
-    display.setCursor(20,10);
-    display.println("Rocksetta");
+
 
 
     myGlobalCount = 0;
@@ -497,16 +499,24 @@ void loop(){
           }  // End STOP
 
           // Check if we need to change the Intent speed!
-          if (myPwmNow = myPwmOld) {
-            myIntentPWM = myPwmNow;     
+          if (myPwmNow == myPwmOld) {
+            myIntentPWM = myPwmNow; 
+                
           }
 
                     // Check if we need to change the Intent direction!
-          if (myServoNow = myServoOld) {
+          if (myServoNow == myServoOld) {
             myIntentServo = myServoNow;
           }
 
-          
+          if (myIntentPwm == 0) { 
+            myLostCount += 1;
+            if (myLostCount > MY_LOST_COUNT ){   // we have been lost for a while so turn in right hand circles
+                myLostCount =  0;
+                myIntentServo =  MY_SERVO_MAX;
+                myIntentPwm =  MY_PWM_MIN;
+              }
+          }
 
           myPwmOld = myPwmNow;   // reset the old value for next loop
           myServoOld = myServoNow;   // reset the old value for next loop
