@@ -108,10 +108,10 @@ bool myLoRaStop = false;
 
 
 const int  MY_THREAD_SLEEP = 20;   // default 10, ms the motor thread sleeps, lower the number faster the response
-const int  MY_INTENT_COUNT = 6;   // >= 2 how many threads until the intent kicks in. Higher more mellow, lower more intense
+const int  MY_INTENT_COUNT = 20;   // >= 2 how many threads until the intent kicks in. Higher more mellow, lower more intense
 
 const float MY_FOMO_CUTOFF = 0.75;
-const int MY_MIDDLE_X = 38;  //44;    //  (98 pixels / 2) - 4
+const int MY_MIDDLE_X = 40; //38;  //44;    //  (98 pixels / 2) - 4
 const int MY_SERVO_STRAIGHT_RANGE = 10;  // middle location allowable error
 const int  MY_SERVO_JUMP = 20;   // 3 if increasing but +-10 if fixed for INTENT matching
 
