@@ -156,6 +156,7 @@ int myMaxHeightOld = 0;
 int myConnectedX = 0;
 int myConnectedY = 0;
 int myConnectedWidth = 0;
+String myConnectedLabel = "";
 
 
 
@@ -302,6 +303,7 @@ void loop(){
     myConnectedX = 0;
     myConnectedY = 0;
     myConnectedWidth = 0;
+    myConnectedLabel = "";
     
 
     ei::signal_t signal;
@@ -355,6 +357,7 @@ void loop(){
              myConnectedX = (int)bb.x; 
              myConnectedY = (int)bb.y; 
              myConnectedWidth = (int)bb.width; 
+             myConnectedLabel = (String)bb.label;
            } 
            ei_printf("Good, ");
            display.drawRect(xMap, yMap, widthMap, heightMap, SSD1327_WHITE ); // good value
@@ -427,12 +430,44 @@ void loop(){
               if (myPwmNow < MY_PWM_MIN  )  {
                  myPwmNow = MY_PWM_MIN;   
               }
+
+
+           // NEW 1right 2left 3fast fuzzy logic code
+
       
-      
+               if (myConnectedLabel == "1right") {
+                   myServoNow = MY_SERVO_STRAIGHT + MY_SERVO_JUMP;   //   += for increasing but worse for intent
+                   myLostCount =  0;  // about the intent
+                   digitalWrite(LEDG, LOW);      // green right 
+                   ei_printf("Green go Right: %d", myServoNow );
+                   myIntentGoal = 1;
+                   display.setCursor(50, 50);
+                   display.println("Green Right");
+                  }  //If bounding box taller them make car go faster  
+                  else if (myConnectedLabel == "2left") {
+                 
+                   myLostCount =  0;  // about the intent
+                   myServoNow = MY_SERVO_STRAIGHT - MY_SERVO_JUMP; //   -= for increasing but worse for intent
+                   digitalWrite(LEDB, LOW);      // Blue left  
+                   myIntentGoal = 2;
+                   display.setCursor(70, 50);
+                   display.println("blue left");
+                   ei_printf("Blue go Left: %d", myServoNow );
+                 } 
+                  else if (myConnectedLabel == "3fast") {
+                  myLostCount =  0;  // about the intent
+                  myServoNow = MY_SERVO_STRAIGHT;
+                  digitalWrite(LEDB, LOW);      // Blue 
+                  digitalWrite(LEDG, LOW);      // green  
+                  myIntentGoal = 3;
+                  display.setCursor(10, 50);
+                  display.println("Straight");
+                  ei_printf("Cyan go Straight: %d", myServoNow );
+                  }  
 
+/*
 
-
-        
+                // OLD LINES FOMO CODE TO DETERMINE DIRECTION
                 // RC car Direction! Based on x location of tallest bounding box
                 if (myConnectedX + (myConnectedWidth/2) > MY_MIDDLE_X + MY_SERVO_STRAIGHT_RANGE) {
                    myServoNow = MY_SERVO_STRAIGHT + MY_SERVO_JUMP;   //   += for increasing but worse for intent
@@ -463,7 +498,7 @@ void loop(){
                   ei_printf("Cyan go Straight: %d", myServoNow );
                   }  
 
-
+*/
        
                   // PANIC servo override if long box, always go right
                   if (myConnectedWidth > 30) {
@@ -567,6 +602,7 @@ void loop(){
          // ACTIVATE THE Main MOTOR
          myGlobalD5 = myPwmNow;     // this is updated in the thread   
          ei_printf("\n" );
+
 
 
 
