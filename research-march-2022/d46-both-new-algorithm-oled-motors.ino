@@ -476,11 +476,11 @@ void loop(){
         if (myGlobalCount == 1) {  // && myMaxHeight > MY_MAXHEIGHT_GOOD) {   // one object large maxHeight so go straight
 
              // myServoNow = MY_SERVO_STRAIGHT;
-              digitalWrite(LEDB, LOW);      // Blue 
-              digitalWrite(LEDG, LOW);      // green  
+            //  digitalWrite(LEDB, LOW);      // Blue 
+             // digitalWrite(LEDG, LOW);      // green  
               display.setCursor(10, 30);
               display.println("one Object");
-              ei_printf("Cyan one Object: ");
+              ei_printf("one Object: ");
             
         } 
         
@@ -496,10 +496,14 @@ void loop(){
             } else {
                mySlopeX = (myConnectedX + (myConnectedWidth/2)) - (myConnectedX2nd + (myConnectedWidth2nd/2));
             }
+
+
+       // new algorithm always this equation
+       myServoNow = MY_SERVO_STRAIGHT - myShiftX;         
         
        if (myShiftX < 0 ) { // green go right
          // myServoNow = MY_SERVO_STRAIGHT + MY_SERVO_JUMP;   
-          myServoNow = MY_SERVO_STRAIGHT + myShiftX;   
+        //  myServoNow = MY_SERVO_STRAIGHT + myShiftX;   
           digitalWrite(LEDG, LOW);      // green right 
           ei_printf("Green go Right: %d", myServoNow );
 
@@ -507,7 +511,7 @@ void loop(){
           display.println("Green Right"); 
        } else {   // go left
            // myServoNow = MY_SERVO_STRAIGHT - MY_SERVO_JUMP; //   -= for increasing but worse for intent
-            myServoNow = MY_SERVO_STRAIGHT - myShiftX; //   -= for increasing but worse for intent
+           // myServoNow = MY_SERVO_STRAIGHT + myShiftX; //   -= for increasing but worse for intent
             digitalWrite(LEDB, LOW);      // Blue left  
             display.setCursor(60, 60);
             display.println("blue left");
