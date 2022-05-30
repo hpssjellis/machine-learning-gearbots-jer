@@ -478,8 +478,9 @@ void loop(){
                mySlopeX = 1;
             } else {             // 2nd x location - tallest x location = x pixels of the slope
                 // Argggh which one is it. Oh well just try both and see which one works
-             // mySlopeX = round( ( myConnectedX2nd + (myConnectedWidth2nd/2))  - ( myConnectedX    + (myConnectedWidth/2))    );
+                // mySlopeX = round( ( myConnectedX2nd + (myConnectedWidth2nd/2))  - ( myConnectedX    + (myConnectedWidth/2))    );
                 mySlopeX = round( ( myConnectedX    + (myConnectedWidth/2))     - ( myConnectedX2nd + (myConnectedWidth2nd/2)) );
+  
             }
           display.setCursor(20, 20);
           display.println(String(myShiftX)); 
@@ -489,10 +490,18 @@ void loop(){
           display.println(String(mySlopeX)); 
           ei_printf(", mySlopeX: %d, ", mySlopeX );
 
+
+
+          // Lets print but ignore the slopeX in pixels
+         // mySlopeX = 0;
+
+
+
        // new algorithm always this equation
        myServoNow = MY_SERVO_STRAIGHT - round((myShiftX + mySlopeX) * PIXEL_TO_DEGREE );   //* mySlopeX);         
         
-       if (myShiftX > 0 ) { // green go right
+     //  if (myShiftX > 0 ) { // green go left
+       if (myServoNow < MY_SERVO_STRAIGHT ) { //servoNow less than middle degrees, green go left
          // myServoNow = MY_SERVO_STRAIGHT + MY_SERVO_JUMP;   
         //  myServoNow = MY_SERVO_STRAIGHT + myShiftX;   
           digitalWrite(LEDG, LOW);      // green right 
@@ -500,7 +509,7 @@ void loop(){
 
           display.setCursor(60, 60);
           display.println("Green Left"); 
-       } else {   // go left
+       } else {                         // go right
            // myServoNow = MY_SERVO_STRAIGHT - MY_SERVO_JUMP; //   -= for increasing but worse for intent
            // myServoNow = MY_SERVO_STRAIGHT + myShiftX; //   -= for increasing but worse for intent
             digitalWrite(LEDB, LOW);      // Blue left  
