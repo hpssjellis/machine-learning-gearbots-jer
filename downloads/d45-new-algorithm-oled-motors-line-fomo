@@ -106,46 +106,51 @@ Servo myServo_D2;
 bool myLoRaStop = false;
 
 
-const float PIXEL_TO_DEGREE = 0.6;    // can be adjusted. closer to 1 car turns faster
-const int  MY_MAXHEIGHT_GOOD = 20; //y and height
-const int  MY_THREAD_SLEEP = 10;   // default 10, ms the motor thread sleeps, lower the number faster the response
-const int  MY_INTENT_COUNT = 2000;   // >= 2 how many threads until the intent kicks in. Higher more mellow, lower more intense
 
-const float MY_FOMO_CUTOFF = 0.75;
-const int MY_MIDDLE_X = 44; //38;  //44;    //  (98 pixels / 2) - 4
-const int MY_SERVO_STRAIGHT_RANGE = 20;  // middle location allowable error
-const int  MY_SERVO_JUMP = 10;   // 3 if increasing but +-10 if fixed for INTENT matching
+                                  // if greater than 20 basically don't use slope X
+const float SLOPE_CUTOFF = 30;   //  5; default degrees when slope of line becomes important 
 
-const int MY_SERVO_MIN = 70;
+const float SHIFT_PIXEL_TO_DEGREE = 0.6; 
+const float SLOPE_PIXEL_TO_DEGREE = 0.6;    // can be adjusted. closer to 1 car turns faster
+const int  MY_MAXHEIGHT_GOOD = 20;    // y and height
+const int  MY_THREAD_SLEEP = 10;      // default 10, ms the motor thread sleeps, lower the number faster the response
+//const int  MY_INTENT_COUNT = 2000;   // >= 2 how many threads until the intent kicks in. Higher more mellow, lower more intense
+
+const float MY_FOMO_CUTOFF = 0.80;    // default 0.85;
+const int MY_MIDDLE_X = 42; //38;  //42;    //  (98 pixels / 2) - 4
+//const int MY_SERVO_STRAIGHT_RANGE = 20;  // middle location allowable error
+//const int  MY_SERVO_JUMP = 10;   // 3 if increasing but +-10 if fixed for INTENT matching
+
+const int MY_SERVO_MIN = 70;        // degrees
 const int MY_SERVO_STRAIGHT = 90;
 const int MY_SERVO_MAX = 110;
-const int MY_LOST_COUNT_MAX = 30;  // how many loops do you wait when lost to start slowly turning to the right
+//const int MY_LOST_COUNT_MAX = 30;  // how many loops do you wait when lost to start slowly turning to the right
 
 
 int myServoNow = MY_SERVO_STRAIGHT;    // start going straight
-int myServoOld = MY_SERVO_STRAIGHT;    // start going straight
+//int myServoOld = MY_SERVO_STRAIGHT;    // start going straight
 
 
-const int  HEIGHT_WIDTH_PWM = 25; //30
+const int  HEIGHT_WIDTH_PWM = 25;     //30   multiplier for box wide = slow, tall = fast
 
-const int MY_PWM_MIN = 25;  // 30
-const int MY_PWM_MAX = 35; //50;  // careful this is the max speed for the car and can be up to 255!
+const int MY_PWM_MIN = 20;      // 25
+const int MY_PWM_MAX = 35;     //50;  // careful this is the max speed for the car and can be up to 255!
 int myPwmNow = 0;                 // start with it stopped!
-int myPwmOld = 0;      
+//int myPwmOld = 0;      
 
 int myGlobalCount; // countof all relevant objects
-int myIntentGoal = 0; // 0=stop, 1=go right, 2=go left, 3=straight, 4=lost look for objects
-int myIntentServo = MY_SERVO_STRAIGHT; // go straight  
-int myIntentPWM = 0;   // cars intent to go a certain speed 0=stop slow=MY_PWM_MIN  fast=MY_PWM_MAX
+//int myIntentGoal = 0; // 0=stop, 1=go right, 2=go left, 3=straight, 4=lost look for objects
+//int myIntentServo = MY_SERVO_STRAIGHT; // go straight  
+//int myIntentPWM = 0;   // cars intent to go a certain speed 0=stop slow=MY_PWM_MIN  fast=MY_PWM_MAX
 int myThreadCount = 0; // how many times the thread has ran since the last intent
-int myLostCount = 0;
+//int myLostCount = 0;
 
 
 
 
 
 
-
+// should probably be a struct array, but this was easier
 
 int myMaxHeight = 0;
 //int myMaxHeightOld = 0;    // not yet using
@@ -213,7 +218,7 @@ void setup(){
      myThread01.start(myLedBlue_myThread01);
     // put your setup code here, to run once:
     Serial.begin(115200);
-    Serial.println("Edge Impulse Inferencing Demo");
+   // Serial.println("Edge Impulse Inferencing Demo");
 
     pinMode(LEDR, OUTPUT); 
     pinMode(LEDG, OUTPUT);   // this is LED_BUILTIN
@@ -312,7 +317,7 @@ void loop(){
 
 
     myGlobalCount = 0;  // how many acceptable objects
-    myPwmOld = myPwmNow; 
+   // myPwmOld = myPwmNow; 
     myPwmNow = 0;   //  iF no objects we want the car to stay stopped
     //myServoOld = myServoNow; 
     //myServoNow = 0;    // global so don't touch here
@@ -426,15 +431,7 @@ void loop(){
 
    if (bb_found) {    // if objects are found lets load some l
 
-     // Show some color on the onboard LED
-/*
-     if (myGlobalCount  == 1) { digitalWrite(LEDR, HIGH); digitalWrite(LEDG, HIGH);  digitalWrite(LEDB, LOW); }
-     if (myGlobalCount  == 2) { digitalWrite(LEDR, HIGH); digitalWrite(LEDG, LOW);   digitalWrite(LEDB, HIGH);}
-     if (myGlobalCount  > 2 && myGlobalCount  <= 5) {   digitalWrite(LEDR, HIGH); digitalWrite(LEDG, LOW);   digitalWrite(LEDB, LOW); }
-     if (myGlobalCount  > 5 && myGlobalCount  <= 8) {   digitalWrite(LEDR, LOW);  digitalWrite(LEDG, HIGH);  digitalWrite(LEDB, HIGH);}
-     if (myGlobalCount  > 8 && myGlobalCount  <= 11) {  digitalWrite(LEDR, LOW);  digitalWrite(LEDG, HIGH);  digitalWrite(LEDB, LOW); }
-     if (myGlobalCount  > 11 && myGlobalCount  <= 14) { digitalWrite(LEDR, LOW);  digitalWrite(LEDG, LOW);   digitalWrite(LEDB, HIGH);}
-*/
+    
    //  Leave full white to show LORA stop if we implement that.
    //  if (myGlobalCount  > 14) { digitalWrite(LEDR, LOW);  digitalWrite(LEDG, LOW);   digitalWrite(LEDB, LOW); }
 
@@ -443,12 +440,7 @@ void loop(){
        // LET'S TRY SOME FUZZY LOGIC
         
         // RC car speed!
-       // if (myMaxHeight > myMaxHeightOld ) {myPwmNow += 1;}  //If bounding box taller them make car go faster  
-       // else { myPwmNow -= 1; }
-       
-      //  myPwmNow = (myMaxHeight * 5) - (myConnectedWidth * 3)  ;   // taller the bounding box faster the car
 
-          
             
          if (myMaxHeight == 0 ) {  // stop if no obects detected
              myPwmNow = 0;  // MY_PWM_MIN;  // 0;  // stop or go slow
@@ -484,24 +476,50 @@ void loop(){
             
         } 
         
-        
-       // else {
-           // both these equations are probably the same as the 2nd data is probably zero
 
-           
-            myShiftX = MY_MIDDLE_X - (myConnectedX + (myConnectedWidth/2));
+            myShiftX = round( SHIFT_PIXEL_TO_DEGREE * ( MY_MIDDLE_X - (myConnectedX + (myConnectedWidth/2)))  );
             
             if (myGlobalCount <= 1 ) {   // one object large maxHeight so go straight
-               mySlopeX = 1;
-            } else {
-               mySlopeX = (myConnectedX + (myConnectedWidth/2)) - (myConnectedX2nd + (myConnectedWidth2nd/2));
+               mySlopeX = 0;
+            } else {             // 2nd x location - tallest x location = x pixels of the slope
+                // Argggh which one is it. Oh well just try both and see which one works
+                // mySlopeX = round( ( myConnectedX2nd + (myConnectedWidth2nd/2))  - ( myConnectedX    + (myConnectedWidth/2))    );
+                mySlopeX = round( SLOPE_PIXEL_TO_DEGREE * ( ( myConnectedX    + (myConnectedWidth/2))     - ( myConnectedX2nd + (myConnectedWidth2nd/2)) ) );
+  
             }
+            
+          display.setCursor(20, 20);
+          display.println(String(myShiftX)); 
+          ei_printf(", myShiftX: %d, ", myShiftX );  
+                  
+          display.setCursor(60, 20);
+          display.println(String(mySlopeX)); 
+          ei_printf(", mySlopeX: %d, ", mySlopeX );
+
+
+
+          // Lets print but ignore the slopeX in pixels
+         // mySlopeX = 0;
+
 
 
        // new algorithm always this equation
-       myServoNow = MY_SERVO_STRAIGHT - round(myShiftX * PIXEL_TO_DEGREE );   //* mySlopeX);         
-        
-       if (myShiftX > 0 ) { // green go right
+       // myServoNow = MY_SERVO_STRAIGHT - round((myShiftX + mySlopeX) * PIXEL_TO_DEGREE );   //* mySlopeX);         
+
+                                    // these values cancel each other out if
+        //myServoNow = MY_SERVO_STRAIGHT    - myShiftX  - mySlopeX  ;      
+
+       if ( abs(mySlopeX) > SLOPE_CUTOFF) {   
+          myServoNow = MY_SERVO_STRAIGHT - mySlopeX  ;      
+        } else {
+          myServoNow = MY_SERVO_STRAIGHT - myShiftX   ;      
+        }
+
+
+
+       
+     //  if (myShiftX > 0 ) { // green go left
+       if (myServoNow < MY_SERVO_STRAIGHT ) { //servoNow less than middle degrees, green go left
          // myServoNow = MY_SERVO_STRAIGHT + MY_SERVO_JUMP;   
         //  myServoNow = MY_SERVO_STRAIGHT + myShiftX;   
           digitalWrite(LEDG, LOW);      // green right 
@@ -509,7 +527,7 @@ void loop(){
 
           display.setCursor(60, 60);
           display.println("Green Left"); 
-       } else {   // go left
+       } else {                         // go right
            // myServoNow = MY_SERVO_STRAIGHT - MY_SERVO_JUMP; //   -= for increasing but worse for intent
            // myServoNow = MY_SERVO_STRAIGHT + myShiftX; //   -= for increasing but worse for intent
             digitalWrite(LEDB, LOW);      // Blue left  
@@ -526,59 +544,10 @@ void loop(){
 
 
       
+       
 
 
-      /*
-        
-                // RC car Direction! Based on x location of tallest bounding box
-                if (myConnectedX + (myConnectedWidth/2) > MY_MIDDLE_X + MY_SERVO_STRAIGHT_RANGE) {
-                   myServoNow = MY_SERVO_STRAIGHT + MY_SERVO_JUMP;   //   += for increasing but worse for intent
-                   myLostCount =  0;  // about the intent
-                   digitalWrite(LEDG, LOW);      // green right 
-                   ei_printf("Green go Right: %d", myServoNow );
-                   myIntentGoal = 1;
-                   display.setCursor(50, 50);
-                   display.println("Green Right");
-                  }  //If bounding box taller them make car go faster  
-                else if (myConnectedX + (myConnectedWidth/2) < MY_MIDDLE_X - MY_SERVO_STRAIGHT_RANGE) {
-                 
-                   myLostCount =  0;  // about the intent
-                   myServoNow = MY_SERVO_STRAIGHT - MY_SERVO_JUMP; //   -= for increasing but worse for intent
-                   digitalWrite(LEDB, LOW);      // Blue left  
-                   myIntentGoal = 2;
-                   display.setCursor(70, 50);
-                   display.println("blue left");
-                   ei_printf("Blue go Left: %d", myServoNow );
-                 } else {
-                  myLostCount =  0;  // about the intent
-                  myServoNow = MY_SERVO_STRAIGHT;
-                  digitalWrite(LEDB, LOW);      // Blue 
-                  digitalWrite(LEDG, LOW);      // green  
-                  myIntentGoal = 3;
-                  display.setCursor(10, 50);
-                  display.println("Straight");
-                  ei_printf("Cyan go Straight: %d", myServoNow );
-                  }  
 
-*/
-                  
-
-
-       /*
-                  // PANIC servo override if long box, always go right
-                  if (myConnectedWidth > 30) {
-                    
-                   myServoNow = MY_SERVO_MAX; 
-                   digitalWrite(LEDR, LOW);       
-                   digitalWrite(LEDG, LOW);       
-                   digitalWrite(LEDB, HIGH);      // white panic go right 
-                   
-                   display.setCursor(20, 80);
-                   display.println("redish panic right"); 
-                   ei_printf("redish panic right: %d", myServoNow );
-                    }
-        
-        */
         
         
                 
@@ -610,16 +579,7 @@ void loop(){
                 display.setCursor(20,10);
                 display.println("Rocksetta-Drive");  
 
-/*
-                
-                display.setCursor(2, 2);
-                display.println(String(myIntentGoal));
-                display.setCursor(50, 110);
-                display.println(String(myIntentServo));
-                display.setCursor(100, 110);
-                display.println(String(myIntentPWM));
-*/
-                
+ 
                 
                 display.setCursor(10,120);
                 display.println("Servo:");
@@ -635,41 +595,13 @@ void loop(){
 
 
 
-/*
 
-          // Check if we need to change the Intent speed!
-          if (myPwmNow == myPwmOld) {
-            myIntentPWM = myPwmNow; 
-                
-          }
-
-                    // Check if we need to change the Intent direction!
-          if (myServoNow == myServoOld) {
-            myIntentServo = myServoNow;
-          }
-
-*/
-/*        // if car is stopped this code was suppossed to make it look for objects 
- *        // by continuously turning! 
-          if (myIntentPWM == 0 || myIntentGoal < 4 ) { 
-            myLostCount += 1;
-            if (myLostCount > MY_LOST_COUNT_MAX ){   // we have been lost for a while so turn in right hand circles
-               // myLostCount =  0;  // make it last longer
-                myIntentGoal = 4; // 0=stop, 1=right, 2= left, 3= faster, 4=LOST
-                myIntentServo =  MY_SERVO_MAX;
-                myIntentPWM =  MY_PWM_MIN;
-              }
-          }
-
-
-*/
          // myPwmOld = myPwmNow;   // reset the old value for next loop
          // myServoOld = myServoNow;   // reset the old value for next loop
           
          // ACTIVATE THE Main MOTOR
          myGlobalD5 = myPwmNow;     // this is updated in the thread   
          ei_printf("\n" );
-
 
 
 
