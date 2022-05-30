@@ -28,7 +28,8 @@
  * 
          envie_m7.build.extra_flags=-DEI_CLASSIFIER_ALLOCATION_STATIC
  *
- * 
+ * Note 4:(advanced!) In edge impulse training: choose ... expert mode and object_weight=100 (less for fewer more accuarte objects) 
+ * and cut_point for layer reduction       cut_point = mobile_net_v2.get_layer('block_6_expand_relu')
  * 
  * 
  * Use at your own risk!
@@ -172,6 +173,10 @@ int myConnectedValueAsIntPercent2nd = 0;  // are these needed
 
 void myLedBlue_myThread01(){
   // don't do display or ei_printf commands here as it goes to fast
+
+// following was for an intent concept that the car wanted to do something unless changed by 
+// continuous data
+  /*
    while (true) {
       myThreadCount += 1;
       if (myThreadCount >= MY_INTENT_COUNT ) {
@@ -184,6 +189,16 @@ void myLedBlue_myThread01(){
       }
       ThisThread::sleep_for(MY_THREAD_SLEEP);   
    }
+
+*/
+   while (true) {
+
+      analogWrite(D5, myGlobalD5); 
+      myServo_D2.write(myServoNow);  
+      
+      ThisThread::sleep_for(MY_THREAD_SLEEP);   
+   }
+   
 }
 
 
@@ -435,13 +450,13 @@ void loop(){
 
           
             
-         if (myMaxHeight == 0 ) {  // ignore no objects if LOST intent
+         if (myMaxHeight == 0 ) {  // stop if no obects detected
              myPwmNow = 0;  // MY_PWM_MIN;  // 0;  // stop or go slow
-             myIntentGoal = 0;
+             //myIntentGoal = 0;
              myServoNow = MY_SERVO_STRAIGHT;  // MY_SERVO_MAX;   // so turn   MY_SERVO_STRAIGHT;   // wheels straight
              display.setCursor(50, 50);
-             display.println("STOP-slow-right");
-          } else {
+             display.println("STOP!");
+          } else {  // got objects so speed depends on how skinny best box is
                myPwmNow = (myMaxHeight/myConnectedWidth) * HEIGHT_WIDTH_PWM  ;   // taller the bounding box faster the car
               // change later
               //myPwmNow =   MY_PWM_MIN;                                          // wider the bounding box slower the car
@@ -454,39 +469,51 @@ void loop(){
                  myPwmNow = MY_PWM_MIN;   
               }
         int mySlopeX = 0;
-        if (myGlobalCount == 1 && myMaxHeight > MY_MAXHEIGHT_GOOD) {   // one object large maxHeight so go straight
+        int myShiftX = 0;
+        //not really it should never really go straight
 
-              myServoNow = MY_SERVO_STRAIGHT;
+        
+        if (myGlobalCount == 1) {  // && myMaxHeight > MY_MAXHEIGHT_GOOD) {   // one object large maxHeight so go straight
+
+             // myServoNow = MY_SERVO_STRAIGHT;
               digitalWrite(LEDB, LOW);      // Blue 
               digitalWrite(LEDG, LOW);      // green  
-              display.setCursor(10, 50);
-              display.println("Straight");
-              ei_printf("Cyan go Straight: %d", myServoNow );
+              display.setCursor(10, 30);
+              display.println("one Object");
+              ei_printf("Cyan one Object: ");
             
-        } else {
+        } 
+        
+        
+       // else {
+           // both these equations are probably the same as the 2nd data is probably zero
+
+           
+            myShiftX = MY_MIDDLE_X - (myConnectedX + (myConnectedWidth/2));
+            
             if (myGlobalCount <= 1 ) {   // one object large maxHeight so go straight
-               mySlopeX = MY_MIDDLE_X - (myConnectedX + (myConnectedWidth/2));
+               mySlopeX = 1;
             } else {
                mySlopeX = (myConnectedX + (myConnectedWidth/2)) - (myConnectedX2nd + (myConnectedWidth2nd/2));
             }
         
-       if (mySlopeX > 0 ) { // go right
-         // myServoNow = MY_SERVO_STRAIGHT + MY_SERVO_JUMP;   //   += for increasing but worse for intent
-          myServoNow = MY_SERVO_STRAIGHT + mySlopeX;   //   += for increasing but worse for intent
+       if (myShiftX < 0 ) { // green go right
+         // myServoNow = MY_SERVO_STRAIGHT + MY_SERVO_JUMP;   
+          myServoNow = MY_SERVO_STRAIGHT + myShiftX;   
           digitalWrite(LEDG, LOW);      // green right 
           ei_printf("Green go Right: %d", myServoNow );
 
-          display.setCursor(50, 50);
+          display.setCursor(10, 60);
           display.println("Green Right"); 
        } else {   // go left
            // myServoNow = MY_SERVO_STRAIGHT - MY_SERVO_JUMP; //   -= for increasing but worse for intent
-            myServoNow = MY_SERVO_STRAIGHT - mySlopeX; //   -= for increasing but worse for intent
+            myServoNow = MY_SERVO_STRAIGHT - myShiftX; //   -= for increasing but worse for intent
             digitalWrite(LEDB, LOW);      // Blue left  
-            display.setCursor(70, 50);
+            display.setCursor(60, 60);
             display.println("blue left");
             ei_printf("Blue go Left: %d", myServoNow );
           
-      } // end mySlopeX > 0
+      //} // end mySlopeX > 0
      } // end more than one object
     //} // end big else maxHeight== 0
      
@@ -578,6 +605,8 @@ void loop(){
 
                 display.setCursor(20,10);
                 display.println("Rocksetta-Drive");  
+
+/*
                 
                 display.setCursor(2, 2);
                 display.println(String(myIntentGoal));
@@ -585,7 +614,7 @@ void loop(){
                 display.println(String(myIntentServo));
                 display.setCursor(100, 110);
                 display.println(String(myIntentPWM));
-
+*/
                 
                 
                 display.setCursor(10,120);
@@ -602,7 +631,7 @@ void loop(){
 
 
 
-
+/*
 
           // Check if we need to change the Intent speed!
           if (myPwmNow == myPwmOld) {
@@ -615,7 +644,7 @@ void loop(){
             myIntentServo = myServoNow;
           }
 
-
+*/
 /*        // if car is stopped this code was suppossed to make it look for objects 
  *        // by continuously turning! 
           if (myIntentPWM == 0 || myIntentGoal < 4 ) { 
@@ -630,8 +659,8 @@ void loop(){
 
 
 */
-          myPwmOld = myPwmNow;   // reset the old value for next loop
-          myServoOld = myServoNow;   // reset the old value for next loop
+         // myPwmOld = myPwmNow;   // reset the old value for next loop
+         // myServoOld = myServoNow;   // reset the old value for next loop
           
          // ACTIVATE THE Main MOTOR
          myGlobalD5 = myPwmNow;     // this is updated in the thread   
