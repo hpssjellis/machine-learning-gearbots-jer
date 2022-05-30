@@ -106,13 +106,13 @@ Servo myServo_D2;
 bool myLoRaStop = false;
 
 
-
+const float PIXEL_TO_DEGREE = 0.6;    // can be adjusted. closer to 1 car turns faster
 const int  MY_MAXHEIGHT_GOOD = 20; //y and height
 const int  MY_THREAD_SLEEP = 10;   // default 10, ms the motor thread sleeps, lower the number faster the response
 const int  MY_INTENT_COUNT = 2000;   // >= 2 how many threads until the intent kicks in. Higher more mellow, lower more intense
 
 const float MY_FOMO_CUTOFF = 0.75;
-const int MY_MIDDLE_X = 40; //38;  //44;    //  (98 pixels / 2) - 4
+const int MY_MIDDLE_X = 44; //38;  //44;    //  (98 pixels / 2) - 4
 const int MY_SERVO_STRAIGHT_RANGE = 20;  // middle location allowable error
 const int  MY_SERVO_JUMP = 10;   // 3 if increasing but +-10 if fixed for INTENT matching
 
@@ -499,23 +499,23 @@ void loop(){
 
 
        // new algorithm always this equation
-       myServoNow = MY_SERVO_STRAIGHT - myShiftX;         
+       myServoNow = MY_SERVO_STRAIGHT - round(myShiftX * PIXEL_TO_DEGREE );   //* mySlopeX);         
         
-       if (myShiftX < 0 ) { // green go right
+       if (myShiftX > 0 ) { // green go right
          // myServoNow = MY_SERVO_STRAIGHT + MY_SERVO_JUMP;   
         //  myServoNow = MY_SERVO_STRAIGHT + myShiftX;   
           digitalWrite(LEDG, LOW);      // green right 
-          ei_printf("Green go Right: %d", myServoNow );
+          ei_printf("Green go left: %d", myServoNow );
 
-          display.setCursor(10, 60);
-          display.println("Green Right"); 
+          display.setCursor(60, 60);
+          display.println("Green Left"); 
        } else {   // go left
            // myServoNow = MY_SERVO_STRAIGHT - MY_SERVO_JUMP; //   -= for increasing but worse for intent
            // myServoNow = MY_SERVO_STRAIGHT + myShiftX; //   -= for increasing but worse for intent
             digitalWrite(LEDB, LOW);      // Blue left  
-            display.setCursor(60, 60);
-            display.println("blue left");
-            ei_printf("Blue go Left: %d", myServoNow );
+            display.setCursor(10, 60);
+            display.println("blue right");
+            ei_printf("Blue go right: %d", myServoNow );
           
       //} // end mySlopeX > 0
      } // end more than one object
