@@ -40,8 +40,6 @@ https://nathannull.github.io/GearbotsNS/public/index.html
 # Brandon  
 https://machinelearning3dprinting.github.io/gearbot_brandon/public/index.html
 
-# Romeo 
-https://romeogrey.github.io/Gearbots-Romeo/public/index.html
 
 
 
@@ -80,6 +78,8 @@ website: https://gavidd.github.io/David/public/
 .
 
 
+# Romeo 
+https://romeogrey.github.io/Gearbots-Romeo/public/index.html
 
 
 # Aaron 
