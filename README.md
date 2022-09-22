@@ -2,6 +2,12 @@
 My repo for the machine learning Engineering design group
 
 
+Vision Classify reminder site 
+
+https://hpssjellis.github.io/multi-language-edgeimpulse-tutorial-vision-cell-phone/#top
+
+
+
 RC car ML downloads at [downloads](downloads/)
 
 .
