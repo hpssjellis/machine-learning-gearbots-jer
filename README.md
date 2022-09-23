@@ -166,6 +166,9 @@ Brandon's Circuit Diagram
 <img src="https://user-images.githubusercontent.com/5605614/191873567-31a3f0ee-20cc-4c13-83e8-817c6bd09ea9.png" width=900>
 
 
+<img src="https://user-images.githubusercontent.com/5605614/191873872-680042a4-848b-48f2-9ae7-c874bb97690d.png" width=900>
+
+
 
 
 
