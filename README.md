@@ -160,7 +160,10 @@ July 8th, Thursday
 
 
 
+Brandon's Circuit Diagram
 
+
+<img src="https://user-images.githubusercontent.com/5605614/191873567-31a3f0ee-20cc-4c13-83e8-817c6bd09ea9.png" width=500>
 
 
 
