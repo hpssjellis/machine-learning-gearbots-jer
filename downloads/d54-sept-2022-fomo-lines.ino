@@ -373,7 +373,7 @@ void loop(){
         if (bb.value == 0) {
             display.setCursor(3, 5);
             display.println("0: I am lost");    
-        }
+   
             continue;
         }
 
