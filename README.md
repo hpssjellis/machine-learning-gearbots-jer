@@ -265,3 +265,8 @@ Website https://ethan-will.github.io/machine-learning-gearbots-eth/public/
 ![image](https://user-images.githubusercontent.com/5605614/138486093-81a9bc95-1730-4333-ba32-c26dd73b2be9.png)
 
 
+
+
+## My latest trining for FOMO
+
+![image](https://user-images.githubusercontent.com/5605614/192192066-d2457df0-ba0f-4e55-9c20-52d0c9cfeb4e.png)
