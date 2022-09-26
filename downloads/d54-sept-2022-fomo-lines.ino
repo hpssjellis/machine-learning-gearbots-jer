@@ -371,8 +371,8 @@ void loop(){
     for (size_t ix = 0; ix < EI_CLASSIFIER_OBJECT_DETECTION_COUNT; ix++) {
         auto bb = result.bounding_boxes[ix];
         if (bb.value == 0) {
-            display.setCursor(3, yMap+5);
-            display.println("0 I am lost");    
+            display.setCursor(3, 5);
+            display.println("0: I am lost");    
         }
             continue;
         }
@@ -395,18 +395,18 @@ void loop(){
         display.setCursor(xMap+2, yMap);
         display.println(bb.label);
 
-        display.setCursor(3, yMap+5);
+        display.setCursor(3, 5);
         if (String(bb.label).substring(0, 1) == "1"){    // looking for the coding numbers
-          display.println("1 turn left");            
+          display.println("1: turn left");            
           digitalWrite(LEDB, LOW);    
         }
 
         if (String(bb.label).substring(0, 1) == "2"){
-          display.println("2 turn right");       
+          display.println("2: turn right");       
           digitalWrite(LEDG, LOW);       
         }
         if (String(bb.label).substring(0, 1) == "3"){
-          display.println("3 go fast");     
+          display.println("3: go fast");     
           digitalWrite(LEDB, LOW);          
           digitalWrite(LEDG, LOW);       
         }       
