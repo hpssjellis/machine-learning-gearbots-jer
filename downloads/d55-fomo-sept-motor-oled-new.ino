@@ -398,7 +398,7 @@ void loop(){
         display.setCursor(xMap+2, yMap);
         display.println(bb.label);
 
-        display.setCursor(3, 5);
+        display.setCursor(3, 50);  // write them near the left midway down the page
         if (String(bb.label).substring(0, 1) == "1"){    // looking for the coding numbers
           display.println("1: turn left");            
           digitalWrite(LEDB, LOW);  
