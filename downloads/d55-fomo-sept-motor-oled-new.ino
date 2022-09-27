@@ -368,12 +368,12 @@ void loop(){
         return;
     }
 
-
+    
     bool bb_found = result.bounding_boxes[0].value > 0;
     for (size_t ix = 0; ix < EI_CLASSIFIER_OBJECT_DETECTION_COUNT; ix++) {
         auto bb = result.bounding_boxes[ix];
         if (bb.value == 0) {
-            display.setCursor(3, 5);
+            display.setCursor(3, 50);
             display.println("0: I am lost");    
             myPwmNow = MY_PWM_MIN;   // slowly go in a right turning circle when lost
             myServoNow = MY_SERVO_MAX;   
@@ -397,6 +397,9 @@ void loop(){
         int heightMap = map(bb.height, 0,96, 0,127);
         display.setCursor(xMap+2, yMap);
         display.println(bb.label);
+
+        // draw the box where the FOMO was found
+        display.drawRect(xMap, yMap, widthMap, heightMap, SSD1327_WHITE ); // good value`               
 
         display.setCursor(3, 50);  // write them near the left midway down the page
         if (String(bb.label).substring(0, 1) == "1"){    // looking for the coding numbers
