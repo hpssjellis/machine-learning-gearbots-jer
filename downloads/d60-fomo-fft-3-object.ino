@@ -308,9 +308,7 @@ void setup(){
 */
 void loop(){
   
-    digitalWrite(LEDB, HIGH);   //on board LED's are turned off by HIGH    
-    digitalWrite(LEDG, HIGH);   
-    digitalWrite(LEDR, HIGH); 
+
     // instead of wait_ms, we'll wait on the signal, this allows threads to cancel us...
     if (ei_sleep(myDelay) != EI_IMPULSE_OK) {
         return;
@@ -411,7 +409,9 @@ void loop(){
         display.drawRect(xMap, yMap, widthMap, heightMap, SSD1327_WHITE ); // good value`               
 
         display.setCursor(3, 30);  // write them near the left midway down the page
-
+        digitalWrite(LEDB, HIGH);   //on board LED's are turned off by HIGH    
+        digitalWrite(LEDG, HIGH);   
+        digitalWrite(LEDR, HIGH); 
 
                
         if (String(bb.label).substring(0, 1) == "1"){    // looking for the coding numbers
@@ -434,7 +434,7 @@ void loop(){
         if (String(bb.label).substring(0, 1) == "2"){  //2bullseyeGoFast
           display.println("2:bullseye-go-fast");     
           digitalWrite(LEDR, LOW);    
-          digitalWrite(LEDG, LOW);    
+          digitalWrite(LEDG, HIGH);    
           digitalWrite(LEDB, HIGH);  
           myPwmNow = MY_PWM_MAX;   // straight and fast - not too fast for testing
           myServoNow = MY_SERVO_STRAIGHT;        
