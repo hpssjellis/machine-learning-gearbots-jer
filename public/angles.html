@@ -1,5 +1,5 @@
 
-<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.1.2-22</h3>
+<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.1.2-23</h3>
 
     
     
@@ -12,7 +12,7 @@ Enter your equation to calculate angle and speed Use variables myX, myY, myAngle
     <br>
    <textarea rows=20 cols=70 style="position:relative;  left:0; top:0; "  onmousemove="{             
    //document.getElementById('myDiv01').innerHTML = 'x:' + event.clientX  + ', y:' + event.clientY
-   document.getElementById('bbx').value = event.clientX - 48 - this.getBoundingClientRect().left
+   document.getElementById('bbx').value = (event.clientX/this.getBoundingClientRect().width) - 48 - this.getBoundingClientRect().left
    document.getElementById('bby').value = event.clientY //- this.clientY
      
    document.getElementById('myDiv01').innerHTML = this.getBoundingClientRect().width
