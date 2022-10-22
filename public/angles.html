@@ -9,10 +9,16 @@
    myX = document.getElementById('bbx').value    
    myY = document.getElementById('bby').value  
                    
-   myAng = 5
-   mySpe = 5                
-   myY = document.getElementById('myAngle').value = myAng
-   myY = document.getElementById('mySpeed').value = mySpe
+   myAngle = 5
+   mySpeed = 5   
+                   
+                   
+                   
+                   
+   myY = document.getElementById('myAngle2').value = myAngle
+   myY = document.getElementById('mySpeed2').value = mySpeed
+   
+    document.getElementById('myArrow').style.rotate = myAngle + 'deg';	                
   // console.log('myX')                               
   // console.log(myX)                                    
 }">
@@ -23,9 +29,9 @@
     
 X: -48 to 48 <input type=text id="bbx" > Y: 0 to 90 <input type=text id="bby"><br>
 Enter your equation to calculate angle and speed<br>
-  Enter Your Calculation:  <input type=text id="myCalc" > <br>
-  Calculated Angle in degrees:  <input type=text id="myAngle" READONLY><br>
-  Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed" READONLY><br>
+  Enter Your Calculation:  <input type=text id="myCalc" > <br>  Use variables myX, myY, myAngle, mySpeed
+  Calculated Angle in degrees:  <input type=text id="myAngle2" READONLY><br>
+  Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed2" READONLY><br>
     
     
     
