@@ -2,18 +2,18 @@
 
 
 <body onmousemove="{             
-   document.getElementById('myDiv01').innerHTML = 'x:' + event.clientX  + ', y:' + event.clientY
+   //document.getElementById('myDiv01').innerHTML = 'x:' + event.clientX  + ', y:' + event.clientY
    document.getElementById('bbx').value = event.clientX 
    document.getElementById('bby').value = event.clientY
                    
-   myX = document.getElementById('bbx').value    
-   myY = document.getElementById('bby').value  
+   myX = 400-document.getElementById('bbx').value    
+   myY = 400-document.getElementById('bby').value  
                    
    myAngle = 5
    mySpeed = 5   
                    
                    
-                   
+   eval(document.getElementById('myCalc').value )                
                    
    myY = document.getElementById('myAngle2').value = myAngle
    myY = document.getElementById('mySpeed2').value = mySpeed
