@@ -1,8 +1,10 @@
 
-   <textarea rows="960px" cols="960px" style="position:relative;  left:0; top:0; "  onmousemove="{             
+   <textarea  style="position:relative;  left:0; top:0; width:90px; height:90px; "  onmousemove="{             
    //document.getElementById('myDiv01').innerHTML = 'x:' + event.clientX  + ', y:' + event.clientY
-   document.getElementById('bbx').value = ((event.clientX * 96 )/this.getBoundingClientRect().width) - 48 + this.getBoundingClientRect().left
-   document.getElementById('bby').value = this.getBoundingClientRect().top - this.getBoundingClientRect().height - event.clientY 
+   // document.getElementById('bbx').value = ((event.clientX * 96 )/this.getBoundingClientRect().width) - 48 + this.getBoundingClientRect().left
+   //  document.getElementById('bby').value = this.getBoundingClientRect().top - this.getBoundingClientRect().height - event.clientY 
+   document.getElementById('bbx').value = event.clientX 
+   document.getElementById('bby').value = event.clientY 
      
    document.getElementById('myDiv01').innerHTML = this.getBoundingClientRect().width
                                                                                        
@@ -26,15 +28,15 @@
    myY = document.getElementById('mySpeed2').value = mySpeed
    
    document.getElementById('myArrow').style.rotate = (myAngle*1) + 97 + 'deg';	
-   }"></textarea> 
+   }"></textarea> <br>
     
    
-<img id="myArrow" style="" src="arrow1.png"  width=200 />
+. . . . . . . . . . . <img id="myArrow" style="" src="arrow1.png"  width=200 />
 
 
 
 
-<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.1.2-26</h3>
+<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.1.2-27</h3>
 
     
     
