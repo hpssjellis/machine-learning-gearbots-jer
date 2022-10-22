@@ -1,9 +1,5 @@
 
-
-
-<body >
-<h> Version 0.1.2-16</h>
-<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground</h3>
+<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.1.2-17</h3>
 
     
     
@@ -13,11 +9,11 @@ Enter your equation to calculate angle and speed<br>
   Calculated Angle in degrees:  <input type=text id="myAngle2" READONLY><br>
   Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed2" READONLY><br>
     
-    
+    <br>
    <textarea rows=20 cols=70 onmousemove="{             
    //document.getElementById('myDiv01').innerHTML = 'x:' + event.clientX  + ', y:' + event.clientY
-   document.getElementById('bbx').value = event.clientX 
-   document.getElementById('bby').value = event.clientY
+   document.getElementById('bbx').value = event.clientX - 48 
+   document.getElementById('bby').value = event.clientY - this.clientY
                    
    myX = 400-document.getElementById('bbx').value    
    myY = 400-document.getElementById('bby').value  
@@ -32,12 +28,8 @@ Enter your equation to calculate angle and speed<br>
    myY = document.getElementById('mySpeed2').value = mySpeed
    
    document.getElementById('myArrow').style.rotate = myAngle + 'deg';	
-   }">...</textarea> 
+   }"></textarea> 
     
-
-
-   
-<br> <br><br><br><br><br><br><br><br>
    
 <img id="myArrow" style="" src="arrow1.png"  width=200 />
 
