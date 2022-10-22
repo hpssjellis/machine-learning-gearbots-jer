@@ -3,20 +3,20 @@
 
 <body onmousemove="{             
    document.getElementById('myDiv01').innerHTML = 'x:'+event.clientX  + ', y:'+event.clienty 
-   myX = document.getElementById('bbx"').value    
+   myX = document.getElementById('bbx').value    
    console.log('myX')                               
    console.log(myX)                                    
 }">
-<h> Version 0.1.1-10</h>
-<h3> edgeimpulse fomo x y to car angle and speed Kind of a PID controller testing ground</h3>
+<h> Version 0.1.1-11</h>
+<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground</h3>
 
     
     
 X: -48 to 48 <input type=text id="bbx" > Y: 0 to 90 <input type=text id="bby"><br>
 Enter your equation to calculate angle and speed<br>
-    <input type=text id="myCalc" > <br>
-    <input type=text id="myAngle" READONLY><br>
-    <input type=text id="mySpeed" READONLY><br>
+  Enter Your Calculation:  <input type=text id="myCalc" > <br>
+  Calculated Angle in degrees:  <input type=text id="myAngle" READONLY><br>
+  Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed" READONLY><br>
     
     
     
