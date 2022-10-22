@@ -10,12 +10,13 @@ Enter your equation to calculate angle and speed Use variables myX, myY, myAngle
   Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed2" READONLY><br>
     
     <br>
-   <textarea rows=20 cols=70 onmousemove="{             
+   <textarea rows=20 cols=70 style="position:relative;  left:0; top:0; "  onmousemove="{             
    //document.getElementById('myDiv01').innerHTML = 'x:' + event.clientX  + ', y:' + event.clientY
    document.getElementById('bbx').value = event.clientX - 48 
    document.getElementById('bby').value = event.clientY //- this.clientY
-                                          alert(this.x)
-                   
+     
+   document.getElementById('myDiv01').innerHTML = this.style.left
+                                                                                       
    myX = 400-document.getElementById('bbx').value    
    myY = 400-document.getElementById('bby').value  
                    
