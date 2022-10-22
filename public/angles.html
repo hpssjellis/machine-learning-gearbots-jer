@@ -1,15 +1,4 @@
 
-<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.1.2-24</h3>
-
-    
-    
-X: -48 to 48 <input type=text id="bbx" > Y: 0 to 90 <input type=text id="bby"><br>
-Enter your equation to calculate angle and speed Use variables myX, myY, myAngle, mySpeed<br>
-  Enter Your Calculation:  <input type=text id="myCalc" size= 100 value="myAngle=myX; mySpeed=200;">   <br>
-  Calculated Angle in degrees:  <input type=text id="myAngle2" READONLY><br>
-  Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed2" READONLY><br>
-    
-    <br>
    <textarea rows=20 cols=70 style="position:relative;  left:0; top:0; "  onmousemove="{             
    //document.getElementById('myDiv01').innerHTML = 'x:' + event.clientX  + ', y:' + event.clientY
    document.getElementById('bbx').value = ((event.clientX * 96 )/this.getBoundingClientRect().width) - 48 + this.getBoundingClientRect().left
@@ -41,6 +30,21 @@ Enter your equation to calculate angle and speed Use variables myX, myY, myAngle
     
    
 <img id="myArrow" style="" src="arrow1.png"  width=200 />
+
+
+
+
+<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.1.2-25</h3>
+
+    
+    
+X: -48 to 48 <input type=text id="bbx" > Y: 0 to 90 <input type=text id="bby"><br>
+Enter your equation to calculate angle and speed Use variables myX, myY, myAngle, mySpeed<br>
+  Enter Your Calculation:  <input type=text id="myCalc" size= 100 value="myAngle=myX; mySpeed=200;">   <br>
+  Calculated Angle in degrees:  <input type=text id="myAngle2" READONLY><br>
+  Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed2" READONLY><br>
+    
+    <br>
 
 <div id="myDiv01">...</div>
 
