@@ -5,6 +5,7 @@
    //  document.getElementById('bby').value = this.getBoundingClientRect().top - this.getBoundingClientRect().height - event.clientY 
    document.getElementById('bbx').value = event.clientX 
    document.getElementById('bby').value = event.clientY 
+   document.getElementById('myConvertedX').value = 48 - parseIntdocument.getElementById('bbx').value())
      
    document.getElementById('myDiv01').innerHTML = this.getBoundingClientRect().width
                                                                                        
@@ -36,11 +37,12 @@
 
 
 
-<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.1.2-27</h3>
+<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.2.0-28</h3>
 
     
     
-X: -48 to 48 <input type=text id="bbx" > Y: 0 to 90 <input type=text id="bby"><br>
+raw FOMO X: 0 to 96 <input type=text id="bbx" > raw FOMO Y: 0 to 90 <input type=text id="bby"><br>
+Converted X -48 to 48 <input type=text id="myConvertedX" READONLY>
 Enter your equation to calculate angle and speed Use variables myX, myY, myAngle, mySpeed<br>
   Enter Your Calculation:  <input type=text id="myCalc" size= 100 value="myAngle=myX; mySpeed=200;">   <br>
   Calculated Angle in degrees:  <input type=text id="myAngle2" READONLY><br>
