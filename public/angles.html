@@ -20,7 +20,7 @@
    mySpeed = 5   
                    
                    
-   eval(document.getElementById('myCalc').value )    
+   eval(document.getElementById('myCalc').value )    // changes mySpeed and myAngle
                                                                                        
    //const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;                                                                                    
     
@@ -29,10 +29,14 @@
    // Math.tan(radians); 
                                                                                        
                    
-   myY = document.getElementById('myAngle2').value = myAngle
-   myY = document.getElementById('mySpeed2').value = mySpeed
+   document.getElementById('myAngle2').value = myAngle
+   document.getElementById('mySpeed2').value = mySpeed
    
    document.getElementById('myArrow').style.rotate = (myAngle*1) + 97 + 'deg';	
+   document.getElementById('myArrow').style.height = (mySpeed*1) + 'px';	
+                                                                                                            
+                                                                                                            
+                                                                                                            
    }"></textarea> <br>
     
    
@@ -41,14 +45,14 @@
 
 
 
-<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.2.1-33</h3>
+<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 0.2.1-34</h3>
 
     
     
 raw FOMO X: 0 to 96 <input type=text id="bbx" > raw FOMO Y: 0 to 90 <input type=text id="bby"><br>
 Converted X -48 to 48 <input type=text id="myConvertedX" READONLY><br>
 Enter your equation to calculate angle and speed Use variables myX (the converted values), myY, myAngle, mySpeed<br>
-  Enter Your Calculation:  <input type=text id="myCalc" size= 100 value="myAngle = 90 + myX; mySpeed=200;">   <br>
+  Enter Your Calculation:  <input type=text id="myCalc" size= 100 value="myAngle = 90 + myX; mySpeed=myAngle;">   <br>
   Calculated Angle in degrees:  <input type=text id="myAngle2" READONLY><br>
   Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed2" READONLY><br>
     
