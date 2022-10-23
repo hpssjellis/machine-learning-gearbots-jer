@@ -14,7 +14,7 @@
    document.getElementById('myConvertedX').value = (document.getElementById('bbx').value * 1) - 48                                                                                               
                                                                                                    
    myX = document.getElementById('myConvertedX').value  
-   myY = 400-document.getElementById('bby').value  
+   myY = 96-document.getElementById('bby').value  
                    
    myAngle = 5
    mySpeed = 5   
@@ -50,8 +50,8 @@
     
     
 raw FOMO X: 0 to 96 <input type=text id="bbx" > raw FOMO Y: 0 to 90 <input type=text id="bby"><br>
-Converted X -48 to 48 <input type=text id="myConvertedX" READONLY><br>
-Enter your equation to calculate angle and speed Use variables myX (the converted values), myY, myAngle, mySpeed<br>
+Converted X -48 to 48 <input type=text id="myConvertedX" READONLY>Converted Y 0 to 96 <input type=text id="myConvertedY" READONLY><br>
+Enter your equation to calculate angle and speed Use variables myX , myY(the converted values), myAngle, mySpeed<br>
   Enter Your Calculation:  <input type=text id="myCalc" size= 100 value="myAngle = 90 + parseInt(myX); mySpeed = 70-Math.abs(myX);">   <br>
   Calculated Angle in degrees:  <input type=text id="myAngle2" READONLY><br>
   Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed2" READONLY><br>
