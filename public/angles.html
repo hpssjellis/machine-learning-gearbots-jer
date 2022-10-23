@@ -11,13 +11,13 @@
    //document.getElementById('myDiv01').innerHTML = this.getBoundingClientRect().width
      
                                                                                                    
-   document.getElementById('myConvertedX').value = (document.getElementById('bbx').value * 1) - 48                                                                                               
-                                                                                                   
+   document.getElementById('myConvertedX').value = (document.getElementById('bbx').value * 1) - 48     
+   document.getElementById('myConvertedX').value = 96-(document.getElementById('bby').value * 1) 
    myX = document.getElementById('myConvertedX').value  
-   myY = 96-document.getElementById('bby').value  
+   myY = document.getElementById('myConvertedY').value  
                    
-   myAngle = 5
-   mySpeed = 5   
+   myAngle = 5  // random set value to be changed by eval below
+   mySpeed = 5   // random set value to be changed by eval below
                    
                    
    eval(document.getElementById('myCalc').value )    // changes mySpeed and myAngle
