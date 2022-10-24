@@ -1,0 +1,76 @@
+
+   <textarea  READONLY style="position:relative;  left:0; top:0; width:320px; height:318px; "  onmousemove="{             
+   //document.getElementById('myDiv01').innerHTML = 'x:' + event.clientX  + ', y:' + event.clientY
+   // document.getElementById('bbx').value = ((event.clientX * 96 )/this.getBoundingClientRect().width) - 48 + this.getBoundingClientRect().left
+   //  document.getElementById('bby').value = this.getBoundingClientRect().top - this.getBoundingClientRect().height - event.clientY 
+                                                                                                   
+   document.getElementById('bbx').value = parseInt(event.clientX / 3.333)
+   document.getElementById('bby').value = parseInt(event.clientY / 3.333)
+                                                                                                   
+     
+   //document.getElementById('myDiv01').innerHTML = this.getBoundingClientRect().width
+     
+                                                                                                   
+   document.getElementById('myConvertedX').value = (document.getElementById('bbx').value * 1) - 48     
+   document.getElementById('myConvertedY').value = 96-(document.getElementById('bby').value * 1) 
+   myX = document.getElementById('myConvertedX').value  
+   myY = document.getElementById('myConvertedY').value  
+                   
+   myAngle = 5  // random set value to be changed by eval below
+   mySpeed = 5   // random set value to be changed by eval below
+                   
+                   
+   eval(document.getElementById('myCalc').value )    // changes mySpeed and myAngle
+                                                                                       
+   //const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;                                                                                    
+    
+                                                                                       
+   // let radians = degrees * Math.PI/180;
+   // Math.tan(radians); 
+                                                                                       
+                   
+   document.getElementById('myAngle2').value = myAngle
+   document.getElementById('mySpeed2').value = mySpeed
+   
+   document.getElementById('myArrow').style.rotate = (myAngle*1) + 97 + 'deg';	
+   document.getElementById('myArrow').style.width = (mySpeed*1) + 'px';	
+                                                                                                            
+                                                                                                            
+                                                                                                            
+   }">Move mouse here represents the FOMO X and Y values</textarea> <br>
+    
+   
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+<img id="myArrow" style="" src="shredderDown.jpeg"  width=200 />
+
+
+
+
+<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 1.0.1-41</h3>
+Try your equation below to change both the angle and the speed of the car<br><br>
+    
+    
+raw FOMO X: 0 to 96 <input type=text id="bbx" > raw FOMO Y: 0 to 96 <input type=text id="bby"><br>
+myX -48 to 48 <input type=text id="myConvertedX" READONLY>myY 96 to 0 <input type=text id="myConvertedY" READONLY><br>
+Enter your equation to calculate angle and speed Use variables myX , myY(the converted values), myAngle, mySpeed<br><br>
+
+  Enter Your Calculation:  <input type=text id="myCalc" size= 100 value="myAngle = 90 + parseInt(myX); mySpeed = 70-Math.abs(myX);">   <br>
+  Calculated Angle in degrees:  <input type=text id="myAngle2" READONLY><br>
+  Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed2" READONLY><br>
+    
+    <br>
+
+<div id="myDiv01">...</div>
+
+
+Note: For single object detection you must make a pre-compile change to a model_metadata.h <br>
+
+<img src="model_metadata.h" width=500> <br><br>
+
+also note:<br>
+
+Math.toDegrees(Math.atan(myX/myY))
+
+
+
+</body>
