@@ -6,7 +6,8 @@
                                                                                                    
    document.getElementById('bbx').value = parseInt(event.clientX / 3.333)
    document.getElementById('bby').value = parseInt(event.clientY / 3.333)
-                                                                                                   
+   let rawX =   document.getElementById('bbx').value                                 
+   let rawY =   document.getElementById('bby').value                                                                                               
      
    //document.getElementById('myDiv01').innerHTML = this.getBoundingClientRect().width
      
@@ -46,15 +47,15 @@
 
 
 
-<h3> edgeimpulse fomo x y to car angle and speed kind of a PID controller testing ground Version 1.0.1-41</h3>
-Try your equation below to change both the angle and the speed of the car<br><br>
+<h3> <a href="edgeimpulse.com">edgeimpulse.com</a> FOMO x y to car angle and speed testing ground Version 1.0.1-41</h3>
+Try your equation below to change both the angle and the speed of the car (Speed represented by size)<br><br>
     
     
-raw FOMO X: 0 to 96 <input type=text id="bbx" > raw FOMO Y: 0 to 96 <input type=text id="bby"><br>
+Raw FOMO X: 0 to 96 <input type=text id="bbx" > raw FOMO Y: 0 to 96 <input type=text id="bby"><br>
 myX -48 to 48 <input type=text id="myConvertedX" READONLY>myY 96 to 0 <input type=text id="myConvertedY" READONLY><br>
-Enter your equation to calculate angle and speed Use variables myX , myY(the converted values), myAngle, mySpeed<br><br>
+Enter your equation to calculate angle and speed Use variables myX , myY(the converted values), rawX , rawY,  myAngle, mySpeed<br><br>
 
-  Enter Your Calculation:  <input type=text id="myCalc" size= 100 value="myAngle = 90 + parseInt(myX); mySpeed = 70-Math.abs(myX);">   <br>
+  Enter Your equation here:  <input type=text id="myCalc" size= 100 value="myAngle = 90 + parseInt(myX); mySpeed = 70-Math.abs(myX);">   <br>
   Calculated Angle in degrees:  <input type=text id="myAngle2" READONLY><br>
   Calculated Speed in PWM value 0 to 255:  <input type=text id="mySpeed2" READONLY><br>
     
@@ -63,14 +64,14 @@ Enter your equation to calculate angle and speed Use variables myX , myY(the con
 <div id="myDiv01">...</div>
 
 
-Note: For single object detection you must make a pre-compile change to a model_metadata.h <br>
+Note: For single object detection you must make a pre-compile change to a model_metadata.h from 10 default to 1. See image below<br>
 
 <img src="model_metadata.h" width=500> <br><br>
 
-also note:<br>
+Also note for degreeangles using arctan Javascript uses :<br>
 
-Math.toDegrees(Math.atan(myX/myY))
+Math.atan(myY/myX)*180/Math.PI
 
-
+Also note: The arduino is programmed in C/C++ but testing the equstions using javascript at least shows that your math is good.
 
 </body>
