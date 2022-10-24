@@ -74,4 +74,13 @@ Math.atan(myY/myX)*180/Math.PI
 
 Also note: The arduino is programmed in C/C++ but testing the equstions using javascript at least shows that your math is good.
 
+
+
+<!--
+Working for me
+
+myTotal = parseInt(Math.atan(myY/Math.abs(myX))*180/Math.PI);  if (myX <0){myAngle = myTotal} else {myAngle = 180-myTotal};        mySpeed = 70-Math.abs(myX);
+
+
+-->
 </body>
