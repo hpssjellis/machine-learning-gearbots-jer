@@ -414,7 +414,7 @@ void loop(){
             //myPwmNow = MY_PWM_MIN;   // slowly go in a right turning circle when lost
             //myServoNow = MY_SERVO_MAX;   
             myPwmNow = 0;   // stop if nothing
-            myServoNow = MY_SERVO_STRAIGHT;   
+           // myServoNow = MY_SERVO_STRAIGHT;    // DON'T CHANGE THE DIRECTION
             digitalWrite(LEDB, HIGH);   //on board LED's are turned off by HIGH    
             digitalWrite(LEDG, HIGH);   
             digitalWrite(LEDR, HIGH); 
