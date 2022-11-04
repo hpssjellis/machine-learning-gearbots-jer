@@ -2,6 +2,9 @@
  * Base RC car FOMO 96x96 with DC motor, servo and OLED all on the M7 core
  * 
  * 
+ * NOTE: THE MEMORY IS CRASHING IF YOU USE THE SERIAL PRINTf FUNCTION VERY MUCH
+ * MUCH BETTER TO USE THE OLED FOR SHOWING DATA WHILE TESTING 
+ * 
  * Note 1:  To get more than 10 detections
  * 
  * go into the edgeimpulse library you installed for this project find the file
@@ -604,12 +607,10 @@ void loop(){
   
       display.setCursor(10,100);
       display.println(String(myTurning));
-      display.setCursor(50,100);
+      display.setCursor(30,100);
       display.println(String(myTurning2));
 
-      display.setCursor(70,100);
-      display.println("Vertical:");
-      display.setCursor(100,100);
+      display.setCursor(50,100);
       display.println(String(myVertical));
       
       display.setCursor(10,120);
