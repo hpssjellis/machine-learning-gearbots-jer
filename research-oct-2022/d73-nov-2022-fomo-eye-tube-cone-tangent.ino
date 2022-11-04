@@ -526,7 +526,7 @@ void loop(){
           // object not reaching the edges of the screen 
           myServoAngle = map(myTurning2, -40,40, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
 
-          myServoAngle = map(myTurning, -40,40, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
+         // myServoAngle = map(myTurning, -40,40, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
            
           //myServoAngle = map(myTurning, -48,48, MY_SERVO_MIN,MY_SERVO_MAX); // raw position to car turn angle
           //  int myServoAngle = map(myTurning, -48,48, 80,100); // raw position to car turn angle
@@ -607,10 +607,10 @@ void loop(){
   
       display.setCursor(10,100);
       display.println(String(myTurning));
-      display.setCursor(30,100);
+      display.setCursor(50,100);
       display.println(String(myTurning2));
 
-      display.setCursor(50,100);
+      display.setCursor(70,100);
       display.println(String(myVertical));
       
       display.setCursor(10,120);
