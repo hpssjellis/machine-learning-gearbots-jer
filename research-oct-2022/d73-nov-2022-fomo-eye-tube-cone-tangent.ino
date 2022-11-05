@@ -1,4 +1,5 @@
 
+
 /*
  * Base RC car FOMO 96x96 with DC motor, servo and OLED all on the M7 core
  * 
@@ -542,8 +543,7 @@ void loop(){
             myServoAngle = map(myTurning2, 0, 90, MY_SERVO_MAX, MY_SERVO_STRAIGHT); // raw position to car turn angle
             //myPwmNow = MY_PWM_MIN + MY_SERVO_MAX - myServoAngle;  // faster if near middle
          }
-          myPwmNow = map(myTurning2, 0,90, MY_PWM_MIN, MY_PWM_MAX);
-          );  // faster if near middle faster closer to 90 degrees
+          myPwmNow = map(myTurning2, 0,90, MY_PWM_MIN, MY_PWM_MAX);  // faster if near middle faster closer to 90 degrees
 
 
 
