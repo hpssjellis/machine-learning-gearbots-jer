@@ -1,5 +1,3 @@
-
-
 /*
  * Base RC car FOMO 96x96 with DC motor, servo and OLED all on the M7 core
  * 
@@ -540,13 +538,10 @@ void loop(){
             myServoAngle = map(myTurning2, 0,90, MY_SERVO_MIN, MY_SERVO_STRAIGHT); // raw position to car turn angle
             //myPwmNow = MY_PWM_MIN + myServoAngle - MY_SERVO_MIN;  // faster if near middle
          } else {
-            myServoAngle = map(myTurning2, 0, 90, MY_SERVO_MAX, MY_SERVO_STRAIGHT); // raw position to car turn angle
+            myServoAngle = map(myTurning2, 90, 0, MY_SERVO_STRAIGHT, MY_SERVO_MAX); // raw position to car turn angle
             //myPwmNow = MY_PWM_MIN + MY_SERVO_MAX - myServoAngle;  // faster if near middle
          }
           myPwmNow = map(myTurning2, 0,90, MY_PWM_MIN, MY_PWM_MAX);  // faster if near middle faster closer to 90 degrees
-
-
-
         
          /* 
           // Math.atan(myY/myX)*180/Math.PI
@@ -604,6 +599,8 @@ void loop(){
        Serial.print(myServoNow);
        Serial.print(F(", PWM:"));
        Serial.println(myPwmNow);
+
+
 
 
       display.setCursor(20,10);
