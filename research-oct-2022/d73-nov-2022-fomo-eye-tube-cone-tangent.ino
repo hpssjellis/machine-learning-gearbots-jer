@@ -1,3 +1,4 @@
+
 /*
  * Base RC car FOMO 96x96 with DC motor, servo and OLED all on the M7 core
  * 
@@ -514,17 +515,16 @@ void loop(){
          // myTurning = (int)bb.x;   // from -48 to + 48, 0 = straight 
            // int myTurningEnter = (int)bb.x;
            // myTurning = myTurningEnter - 48; 
-           myTurning = (int)bb.x - 48;
+           myTurning = (int)bb.x - 48;   // what if I subtract a larger or smaller number?
             
 
 
-         // possibly this extra math is messing with the memory and killing my OLED
           myVertical = 96-(int)bb.y;   // from 0-96 --> 96 to 0 
           myTurning2 = round( atan2 (myVertical, abs(myTurning)) * 180/3.14159265 ); // radians to degrees and rounding        
  
           
           // object not reaching the edges of the screen 
-          myServoAngle = map(myTurning2, -40,40, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
+         // myServoAngle = map(myTurning2, -48,48, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
 
          // myServoAngle = map(myTurning, -40,40, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
            
@@ -536,12 +536,17 @@ void loop(){
          
          
          if (myTurning < 0) {  // means needs to turn left angle between  min and 90
-           // myServoAngle = map(myTurning2, 0,90, MY_SERVO_MIN,MY_SERVO_STRAIGHT); // raw position to car turn angle
-            myPwmNow = MY_PWM_MIN + myServoAngle - MY_SERVO_MIN;  // faster if near middle
+            myServoAngle = map(myTurning2, 0,90, MY_SERVO_MIN, MY_SERVO_STRAIGHT); // raw position to car turn angle
+            //myPwmNow = MY_PWM_MIN + myServoAngle - MY_SERVO_MIN;  // faster if near middle
          } else {
-           // myServoAngle = map(myTurning2, 0,90, MY_SERVO_STRAIGHT,MY_SERVO_MAX); // raw position to car turn angle
-            myPwmNow = MY_PWM_MIN + MY_SERVO_MAX - myServoAngle;  // faster if near middle
+            myServoAngle = map(myTurning2, 0, 90, MY_SERVO_MAX, MY_SERVO_STRAIGHT); // raw position to car turn angle
+            //myPwmNow = MY_PWM_MIN + MY_SERVO_MAX - myServoAngle;  // faster if near middle
          }
+          myPwmNow = map(myTurning2, 0,90, MY_PWM_MIN, MY_PWM_MAX);
+          );  // faster if near middle faster closer to 90 degrees
+
+
+
         
          /* 
           // Math.atan(myY/myX)*180/Math.PI
