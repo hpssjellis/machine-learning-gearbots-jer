@@ -542,12 +542,12 @@ void loop(){
          
          if (myTurning < 0) {  // means needs to turn left angle between  min and 90
            // myServoAngle = map(myTurning2, 0,90, MY_SERVO_MIN, MY_SERVO_STRAIGHT); // raw position to car turn angle
-            myServoAngle = map(myTurning2, 24, MY_SERVO_STRAIGHT, MY_SERVO_MIN, MY_SERVO_STRAIGHT); // raw position to car turn angle
+            myServoAngle = map(myTurning2, 44, MY_SERVO_STRAIGHT, MY_SERVO_MIN, MY_SERVO_STRAIGHT); // raw position to car turn angle
             myServoAngle = constrain(myServoAngle, MY_SERVO_MIN, MY_SERVO_STRAIGHT);
             //myPwmNow = MY_PWM_MIN + myServoAngle - MY_SERVO_MIN;  // faster if near middle
          } else {
             //myServoAngle = map(myTurning2, 90, 0, MY_SERVO_STRAIGHT, MY_SERVO_MAX); // raw position to car turn angle
-            myServoAngle = map(myTurning2, MY_SERVO_STRAIGHT, 24, MY_SERVO_STRAIGHT, MY_SERVO_MAX); // raw position to car turn angle
+            myServoAngle = map(myTurning2, MY_SERVO_STRAIGHT, 44, MY_SERVO_STRAIGHT, MY_SERVO_MAX); // raw position to car turn angle
             myServoAngle = constrain(myServoAngle,  MY_SERVO_STRAIGHT, MY_SERVO_MAX);
           //myPwmNow = MY_PWM_MIN + MY_SERVO_MAX - myServoAngle;  // faster if near middle
          }
