@@ -66,6 +66,7 @@
 
 //#include <e-nov-2022-v2-fomo-eye-tangent_inferencing.h>
 #include <ei-fomo-v5-nov-2022-eye-tube-cone_inferencing.h>
+//#include <ei-fomo-v6-reduced-nov-2022-eye-tube-cone_inferencing.h>
 
 
 //#include <ei-fomo-nov-2022-eye-tube-cone_inferencing.h>
@@ -180,8 +181,8 @@ int myServoNow = MY_SERVO_STRAIGHT;    // start going straight
 
 const int  HEIGHT_WIDTH_PWM = 25;     //30   multiplier for box wide = slow, tall = fast
 
-const int MY_PWM_MIN = 30;      // 25
-const int MY_PWM_MAX = 50;     //50;  // careful this is the max speed for the car and can be up to 255!
+const int MY_PWM_MIN = 27;      // 25 or 30
+const int MY_PWM_MAX = 45;     //50;  // careful this is the max speed for the car and can be up to 255!
 int myPwmNow = 0;                 // start with it stopped!
 //int myPwmOld = 0;      
 
