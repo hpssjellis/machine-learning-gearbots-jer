@@ -2,6 +2,18 @@
 My repo for the machine learning Engineering design group
 
 
+
+If using gitpod.io  to start apache2 into the public folder type
+
+```
+apachectl start
+
+```
+
+
+
+
+
 Vision Classify reminder site 
 
 https://hpssjellis.github.io/multi-language-edgeimpulse-tutorial-vision-cell-phone/#top
