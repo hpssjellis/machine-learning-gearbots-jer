@@ -455,7 +455,7 @@ void loop(){
 
 
            // check value to ditch false positives       
-        if (myValue  > 85 && String(bb.label).substring(0, 1) == "3"){    // 3 looking for the coding numbers
+        if (myValue  > 95 && String(bb.label).substring(0, 1) == "3"){    // 3 looking for the coding numbers
           display.println("3 cone Turn Left");   // cone 
           Serial.print(F(", CONE"));
           digitalWrite(D10, 0);   // zero forward, both break
@@ -467,7 +467,7 @@ void loop(){
           myServoNow = MY_SERVO_SLIGHT_HIGH;  // MY_SERVO_SLIGHT_HIGH;     
         }
 
-        if (myValue  > 85 && String(bb.label).substring(0, 1) == "2"){ //  2 tube
+        if (myValue  > 75 && String(bb.label).substring(0, 1) == "2"){ //  2 tube
           display.println("2 tube Turn Right ");
           Serial.print(F(", TUBE"));       
           digitalWrite(D10, 0);   // zero forward, both break
@@ -481,7 +481,7 @@ void loop(){
 
 
 
-        
+        // always accept this data!
         if (String(bb.label).substring(0, 1) == "1"){  // 1bigeyeFast
           display.println("1 bigeye Fast");   
           Serial.print(F(", EYE"));
