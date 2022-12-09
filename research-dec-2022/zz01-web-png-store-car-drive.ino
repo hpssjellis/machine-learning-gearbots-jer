@@ -34,8 +34,8 @@
 // Since if you share this file it will have your info on it
 
 //#include "arduino_secrets.h"     // more safe
-#define SECRET_SSID ""   // your network
-#define SECRET_PASS "" // your password
+#define SECRET_SSID "003-TCHR-L154 1461"   // your network
+#define SECRET_PASS "8/8834Ue" // your password
 
 
 
@@ -351,14 +351,14 @@ void myWifi() {
         if (currentLine.endsWith("GET /stop")) {
           digitalWrite(LEDG, HIGH);               // GET /H turns the LED on
           mode=1;
-          analogWrite(D4, 0); // stop speed 0 of 255
+          analogWrite(D5, 0); // stop speed 0 of 255
         }
         if (currentLine.endsWith("GET /slow")) {
           digitalWrite(LEDG, LOW);                // GET /L turns the LED off
           mode=2;
           digitalWrite(D3, 1);    // set one direction
           digitalWrite(D1, 0);
-          analogWrite(D4, 30);   // go speed 30 of 255
+          analogWrite(D5, 30);   // go speed 30 of 255
         }
 
         if (currentLine.endsWith("GET /P")) {
@@ -373,7 +373,7 @@ void myWifi() {
         if (currentLine.endsWith("GET /left")) {
           digitalWrite(LEDR, HIGH);                // GET /L turns the LED off
           mode=5;
-          analogWrite(D4, 30);    // go speed 30 of 255
+          analogWrite(D5, 30);    // go speed 30 of 255
           myAngle += -10;
           if (myAngle <= 60){myAngle = 60;}  // minimum angle
           myServo_D2.write(myAngle);         // 70 degree turn left
@@ -381,7 +381,7 @@ void myWifi() {
         if (currentLine.endsWith("GET /right")) {
           digitalWrite(LEDR, LOW);                // GET /L turns the LED off
           mode=6;
-          analogWrite(D4, 30);     // go speed 30 of 255
+          analogWrite(D5, 30);     // go speed 30 of 255
           myAngle += +10;
           if (myAngle >= 120){myAngle = 120;} // max angle
           myServo_D2.write(myAngle);          // 110 degree turn right
@@ -391,7 +391,7 @@ void myWifi() {
           mode=7;
           digitalWrite(D3, 0);    // set one direction
           digitalWrite(D1, 1);
-          analogWrite(D4, 30);   // go speed 30 of 255
+          analogWrite(D5, 30);   // go speed 30 of 255
         }       
         if (c == '\n') {                    // if the byte is a newline character
 
