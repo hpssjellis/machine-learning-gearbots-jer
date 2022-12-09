@@ -34,8 +34,8 @@
 // Since if you share this file it will have your info on it
 
 //#include "arduino_secrets.h"     // more safe
-#define SECRET_SSID "003-TCHR-L154 1461"   // your network
-#define SECRET_PASS "8/8834Ue" // your password
+#define SECRET_SSID ""   // your network
+#define SECRET_PASS "" // your password
 
 
 
@@ -358,7 +358,10 @@ void myWifi() {
           mode=2;
           digitalWrite(D3, 1);    // set one direction
           digitalWrite(D1, 0);
+          myAngle = 90;
+          myServo_D2.write(myAngle);         // 90 degree straight
           analogWrite(D5, 30);   // go speed 30 of 255
+          
         }
 
         if (currentLine.endsWith("GET /P")) {
@@ -408,8 +411,8 @@ void myWifi() {
 
             // the content of the HTTP response follows the header:
             client.print("<input type=button value='Car Stop' onclick='{location=\"/stop\"}'>\n");
-            client.print("<input type=button value='Car Slow' onclick='{location=\"/slow\"}'>\n");
             client.print("<input type=button value='Car Left' onclick='{location=\"/left\"}'>\n");
+            client.print("<input type=button value='Car Slow' onclick='{location=\"/slow\"}'>\n");
             client.print("<input type=button value='Car Right' onclick='{location=\"/right\"}'>\n");
             client.print("<input type=button value='Car backwards' onclick='{location=\"/back\"}'>\n");
                   
