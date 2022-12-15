@@ -34,8 +34,8 @@ char serverAddress[] = "8080-hpssjellis-gitpodporten-k56rqynrp6i.ws-us79.gitpod.
 int port = 443;
 
 //WiFiClient wifi;
-//WiFiClient wifi;
-WiFiSSLClient wifi;
+WiFiClient wifi;
+//WiFiSSLClient wifi;
 WebSocketClient client = WebSocketClient(wifi, serverAddress, port);
 int status = WL_IDLE_STATUS;
 int count = 0;
@@ -74,7 +74,21 @@ void setup() {
     client.println("Connection: Upgrade");
     client.println("Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==");
     client.println("Sec-WebSocket-Version: 13");
-    client.println();   
+    client.println();
+
+   // Serial.print("Sending hello ");
+  //  Serial.println(count);
+
+    // send a hello #
+   // client.beginMessage(TYPE_TEXT);
+   // client.print("hello ");
+   // client.print(count);
+   // client.endMessage();
+
+    // increment count for next message
+   // count++;
+
+
   } 
 }
 
@@ -82,17 +96,6 @@ void loop() {
 
 
   while (client.connected()) {
-    Serial.print("Sending hello ");
-    Serial.println(count);
-
-    // send a hello #
-    client.beginMessage(TYPE_TEXT);
-    client.print("hello ");
-    client.print(count);
-    client.endMessage();
-
-    // increment count for next message
-    count++;
 
     // check if a message is available to be received
     int messageSize = client.parseMessage();
@@ -103,7 +106,7 @@ void loop() {
     }
 
     // wait 5 seconds
-    delay(1000);
+   // delay(1000);
   }
 
   Serial.println("disconnected");
