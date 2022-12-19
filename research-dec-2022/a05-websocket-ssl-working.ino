@@ -2,13 +2,17 @@
 
 //    example at   https://github.com/ambiot/amb1_arduino/blob/dev/Arduino_package/hardware/libraries/WiFi/examples/WiFiSSLClient/WiFiSSLClient.ino
 
+//    https://www.amebaiot.com/zh/rtl8195-arduino-api-wifisslclient/
+
+//    example at   https://github.com/ambiot/amb1_arduino/blob/dev/Arduino_package/hardware/libraries/WiFi/examples/WiFiSSLClient/WiFiSSLClient.ino
+
 
 #include <WiFi.h>
 #include <WiFiSSLClient.h>
 
 
-char ssid[] = "yourNetwork";        // your network SSID (name)
-char pass[] = "yourPassword";       // your network password (use for WPA, or use as key for WEP)
+char ssid[] = "";        // your network SSID (name)
+char pass[] = "";       // your network password (use for WPA, or use as key for WEP)
 int keyIndex = 0;                   // your network key Index number (needed only for WEP)
 
 int status = WL_IDLE_STATUS;
@@ -58,7 +62,7 @@ void setup() {
     printWifiStatus();
 
     Serial.println("\nStarting connection to server...");
-  client.setRootCA((unsigned char*)rootCABuff);
+ // client.setRootCA((unsigned char*)rootCABuff);  // already done by arduino
     // if a connection is formed, report back via serial
     if (client.connect(HTTPS_SERVER, 443)) {
         Serial.println("connected to server");
