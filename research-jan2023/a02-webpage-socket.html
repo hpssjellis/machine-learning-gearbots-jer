@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head><script type="text/javascript" src="https://codesandbox.io/p/preview-protocol.js"></script>
+  <title>WebSocket Javascript Client</title>
+  <script>
+   let myWebSocket; 
+  </script>  
+</head>
+<body>
+  <h1>WebSocket Client v-0.4.1.1-60</h1>
+  <p>This page acts as a WebSocket Javascript Client.</p>
+  Remember use "wss://" not "https"  also needs a slash on the end "/"<br>
+<input size=90 type=text id="myGitpod" value="wss://4fh42v-8080.preview.csb.app/" onchange="{
+                                                                                                                           
+  //alert(this.value);                                                                                                                           
+}"><br>
+<input style="width:150px; height:100px; font-size:30px; "  type=button value="connect" onclick="{
+    // Create a new WebSocket
+      myWebSocket = new WebSocket(document.getElementById('myGitpod').value);
+    // myWebSocket.binaryType = 'blob';   //default
+   //  myWebSocket.binaryType = 'arraybuffer';                                       
+    // Handle incoming messages
+    myWebSocket.onmessage = function(event) {
+                                            
+        if (event.data instanceof Blob ) {
+        reader = new FileReader();
+        reader.onload = () => {
+                                            
+            // slows it                                
+          // console.log('Result: ' + reader.result);
+           document.getElementById('myDiv01').innerHTML = 'reader.result: '+ reader.result + '<br>' + document.getElementById('myDiv01').innerHTML ;
+                                            
+                                            
+           let string = reader.result;
+           let buffer = btoa(string);
+           let data2 = 'data:image/png;base64,'+buffer;
+           let image = document.getElementById('myImage');
+           image.src = data2;
+         };
+       // reader.readAsText(event.data);
+       reader.readAsBinaryString(event.data);
+    } else {
+       // document.getElementById('myDiv01').innerHTML = 'event.data: '+ event.data + ' or: ' + String.fromCharCode.apply(null, new Uint8Array(reader.result))   +'<br>' + document.getElementById('myDiv01').innerHTML ;
+      //  document.getElementById('myDiv01').innerHTML = 'event.data: '+ event.data   +'<br>' + document.getElementById('myDiv01').innerHTML ;
+ //document.getElementById('myDiv01').innerHTML = 'event.data: '+ JSON.stringify(event.data) + ' or: ' + String.fromCharCode.apply(null, new Uint8Array(event.data ))  +'<br>' + document.getElementById('myDiv01').innerHTML ;
+ 
+
+   //  slows data showing                                        
+   // console.log('Result: ' + event.data);    
+    document.getElementById('myDiv01').innerHTML = 'event.data: '+ event.data + ' or: ' + String.fromCharCode.apply(null, new Uint8Array(event.data ))  +'<br>' + document.getElementById('myDiv01').innerHTML ;
+                                              
+    }
+                                     
+                                            
+                                            
+                                            
+                                            
+     // console.log('Received message:', event.data);
+    //  document.getElementById('myDiv01').innerHTML = event.data + '<br>' + document.getElementById('myDiv01').innerHTML 
+    }
+}"><br><br>
+  
+<table border=1>
+<tr><td><input style="width:150px; height:100px; font-size:30px; "  type=button value="backwards!" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+    myWebSocket.send('backwards!')
+    console.log( 'Sent message: ' + 'backwards!' );
+}"></td>
+<td><input style="width:150px; height:100px; font-size:30px; "  type=button value="BlueOn!" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+    myWebSocket.send('blueOn!')
+    console.log( 'Sent message: ' + 'blueOn!' );
+}"></td>
+<td><input style="width:150px; height:100px; font-size:30px; "  type=button value="BlueOff!" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+    myWebSocket.send('blueOff!')
+    console.log( 'Sent message: ' + 'blueOff!' );
+}"></td></tr>
+
+
+
+<tr><td><input style="width:150px; height:100px; font-size:30px; " type=button value="moreLeft!" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+    myWebSocket.send('moreLeft!')
+    console.log( 'Sent message: ' + 'moreLeft!' );
+}"></td>
+<td><input style="width:150px; height:100px; font-size:50px; " type=button value="Stop!" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+    myWebSocket.send('stop!')
+    console.log( 'Sent message: ' + 'stop!' );
+}"></td>
+<td><input style="width:150px; height:100px; font-size:30px; " type=button value="moreRight!" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+    myWebSocket.send('moreRight!')
+    console.log( 'Sent message: ' + 'moreRight!' );
+}"></td></tr>
+
+
+
+<tr><td><input style="width:150px; height:100px; font-size:30px; "  type=button value="slow!" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+    myWebSocket.send('slow!')
+    console.log( 'Sent message: ' + 'slow!' );
+}"></td>
+<td><input style="width:150px; height:100px; font-size:30px; "  type=button value="faster!" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+    myWebSocket.send('faster!')
+    console.log( 'Sent message: ' + 'faster!' );
+}"></td>
+<td>
+<input style="width:150px; height:100px; font-size:30px; "  type=button value="slow!" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+    myWebSocket.send('slow!')
+    console.log( 'Sent message: ' + 'slow!' );
+}"></td></tr>
+</table>
+
+
+
+
+<br>
+
+
+<input style="width:400px; height:100px; font-size:30px; "  id="mySend" type=text value="J!"><br>
+
+<input style="width:150px; height:100px; font-size:30px; "  type=button value="Send" onclick="{
+    // send message
+    myWebSocket.send(document.getElementById('mySend').value)
+    console.log( 'Sent message: ' + document.getElementById('mySend').value );
+}"><br>
+  
+  
+
+   
+<div id="myDiv01"></div>
+ 
+  
+</body>
+</html>
+
+
+
