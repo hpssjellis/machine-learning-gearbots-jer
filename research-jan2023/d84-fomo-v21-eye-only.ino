@@ -181,7 +181,7 @@ const int MY_SERVO_MAX = 115;
 
 
 // Stops all sharp turns from random errors.
-int myServoChangeAmount = 2;  // how much to change the turn angle if a change is needed.
+int myServoChangeAmount = 7;  // was 2, how much to change the turn angle if a change is needed.
 int myServoNow = MY_SERVO_STRAIGHT;    // start going straight
 //int myServoOld = MY_SERVO_STRAIGHT;    // start going straight
 
