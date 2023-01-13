@@ -35,7 +35,7 @@
  * Note 5: FOMO has been set to onlshow the top value. 
  * See Note 1   so it was set to 
  * 
- *  #define EI_CLASSIFIER_OBJECT_DETECTION_COUNT       1
+ *  #define EI_CLASSIFIER_OBJECT_DETECTION_COUNT       10
  * 
  * 
  * 
@@ -159,7 +159,7 @@ int myTurning = 0;
 int myServoAngle = 0;
 
 int myLastServo = 0;    // last servo position so we know which way to turn in a panic.
-int myPanicTime = 2000; // time to continue turning even when viewing nothing.
+int myPanicTime = 1000; // time to continue turning even when viewing nothing.
 unsigned long myLastPanic = 0;
  
                                   // if greater than 20 basically don't use slope X
@@ -260,8 +260,10 @@ void myLedBlue_myThread01(){
 
     // special panic for the first little while after no classification
     if ( myGlobalD5 == 0 && ( millis() - myLastPanic ) <= myPanicTime ) {  
-       
-       analogWrite(D5, MY_PWM_MIN);  // go slow
+        digitalWrite(LEDB, LOW);   //on board LED's are turned off by HIGH    
+        digitalWrite(LEDG, HIGH);   
+        digitalWrite(LEDR, HIGH);    
+        analogWrite(D5, MY_PWM_MIN);  // go slow
        
        if ( myLastServo >= MY_SERVO_STRAIGHT){  // was slightly turning right so do a massive slow right turn
            myServoNow = MY_SERVO_MAX;
@@ -740,7 +742,7 @@ void loop(){
             
            // myServoNow = MY_SERVO_STRAIGHT;   
             digitalWrite(LEDB, HIGH);   //on board LED's are turned off by HIGH    
-            digitalWrite(LEDG, HIGH);   
+            digitalWrite(LEDG, LOW);   
             digitalWrite(LEDR, HIGH);    
         }
 }
