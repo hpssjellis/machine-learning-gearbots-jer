@@ -1,0 +1,442 @@
+/*
+ * Base RC car FOMO 96x96 with DC motor, servo and OLED all on the M7 core
+ * 
+ * line 141 in the include file I changed camera speed from 30 to 60 frames per second
+ * 
+ * 
+ * 
+ * Use at your own risk!
+ * by Jeremy Ellis Twitter @rocksetta
+ * 
+ * Basic Pins
+ * // mainly at line 277
+ * 
+ *   pinMode(D3, OUTPUT);   // digital 0 to 1 
+ *   pinMode(D1, OUTPUT);   // digital 0 to 1 
+ *  pinMode(D5, OUTPUT);   // PWM 0 to 255
+ *   
+ * D5  PWM motor
+ * D2  servo
+ * D1  Direction backwards
+ * D3  Direction forwards
+ * neither D1,D3 = glide
+ * both D1,D3 = Stop probably a good idea to set D5 to 0
+ * 
+ * 
+ *  FOR the GRAYSCALE Waveshare OLED 128 x 128 using library Adafruit_SSD1327.h
+ *   
+ *   blue  DIN (mosi) D8
+ *   yellow (sck) D9                                                                                                                                                             
+ *   orange (cs) D7
+ *   green (dc)  D6
+ *   white (reset) not needed but D14 if you did
+ *
+ * another reference here 
+ * https://learn.adafruit.com/adafruit-gfx-graphics-library/graphics-primitives
+ *
+ */
+
+
+
+
+ 
+/* Includes ---------------------------------------------------------------- */
+
+// This is the file from EdgeImpulse.com the arduino model download
+#include <ei-fomo-v21-just-eye_inferencing.h>
+
+
+
+
+#include "edge-impulse-advanced-v2.h"
+#include <Servo.h>
+#include "mbed.h"
+#include "rtos.h"
+//using namespace mbed;  // sometimes needed
+using namespace rtos;
+
+#include <Adafruit_SSD1327.h>
+
+// Used for software SPI
+#define OLED_CLK D9
+#define OLED_MOSI D8
+
+// Used for software or hardware SPI
+#define OLED_CS D7
+#define OLED_DC D6
+
+// Used for I2C or SPI
+#define OLED_RESET -1
+
+// hardware SPI
+Adafruit_SSD1327 display(128, 128, &SPI, OLED_DC, OLED_RESET, OLED_CS);
+
+// Global Variables
+int myDelay = 0;  // delay between readings, can be zero, default 2000 = 2 seconds
+int x1Map, x2Map, y1Map, y2Map;
+
+
+// the OLED uses these
+#define CUTOUT_COLS                 EI_CLASSIFIER_INPUT_WIDTH
+#define CUTOUT_ROWS                 EI_CLASSIFIER_INPUT_HEIGHT
+const int cutout_row_start = (EI_CAMERA_RAW_FRAME_BUFFER_ROWS - CUTOUT_ROWS) / 2;
+const int cutout_col_start = (EI_CAMERA_RAW_FRAME_BUFFER_COLS - CUTOUT_COLS) / 2;
+
+
+
+// main thread for the servo and dc motor to keep their operation away from the analysis
+Thread myThread01;
+
+int myGlobalD5 = 0; // the Big Motor PWM speed
+
+Servo myServo_D2;
+
+
+int myTurning = 0;
+int myServoAngle = 0;
+
+
+
+
+const int  MY_THREAD_SLEEP = 10;      // default 10, ms the motor thread sleeps, lower the number faster the response
+
+// might still use
+//const float MY_FOMO_CUTOFF = 0.85;    // default 0.85;
+const int MY_MIDDLE_X = 48; //38;  //42;    //  (98 pixels / 2) - 4
+
+const int MY_SERVO_MIN = 65;        // degrees
+const int MY_SERVO_SLIGHT_LOW = 82;
+const int MY_SERVO_STRAIGHT = 90;
+const int MY_SERVO_SLIGHT_HIGH = 98;
+const int MY_SERVO_MAX = 115;
+
+
+
+// Stops all sharp turns from random errors.
+//int myServoChangeAmount = 20;  //  default 2 to 10 degrees. how much to change the turn angle if a change is needed.
+int myServoNow = MY_SERVO_STRAIGHT;    // start going straight
+
+
+
+const int MY_PWM_MIN = 32;      // 25
+const int MY_PWM_MAX = 37;     //50;  // careful this is the max speed for the car and can be up to 255!
+int myPwmNow = 0;                 // start with it stopped!
+
+int myGlobalCount; // countof all relevant objects
+
+
+// Thread to change the motor and servo away from the other code
+void myLedBlue_myThread01(){
+  // don't do display or ei_printf or Serial.println() commands here as it goes too fast
+   while (true) {
+
+      // PROTECT PWM FROM GOING TOO FAST
+      if (myGlobalD5 > MY_PWM_MAX) {myGlobalD5 = MY_PWM_MAX; }    
+      analogWrite(D5, myGlobalD5); 
+      
+      // PROTECT THE SERVO FROM WEIRD VALUES
+      if (myServoNow > MY_SERVO_MAX) {myServoNow = MY_SERVO_MAX;} 
+      if (myServoNow < MY_SERVO_MIN) {myServoNow = MY_SERVO_MIN;} 
+      myServo_D2.write(myServoNow);  
+      
+      ThisThread::sleep_for(MY_THREAD_SLEEP);   
+   }
+   
+}
+
+
+
+
+
+/**
+* @brief      Arduino setup function
+*/
+void setup(){
+   
+     myThread01.start(myLedBlue_myThread01);
+    // put your setup code here, to run once:
+    Serial.begin(115200);
+   // Serial.println("Edge Impulse Inferencing Demo");
+
+    pinMode(LEDR, OUTPUT); 
+    pinMode(LEDG, OUTPUT);   // this is LED_BUILTIN
+    pinMode(LEDB, OUTPUT); 
+
+    myServo_D2.attach(D2);   // D2 should do PWM on Portenta
+    
+
+    pinMode(D3, OUTPUT);   // digital 0 to 1 
+    pinMode(D1, OUTPUT);   // digital 0 to 1 
+    pinMode(D5, OUTPUT);   // PWM 0 to 255
+
+    digitalWrite(D1, 0);    // set one direction   
+    digitalWrite(D3, 1);       // set one direction 
+
+
+
+
+
+    
+#ifdef EI_CAMERA_FRAME_BUFFER_SDRAM
+    // initialise the SDRAM
+    SDRAM.begin(SDRAM_START_ADDRESS);
+#endif
+
+    if (ei_camera_init()) {
+        Serial.println("Failed to initialize Camera!");
+    }
+    else {
+        Serial.println("Camera initialized");
+    }
+
+    for (size_t ix = 0; ix < ei_dsp_blocks_size; ix++) {
+        ei_model_dsp_t block = ei_dsp_blocks[ix];
+        if (block.extract_fn == &extract_image_features) {
+            ei_dsp_config_image_t config = *((ei_dsp_config_image_t*)block.config);
+            int16_t channel_count = strcmp(config.channels, "Grayscale") == 0 ? 1 : 3;
+            if (channel_count == 3) {
+                Serial.println("WARN: You've deployed a color model, but the Arduino Portenta H7 only has a monochrome image sensor. Set your DSP block to 'Grayscale' for best performance.");
+                break; // only print this once
+            }
+        }
+    }
+    
+    // Following for the Grayscale OLED
+
+   if ( ! display.begin(0x3D) ) {   // start Grayscale OLED
+     Serial.println("Unable to initialize OLED");
+     while (1) yield();
+  }    
+    display.setTextSize(1);
+    display.setTextColor(SSD1327_WHITE);
+
+    display.setRotation(0);
+    display.setCursor(0,0);
+
+    //   map cutout of the 320 x 320   // 240 model to OLED 128 x 64 screen
+    x1Map = map((int)cutout_col_start, 0, 320, 0, 127);  
+    x2Map = map((int)CUTOUT_COLS, 0, 320, 0, 127);
+    y1Map = map((int)cutout_row_start, 0, 320, 0, 127);
+    y2Map = map((int)CUTOUT_ROWS, 0, 320, 0, 127);
+
+    
+}
+
+/**
+* @brief      Get data and run inferencing
+*
+* @param[in]  debug  Get debug info if true
+*/
+void loop(){
+  
+
+    // instead of wait_ms, we'll wait on the signal, this allows threads to cancel us...
+    if (ei_sleep(myDelay) != EI_IMPULSE_OK) {
+        return;
+    }
+    
+   // Serial.println("Starting inferencing in "+String(myDelay)+" microseconds...");
+
+    // Put the image on the OLED
+    display.clearDisplay();                 // clear the internal memory for OLED
+    for (int x=0; x < EI_CAMERA_RAW_FRAME_BUFFER_COLS; x++){     // EI_CAMERA_RAW_FRAME_BUFFER_COLS = 320
+      for (int y=0; y < EI_CAMERA_RAW_FRAME_BUFFER_ROWS; y++){       //EI_CAMERA_RAW_FRAME_BUFFER_ROWS = 320   //240
+      
+        uint8_t myGRAY = ei_camera_frame_buffer[(y * (int)EI_CAMERA_RAW_FRAME_BUFFER_COLS) + x];  
+
+          int myGrayMap = map(myGRAY, 0, 255, 0, 15);  
+          int xMap = map(x, 0, 320, 0, 127);
+          int yMap = map(y, 0, 320, 0, 127);
+          display.drawPixel(xMap, yMap, myGrayMap );   // grayscale 0-255, 128x128  //128 x 64
+      } 
+    }
+
+    display.drawRect(0,0,128,128, SSD1327_WHITE );  // rectangle around outside of OLED
+
+
+
+
+    myGlobalCount = 0;  // how many acceptable objects
+   // myPwmOld = myPwmNow; 
+    myPwmNow = 0;   //  iF no objects we want the car to stay stopped
+
+
+
+    ei::signal_t signal;
+    signal.total_length = EI_CLASSIFIER_INPUT_WIDTH * EI_CLASSIFIER_INPUT_HEIGHT;
+    signal.get_data = &ei_camera_cutout_get_data;
+
+    if (ei_camera_capture((size_t)EI_CLASSIFIER_INPUT_WIDTH, (size_t)EI_CLASSIFIER_INPUT_HEIGHT, NULL) == false) {
+        Serial.println("Failed to capture image\r\n");
+        return;
+    }
+
+    // Run the classifier
+    ei_impulse_result_t result = { 0 };
+
+    EI_IMPULSE_ERROR err = run_classifier(&signal, &result, debug_nn);
+    if (err != EI_IMPULSE_OK) {
+        Serial.println("ERR: Failed to run classifier, error number: " + String(err));
+        return;
+    }
+
+      int myBbxTotal = 0; // sums the thing we are interested in
+      int myDivider = 0;
+      int myBbxAverage = 0;
+      
+      int my0 = 0;  // for background info
+      int my9 = 0;
+      
+
+
+        
+    bool bb_found = result.bounding_boxes[0].value > 0;
+    for (size_t ix = 0; ix < EI_CLASSIFIER_OBJECT_DETECTION_COUNT; ix++) {
+             // only show the best 3
+             // for (size_t ix = 0; ix < 3; ix++) {
+        auto bb = result.bounding_boxes[ix];
+
+      
+      if (bb.value == 0){     // how many classifications came up with nothing
+         my0 += 1;
+      }
+
+      if (String(bb.label).substring(0, 1) == "1"){  // eye detection
+         myBbxTotal += (int)bb.x;
+         myDivider += 1;
+      }
+
+      if (String(bb.label).substring(0, 1) == "9"){  // if I make just a background label
+         my9 += 1;
+      }
+
+     
+
+        int xMap = map(bb.x, 0,96, 0,127);
+        int yMap = map(bb.y, 0,96, 0,127);
+        int widthMap = map(bb.width, 0,96, 0,127);
+        int heightMap = map(bb.height, 0,96, 0,127);
+        display.setCursor(xMap+2, yMap);
+        display.println(bb.label);
+
+        // draw the box where the FOMO was found
+        display.drawRect(xMap, yMap, widthMap, heightMap, SSD1327_WHITE ); // good value`               
+
+        display.setCursor(3, 30);  // write them near the left midway down the page
+
+
+        
+    }        // END of analysis loop!
+
+    if (!bb_found) {
+        ei_printf("    No objects found. ");
+    }
+
+
+
+    
+#if EI_CLASSIFIER_HAS_ANOMALY == 1
+    Serial.println("    anomaly score: " + String(result.anomaly, 5));
+#endif
+   
+
+
+
+
+
+//--------------------------- start new stuff----------------------
+
+
+        if (my9 > 0) {
+          // background found just ignore    
+        }
+
+       
+        if (myBbxTotal > 0){  // saw at least one eye
+          myBbxAverage = myBbxTotal / myDivider;
+          display.println("1 bigeye Fast");   
+          digitalWrite(D1, 0);   // zero forward, both break
+          digitalWrite(D3, 1);    // 1 forward,    neither glide  
+          digitalWrite(LEDR, LOW);    
+          digitalWrite(LEDG, HIGH);     // purple ish
+          digitalWrite(LEDB, LOW);  
+
+          myTurning = (int)myBbxAverage - MY_MIDDLE_X;    // 48 for middle location may change
+        
+          
+          // myServoAngle = map(myTurning, -40,40, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
+          
+          // make the angles bigger by making the mapping smaller to offset averaging many X values
+          myServoAngle = map(myTurning, -20,20, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
+
+
+         // If the angle is near the center and 2 or more objects are detected then go full speed.
+         if (myServoAngle > MY_SERVO_SLIGHT_LOW && myServoAngle < MY_SERVO_SLIGHT_HIGH && myDivider >= 2 ){
+            myPwmNow = MY_PWM_MAX;   
+         } else {
+           myPwmNow = MY_PWM_MIN;
+        }
+
+
+        // this check is now not really needed
+        if (myPwmNow > MY_PWM_MAX) {myPwmNow = MY_PWM_MAX;}
+        myServoNow = myServoAngle;
+
+   
+        } 
+
+        else {   //No objects detected so stop the car!
+          digitalWrite(D1, 0);   // zero forward, both break
+          digitalWrite(D3, 0);    // 1 forward,    neither glide
+          display.setCursor(3, 30);
+          display.println("0: I am lost");    
+
+          myPwmNow = 0;   // stop if nothing seen
+         
+         // myServoNow = MY_SERVO_STRAIGHT;  // better to not reset the direction  
+          digitalWrite(LEDB, HIGH);   //on board LED's are turned off by HIGH    
+          digitalWrite(LEDG, HIGH);   
+          digitalWrite(LEDR, HIGH);    
+        
+       }
+
+
+//-------------------------------- end new stuff -------------------------------
+
+       Serial.print(F("myTurn:"));
+       Serial.print(myTurning);
+       Serial.print(F(", servo:"));
+       Serial.print(myServoNow);
+       Serial.print(F(", PWM:"));
+       Serial.print(myPwmNow);
+
+       
+       Serial.print(F(", myBbxTotal: "));
+       Serial.print(myBbxTotal);
+       Serial.print(F(", myDivider: "));
+       Serial.print(myDivider);
+       Serial.print(F(", my0: "));
+       Serial.print(my0);
+       Serial.print(F(", my9: "));
+       Serial.println(my9);
+
+      display.setCursor(20,10);
+      display.println("Rocksetta-Drive");  
+       
+      display.setCursor(10,120);
+      display.println("Servo:");
+      display.setCursor(50, 120);
+      display.println(String(myServoNow));
+      display.setCursor(70, 120);
+      display.println("PWM:");
+      display.setCursor(100, 120);
+      display.println(String(myPwmNow));
+
+      myGlobalD5 = myPwmNow;  // activate the motor in it's own thread
+         
+     // Last thing is to show the 128x128 GRAYSCALE OLED
+     display.display();  // OLED 4 bit 16 color GRAYSCALE update
+}
+
+
+ 
