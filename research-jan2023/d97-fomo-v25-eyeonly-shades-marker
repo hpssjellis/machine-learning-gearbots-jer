@@ -448,7 +448,8 @@ void loop(){
            // If the angle is near the center and 1 object then go slow.
            if (myDivider == 1 ){
                myPwmNow = MY_PWM_SLOW;  //go 2/3 slow speed   
-           } else {  // else objects not near the center so go slow
+           }
+         } else {  // else objects not near the center so go slow
             
            // Set LED's to be green // showing big turning so go slow
            digitalWrite(LEDR, HIGH);    
@@ -465,9 +466,7 @@ void loop(){
         myServoNow = myServoAngle;
 
    
-        } 
-
-        else {   //No objects detected so stop the car!
+        } else {   //No objects detected so stop the car!
           digitalWrite(D1, 0);   // zero forward, both break
           digitalWrite(D3, 0);    // 1 forward,    neither glide
 #ifdef USE-GRAY-OLED         
