@@ -332,6 +332,7 @@ void loop(){
       int myBbxTotal = 0; // sums the thing we are interested in
       int myDivider = 0;
       int myBbxAverage = 0;
+      int myBbxMax = 0; // to determin how close the x locations are
       
       int my0 = 0;  // for background info
       int my9 = 0;
@@ -350,11 +351,12 @@ void loop(){
       }
 
 
-     // marker 7: The more objects you deetect the bigger chance for false detections
-     // here is where you identify tose objects. I put numbers in the label name to make this easier
+     // marker 7: The more objects you detect the bigger chance for false detections
+     // here is where you identify those objects. I put numbers in front of the label name to make this easier
     
       if (String(bb.label).substring(0, 1) == "1"){  // eye detection
          myBbxTotal += (int)bb.x;
+         if (myBbxMax < (int)bb.x ) {myBbxMax = (int)bb.x;}
          myDivider += 1;
       }
 
@@ -399,7 +401,7 @@ void loop(){
 
 //--------------------------- start new stuff----------------------
 
-       // mark 8: This is the important student area where we dod stuff to the car.
+       // mark 8: This is the important student area where we do stuff to drive the car.
 
         if (my9 > 0) {
           // background found just ignore    
@@ -408,48 +410,58 @@ void loop(){
        
         if (myBbxTotal > 0){  // saw at least one eye
           myBbxAverage = myBbxTotal / myDivider;
+          
+          
 #ifdef USE-GRAY-OLED          
           display.println("1 bigeye Fast"); 
-#endif            
+#endif    
+        
           digitalWrite(D1, 0);   // zero forward, both break
           digitalWrite(D3, 1);    // 1 forward,    neither glide  
-          digitalWrite(LEDR, LOW);    
-          digitalWrite(LEDG, HIGH);     // purple ish
-          digitalWrite(LEDB, LOW);  
+
 
           myTurning = (int)myBbxAverage - MY_MIDDLE_X;    // 48 for middle location may change
         
           
-          // myServoAngle = map(myTurning, -40,40, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
           
           // make the angles bigger by making the mapping smaller to offset averaging many X values
-        //  myServoAngle = map(myTurning, -20,20, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
+          // myServoAngle = map(myTurning, -20,20, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
           myServoAngle = map(myTurning, -30,30, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
+          // myServoAngle = map(myTurning, -40,40, MY_SERVO_MIN, MY_SERVO_MAX); // raw position to car turn angle
 
 
-         // If the angle is near the center and 3 or more objects are detected then go full speed.
-         if (myServoAngle > MY_SERVO_SLIGHT_LOW && myServoAngle < MY_SERVO_SLIGHT_HIGH && myDivider >= 3 ){
-            myPwmNow = MY_PWM_MAX;  //go fast 
-            myServoAngle = MY_SERVO_STRAIGHT; // go straight if fast
-         } 
-         // If the angle is near the center and 2  are detected then go middle speed.
- 
-         else if (myServoAngle > MY_SERVO_SLIGHT_LOW && myServoAngle < MY_SERVO_SLIGHT_HIGH && myDivider == 2 ){
-            myPwmNow = MY_PWM_MEDIUM;  //Medium 
-         } 
- 
-        
-         
+         // If the angle is near the center do these else go minimum speed
+         if (myServoAngle > MY_SERVO_SLIGHT_LOW && myServoAngle < MY_SERVO_SLIGHT_HIGH){
+
+           // Set LED's to be blue // showing near the center average
+           digitalWrite(LEDR, HIGH);    
+           digitalWrite(LEDG, HIGH);     
+           digitalWrite(LEDB, LOW);           
+           if (myDivider >= 3 ){ // more than or equal to 3 objects go fast!        
+              myPwmNow = MY_PWM_MAX;  //go fast 
+              myServoAngle = MY_SERVO_STRAIGHT; // go straight if fast
+           } 
+           // If the angle is near the center and 2  are detected then go middle speed. 
+           if ( myDivider == 2 ){
+              myPwmNow = MY_PWM_MEDIUM;  // Go Medium 
+           }         
            // If the angle is near the center and 1 object then go slow.
-         else if (myServoAngle > MY_SERVO_SLIGHT_LOW && myServoAngle < MY_SERVO_SLIGHT_HIGH && myDivider == 1 ){
-            myPwmNow = MY_PWM_SLOW;  //go 2/3 slow speed   
-          } else {
-            myPwmNow = MY_PWM_MIN;  //go slow       
-          }
+           if (myDivider == 1 ){
+               myPwmNow = MY_PWM_SLOW;  //go 2/3 slow speed   
+           } else {  // else objects not near the center so go slow
+            
+           // Set LED's to be green // showing big turning so go slow
+           digitalWrite(LEDR, HIGH);    
+           digitalWrite(LEDG, LOW);     
+           digitalWrite(LEDB, HIGH);
+           myPwmNow = MY_PWM_MIN;  //go slow       
+        }
          
 
         // this check is now not really needed
         if (myPwmNow > MY_PWM_MAX) {myPwmNow = MY_PWM_MAX;}
+
+        // variable sent to the turning thread
         myServoNow = myServoAngle;
 
    
@@ -464,7 +476,9 @@ void loop(){
 #endif
           myPwmNow = 0;   // stop if nothing seen
          
-         // myServoNow = MY_SERVO_STRAIGHT;  // better to not reset the direction  
+          // myServoNow = MY_SERVO_STRAIGHT;  // better to not reset the direction
+          
+          // Since car is stopped turn off all LED's 
           digitalWrite(LEDB, HIGH);   //on board LED's are turned off by HIGH    
           digitalWrite(LEDG, HIGH);   
           digitalWrite(LEDR, HIGH);    
