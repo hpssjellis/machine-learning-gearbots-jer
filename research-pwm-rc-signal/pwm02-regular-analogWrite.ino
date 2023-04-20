@@ -5,7 +5,7 @@
 //pin 3 set for PWM in using pulseIn() to measeure the duration
 
 #include <Arduino.h>  // only needed for https://platformio.org/
-#include <Servo.h>
+//#include <Servo.h>
 
 //Servo myServo_D2;
 
