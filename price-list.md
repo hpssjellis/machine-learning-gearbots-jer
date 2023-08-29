@@ -54,15 +54,11 @@ Here is the changing list. The 2021 Portenta should last us a few years.
 ## 2023-2024 Microcontroller Price List   
 
 IF you have the Portenta with Vision Shield then keep it. It analyses faster, but it is bigger much more expensive, only grayscale and more fragile much easier broken (bricked) than the following.
-![image](https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/3d1a1be9-0d77-4882-9bbc-3a3b6aa90794)
 
 
-![image](https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/3c0e711d-3828-4ea4-b7da-0e91730a40c1)
+1. <img src="https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/3d1a1be9-0d77-4882-9bbc-3a3b6aa90794" width=400 /> [XIAO-Esp32S3-sense](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)  XIAO-Esp32S3-sense from seedstudio only $13.99 USD
 
-
-1. <img src="https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/3d1a1be9-0d77-4882-9bbc-3a3b6aa90794" width=400 /> [XIAO-Esp32S3-sense](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)  XIAO-Esp32S3-sense from seedstudio only $13.00 USD
-
-2. <img src="https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/3c0e711d-3828-4ea4-b7da-0e91730a40c1.png" width=400 /> [XIAO Round Display](https://wiki.seeedstudio.com/get_start_round_display/)  XIAO Round Display from seedstudio only $10.00 USD
+2. <img src="https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/3c0e711d-3828-4ea4-b7da-0e91730a40c1.png" width=400 /> [XIAO Round Display](https://wiki.seeedstudio.com/get_start_round_display/)  XIAO Round Display from seedstudio only $18.00 USD
 
 Even past students may want to get the new equipment as it is so cheap.
 
