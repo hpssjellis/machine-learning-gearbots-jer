@@ -26,6 +26,11 @@ Located at #1 - 33232 South Fraser Way
 <img src="https://user-images.githubusercontent.com/5605614/133374122-6af08f67-3216-41f2-9b39-30c7eb15e9a4.png" width=400 /> And these plugs [WSD1302 plug set](https://www.rcsuperstore.com/ws-deans-2-pin-ultra-plug-set-one-male-one-female-included/) $2.99 USD
 
 
+<img src="https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/4d3309da-5a7c-47c1-84e4-044e4dafd578" width=400 />
+You only need 2 female bullet connectors [https://www.amazon.com/AIRIC-Bullet-Connectors-Insulated-Terminals](https://www.amazon.com/AIRIC-Bullet-Connectors-Insulated-Terminals/dp/B08ZSQZCCR?th=1)
+this is a set of 50 for $11.99 USD. We will probably have some at the course.
+
+
 
 
 # Note: 
