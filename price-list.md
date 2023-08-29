@@ -1,6 +1,8 @@
 ## GearBots Machine Learning Engineering Design STEM Class
 
 
+# GearbotsBC Registration for invited students is at  https://www.gearbots.org/academy-tuition/
+
 # Must have the following, contact Mr Dirom if this is going to be a problem
 
 
