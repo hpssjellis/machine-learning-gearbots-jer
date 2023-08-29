@@ -107,7 +107,7 @@ Note: If you didn't get the 3 wire servo for turning then you need this:
  As a group we decided not to use this method as the coding was much more confusing and turning was unreliable and slow.
 
 
- Note: A few of the adevanced students are working with RF modules and receivers, but this is only for students who know what they are doing. Any student at the course can find out more about this process.
+ Note: A few of the advanced students are working with RF modules and receivers, but this is only for students who know what they are doing. Any student at the course can find out more about this process.
  
 
 
