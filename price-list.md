@@ -30,17 +30,12 @@ Located at #1 - 33232 South Fraser Way
 
 # Note: 
 
-You can get an extra servo motor as this makes coding much eaiser than the orginal car above, which uses a DC motor for turning and a potentiometer to determine what angle the motor is at. 
+You must get an extra servo motor as this makes coding much eaiser than the orginal car above, which uses a DC motor for turning and a potentiometer to determine what angle the motor is at. 
  
 <img src="https://user-images.githubusercontent.com/5605614/133374152-65006148-0003-4ddc-87bb-1dade1220466.png" width=400 />  Extra [3 wire Servo ](https://www.rcpro.ca/collections/shredder/products/shredder-3-wires-19gram-metal-gear-servo) $24.99 CDN
 
 
-# OR
 
-
-<img src="https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png" width=400 />
- If you don't get the 3 wire servo you need this 
- DRV8835 Dual Motor Driver Carrier  https://www.pololu.com/product/2135      from Pololu $9.95 USD
 
 
 
@@ -98,7 +93,18 @@ OR the much better 16 levels of Grayscale OLED<br>
 
 I do have a TFT V2 touchscreen but the refresh rate is too slow.
 
-.
+Note: If you didn't get the 3 wire servo for turning then you need this:
+
+
+<img src="https://user-images.githubusercontent.com/5605614/133374173-5b7151d8-e30d-4162-8eb1-fb6f80b20638.png" width=400 />
+ If you don't get the 3 wire servo you need this 
+ DRV8835 Dual Motor Driver Carrier  https://www.pololu.com/product/2135      from Pololu $9.95 USD
+
+ As a group we decided not to use this method as the coding was much more confusing and turning was unreliable and slow.
+
+
+ Note: A few of the adevanced students are working with RF modules and receivers, but this is only for students who know what they are doing. Any student at the course can find out more about this process.
+ 
 
 
 .
