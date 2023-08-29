@@ -51,11 +51,28 @@ You can get an extra servo motor as this makes coding much eaiser than the orgin
 Here is the changing list. The 2021 Portenta should last us a few years.   
 (Any of the below materials would work fine, just we will be able to do much more with the latest equipment the Portenta and Vision Shield)
 
+## 2023-2024 Microcontroller Price List   
+
+IF you have the Portenta with Vision Shield then keep it. It analyses faster, but it is bigger much more expensive, only grayscale and more fragile much easier broken (bricked) than the following.
+![image](https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/3d1a1be9-0d77-4882-9bbc-3a3b6aa90794)
+
+
+![image](https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/3c0e711d-3828-4ea4-b7da-0e91730a40c1)
+
+
+1. <img src="https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/3d1a1be9-0d77-4882-9bbc-3a3b6aa90794" width=400 /> [XIAO-Esp32S3-sense](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)  XIAO-Esp32S3-sense from seedstudio only $13.00 USD
+
+2. <img src="https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/3c0e711d-3828-4ea4-b7da-0e91730a40c1.png" width=400 /> [XIAO Round Display](https://wiki.seeedstudio.com/get_start_round_display/)  XIAO Round Display from seedstudio only $10.00 USD
+
+Even past students may want to get the new equipment as it is so cheap.
+
+------------------------------------------- Nothing below this line is needed for 2023-2024 -------------------------------------------------------------
+
 ## 2021 Microcontroller Price List   
 When we combine the PortentaH7 with the LoRa vision shield we have a great Machine Learning duo. But it is expensive.  
 
 
-<img src="https://user-images.githubusercontent.com/5605614/133374580-13deb749-820c-46db-bc04-597c610d2bd0.png" width=400 /> [Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD  The base best Arduino
+<img src="https://user-images.githubusercontent.com/5605614/133374580-13deb749-820c-46db-bc04-597c610d2bd0.png" width=400 /> [Arduino PortentaH7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD  The base MCU and best Arduino
 
 
 <img src="https://user-images.githubusercontent.com/5605614/133374592-36bb6dfd-ec10-4796-b998-782b58ce8730.png" width=400 /> [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD  Allows the Portenta to See and hear and use the LoRaWan networks
