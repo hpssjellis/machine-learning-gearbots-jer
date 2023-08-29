@@ -1,4 +1,4 @@
-## Gear Bots Machine Learning Engineering Design STEM Class
+## GearBots Machine Learning Engineering Design STEM Class
 
 
 # Must have the following, contact Mr Dirom if this is going to be a problem
