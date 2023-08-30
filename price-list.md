@@ -7,6 +7,12 @@
 
 
 
+![roboCar1](https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/69a6900e-6177-4777-9272-7d56f15b97a7)
+
+
+
+
+
 <img src="https://user-images.githubusercontent.com/5605614/133374039-45fac79c-23a0-4992-a403-699e03a1c17f.png" width=600 /> [RC-Pro SHREDDER](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN   
 
 
@@ -216,6 +222,7 @@ This is what it looks like when it is all finished. A robot controlled or app co
 
 
 
+![roboCar2](https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/5fd17ea8-0618-4b39-b890-ba2bd507ad6f)
 
 
 
