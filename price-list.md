@@ -35,7 +35,7 @@ Located at #1 - 33232 South Fraser Way
 
 
 <img src="https://github.com/hpssjellis/machine-learning-gearbots-jer/assets/5605614/4d3309da-5a7c-47c1-84e4-044e4dafd578" width=400 />
-You only need 2 female bullet connectors [https://www.amazon.com/AIRIC-Bullet-Connectors-Insulated-Terminals](https://www.amazon.com/AIRIC-Bullet-Connectors-Insulated-Terminals/dp/B08ZSQZCCR?th=1)
+You only need 2 female [bullet connectors](https://www.amazon.ca/Hocansen-Pieces-connectors-Connector-Terminals/dp/B0C3YLBXPS/ref=sr_1_2_sspa?crid=3BOYMJQPUH9AR&keywords=bullet%2Bconnectors%2Bairic&qid=1694043661&sprefix=bullet%2Bconnectors%2Bairic%2Caps%2C163&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1) 
 this is a set of 50 for $11.99 USD. We will probably have some at the course.
 
 
