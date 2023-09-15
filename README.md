@@ -52,13 +52,6 @@ Github website URL  https://hpssjellis.github.io/machine-learning-gearbots-jer/p
 .
 
 
-# Nathan   
-https://nathannull.github.io/GearbotsNS/public/index.html
-
-# Brandon  
-https://machinelearning3dprinting.github.io/gearbot_brandon/public/index.html
-
-
 
 
 
@@ -74,9 +67,14 @@ https://github.com/midnight4577/midnight4577.github.io
 website https://midnight4577.github.io/public/index.html
 
 
-# Will 
+# William 
 https://github.com/poderman/Rc-car      
 website https://poderman.github.io/Rc-car/public/    
+
+
+James  
+
+
 
 
 # David
@@ -180,6 +178,13 @@ Brandon's Circuit Diagram
 
 <img src="https://user-images.githubusercontent.com/5605614/191873872-680042a4-848b-48f2-9ae7-c874bb97690d.png" width=900>
 
+
+
+# Nathan   
+https://nathannull.github.io/GearbotsNS/public/index.html
+
+# Brandon  
+https://machinelearning3dprinting.github.io/gearbot_brandon/public/index.html
 
 
 
