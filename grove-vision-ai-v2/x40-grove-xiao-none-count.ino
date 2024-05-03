@@ -36,7 +36,7 @@ int myOldSpeed = 0;
 
 int myMappedAngle = 0;
 int myOldMappedAngle = 0;
-int myAngleChange = 8;   // was 5 the degrees the servfo will move each time it moves
+int myAngleChange = 10;   // was 5 the degrees the servfo will move each time it moves
 int myMaxAngle = 133;    // was 127 max right turn on my car
 int myMinAngle = 53;     // was 53 max left turn on my car
 int myRealMinX = 10;     // Should be 0 but is the lowest x reading your vision model gets
